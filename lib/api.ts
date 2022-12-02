@@ -11,12 +11,14 @@ import { AUTHORS_DIR, BLOG_POSTS_DIR, BOOK_EXTRACTS_DIR } from './constants';
 const authorDirectory = join(process.cwd(), `_${AUTHORS_DIR}`);
 
 export function getAuthorSlugs() {
+  if (!fs.existsSync(authorDirectory)) return [];
   return fs.readdirSync(authorDirectory);
 }
 
 export function getAuthorBySlug(slug: string, fields: string[] = []) {
   const realSlug = slug.replace(/\.md$/, "");
   const fullPath = join(authorDirectory, `${realSlug}.md`);
+
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
@@ -60,6 +62,7 @@ export function getAllAuthors(fields: string[] = []) {
 const blogDirectory = join(process.cwd(), `_${BLOG_POSTS_DIR}`);
 
 export function getBlogPostSlugs() {
+  if (!fs.existsSync(blogDirectory)) return [];
   return fs.readdirSync(blogDirectory);
 }
 
@@ -111,6 +114,7 @@ export function getAllBlogPosts(fields: string[] = []) {
 const bookDirectory = join(process.cwd(), `_${BOOK_EXTRACTS_DIR}`);
 
 export function getBookExtractSlugs() {
+  if (!fs.existsSync(bookDirectory)) return [];
   return fs.readdirSync(bookDirectory);
 }
 
@@ -152,8 +156,6 @@ export function getAllBookExtracts(fields: string[] = []) {
     .map((slug) => getBookExtractBySlug(slug, fields))
     // sort posts by pageNumber in asccending order
     .sort((post1, post2) => (post1.pageNumber < post2.pageNumber ? -1 : 1));
-
-  console.log(posts.map(({ pageNumber }) => pageNumber));
 
   return posts;
 }
