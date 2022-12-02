@@ -4,7 +4,7 @@ import { DEFAULT_OG_IMAGE_URL } from '../../lib/constants';
 export const samplePost: Post = {
   slug: "hello-world",
   title: "Learn How to Pre-render Pages Using Static Generation with Next.js",
-  coverImage: "/assets/blog/hello-world/cover.jpg",
+  coverImage: "/assets/sample/sample-cover.jpg",
   ogImage: {
     url: DEFAULT_OG_IMAGE_URL,
   },
