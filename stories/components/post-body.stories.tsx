@@ -3,7 +3,7 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import PostBodyComponent from '../../components/post-body';
-import { sampleContent } from '../samples/sample-content';
+import { samplePost } from '../samples/sample-post';
 
 export default {
   title: "Components/Post/Body",
@@ -17,5 +17,5 @@ const Template: ComponentStory<typeof PostBodyComponent> = (args) => (
 
 export const Body = Template.bind({});
 Body.args = {
-  content: sampleContent,
+  content: samplePost.content,
 };

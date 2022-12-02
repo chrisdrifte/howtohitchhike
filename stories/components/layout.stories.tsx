@@ -3,7 +3,7 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import LayoutComponent from '../../components/layout';
-import { sampleContent } from '../samples/sample-content';
+import { samplePost } from '../samples/sample-post';
 
 export default {
   title: "Components/Layout",
@@ -18,5 +18,5 @@ const Template: ComponentStory<typeof LayoutComponent> = (args) => (
 export const Layout = Template.bind({});
 Layout.args = {
   preview: false,
-  children: sampleContent,
+  children: samplePost.content,
 };

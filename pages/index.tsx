@@ -1,17 +1,21 @@
 import PageHome from '../components/page-home';
-import Post from '../interfaces/post';
-import { getAllPosts } from '../lib/api';
+import BlogPost from '../interfaces/blog-post';
+import BookExtract from '../interfaces/book-extract';
+import { getAllBlogPosts, getAllBookExtracts } from '../lib/api';
 
 type Props = {
-  allPosts: Post[];
+  allBlogPosts: BlogPost[];
+  allBookExtracts: BookExtract[];
 };
 
-export default function Index({ allPosts }: Props) {
-  return <PageHome allPosts={allPosts} />;
+export default function Index({ allBlogPosts, allBookExtracts }: Props) {
+  return (
+    <PageHome allBlogPosts={allBlogPosts} allBookExtracts={allBookExtracts} />
+  );
 }
 
 export const getStaticProps = async () => {
-  const allPosts = getAllPosts([
+  const allBlogPosts = getAllBlogPosts([
     "title",
     "date",
     "slug",
@@ -20,7 +24,15 @@ export const getStaticProps = async () => {
     "excerpt",
   ]);
 
+  const allBookExtracts = getAllBookExtracts([
+    "title",
+    "pageNumber",
+    "slug",
+    "coverImage",
+    "excerpt",
+  ]);
+
   return {
-    props: { allPosts },
+    props: { allBlogPosts, allBookExtracts },
   };
 };

@@ -3,7 +3,7 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import CoverImageComponent from '../../components/cover-image';
-import { samplePost } from '../samples/sample-post';
+import { sampleBlogPost } from '../samples/sample-blog-post';
 
 export default {
   title: "Components/CoverImage",
@@ -17,7 +17,7 @@ const Template: ComponentStory<typeof CoverImageComponent> = (args) => (
 
 export const CoverImage = Template.bind({});
 CoverImage.args = {
-  title: samplePost.title,
-  src: samplePost.coverImage,
-  slug: samplePost.slug,
+  title: sampleBlogPost.title,
+  src: sampleBlogPost.coverImage,
+  slug: sampleBlogPost.slug,
 };

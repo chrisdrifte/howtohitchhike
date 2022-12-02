@@ -16,5 +16,5 @@ const Template: ComponentStory<typeof AlertComponent> = (args) => (
 
 export const Alert = Template.bind({});
 Alert.args = {
-  preview: false,
+  preview: true,
 };

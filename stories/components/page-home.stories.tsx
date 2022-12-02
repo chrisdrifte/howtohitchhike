@@ -3,7 +3,8 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import PageHomeComponent from '../../components/page-home';
-import { sampleAllPosts } from '../samples/sample-all-posts';
+import { sampleAllBlogPosts } from '../samples/sample-all-blog-posts';
+import { sampleAllBookExtracts } from '../samples/sample-all-book-extracts';
 
 export default {
   title: "Components/Page/Home",
@@ -17,5 +18,6 @@ const Template: ComponentStory<typeof PageHomeComponent> = (args) => (
 
 export const Home = Template.bind({});
 Home.args = {
-  allPosts: sampleAllPosts,
+  allBlogPosts: sampleAllBlogPosts,
+  allBookExtracts: sampleAllBookExtracts,
 };

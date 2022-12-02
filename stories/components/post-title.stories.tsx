@@ -3,7 +3,7 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import PostTitleComponent from '../../components/post-title';
-import { samplePost } from '../samples/sample-post';
+import { sampleBlogPost } from '../samples/sample-blog-post';
 
 export default {
   title: "Components/Post/Title",
@@ -17,5 +17,5 @@ const Template: ComponentStory<typeof PostTitleComponent> = (args) => (
 
 export const Title = Template.bind({});
 Title.args = {
-  children: samplePost.title,
+  children: sampleBlogPost.title,
 };

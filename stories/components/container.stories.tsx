@@ -3,7 +3,7 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import ContainerComponent from '../../components/container';
-import { sampleContent } from '../samples/sample-content';
+import { samplePost } from '../samples/sample-post';
 
 export default {
   title: "Components/Container",
@@ -17,5 +17,5 @@ const Template: ComponentStory<typeof ContainerComponent> = (args) => (
 
 export const Container = Template.bind({});
 Container.args = {
-  children: sampleContent,
+  children: samplePost.content,
 };

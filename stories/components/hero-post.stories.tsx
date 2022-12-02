@@ -3,7 +3,7 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import HeroPostComponent from '../../components/hero-post';
-import { samplePost } from '../samples/sample-post';
+import { sampleBlogPost } from '../samples/sample-blog-post';
 
 export default {
   title: "Components/HeroPost",
@@ -21,10 +21,10 @@ const Template: ComponentStory<typeof HeroPostComponent> = (args) => (
 
 export const HeroPost = Template.bind({});
 HeroPost.args = {
-  title: samplePost.title,
-  coverImage: samplePost.coverImage,
-  date: samplePost.date,
-  excerpt: samplePost.excerpt,
-  author: samplePost.author,
-  slug: samplePost.slug,
+  title: sampleBlogPost.title,
+  coverImage: sampleBlogPost.coverImage,
+  date: sampleBlogPost.date,
+  excerpt: sampleBlogPost.excerpt,
+  author: sampleBlogPost.author,
+  slug: sampleBlogPost.slug,
 };

@@ -1,25 +1,29 @@
 import Head from 'next/head';
 
+import BlogPost from '../interfaces/blog-post';
+import BookExtract from '../interfaces/book-extract';
 import Post from '../interfaces/post';
-import { CMS_NAME } from '../lib/constants';
+import { BLOG_POSTS_DIR, BLOG_TITLE } from '../lib/constants';
 import Container from './container';
 import HeroPost from './hero-post';
 import Intro from './intro';
 import Layout from './layout';
-import MoreStories from './more-stories';
+import MoreBlogPosts from './more-blog-posts';
+import MoreBookExtracts from './more-book-extracts';
 
 type Props = {
-  allPosts: Post[];
+  allBlogPosts: BlogPost[];
+  allBookExtracts: BookExtract[];
 };
 
-export default function PageHome({ allPosts }: Props) {
-  const heroPost = allPosts[0];
-  const morePosts = allPosts.slice(1);
+export default function PageHome({ allBlogPosts, allBookExtracts }: Props) {
+  const heroPost = allBlogPosts[0];
+  const morePosts = allBlogPosts.slice(1);
   return (
     <>
       <Layout>
         <Head>
-          <title>Next.js Blog Example with {CMS_NAME}</title>
+          <title>{BLOG_TITLE}</title>
         </Head>
         <Container>
           <Intro />
@@ -27,13 +31,15 @@ export default function PageHome({ allPosts }: Props) {
             <HeroPost
               title={heroPost.title}
               coverImage={heroPost.coverImage}
-              date={heroPost.date}
-              author={heroPost.author}
+              dir={BLOG_POSTS_DIR}
               slug={heroPost.slug}
               excerpt={heroPost.excerpt}
             />
           )}
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+          {morePosts.length > 0 && <MoreBlogPosts blogPosts={morePosts} />}
+          {allBookExtracts.length > 0 && (
+            <MoreBookExtracts bookExtracts={allBookExtracts} />
+          )}
         </Container>
       </Layout>
     </>
