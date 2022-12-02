@@ -147,9 +147,13 @@ export function getBookExtractBySlug(slug: string, fields: string[] = []) {
 
 export function getAllBookExtracts(fields: string[] = []) {
   const slugs = getBookExtractSlugs();
+
   const posts = slugs
     .map((slug) => getBookExtractBySlug(slug, fields))
-    // sort posts by pageNumber in descending order
-    .sort((post1, post2) => (post1.pageNumber > post2.pageNumber ? -1 : 1));
+    // sort posts by pageNumber in asccending order
+    .sort((post1, post2) => (post1.pageNumber < post2.pageNumber ? -1 : 1));
+
+  console.log(posts.map(({ pageNumber }) => pageNumber));
+
   return posts;
 }
