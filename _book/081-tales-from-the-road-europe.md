@@ -1,6 +1,6 @@
 ---
 title: "Tales from the Road: Europe"
-coverImage: "/assets/book/081-tales-from-the-road-europe/hitch-04.jpg"
+coverImage: "/assets/book/081-tales-from-the-road-europe.jpg"
 pageNumber: 81
 excerpt: "Uddebo, Sweden to Bologna, Italy via Prague, Czech Republic (3400km). Lübeck was warm and full of tourists, so we decided to pay for our dinner by playing music on the street."
 ---
