@@ -1,4 +1,4 @@
-import { BLOG_DESCRIPTION, BLOG_TITLE } from '../lib/constants';
+import { BLOG_TAGLINE, BLOG_TITLE } from '../lib/constants';
 
 const Intro = () => {
   return (
@@ -7,7 +7,7 @@ const Intro = () => {
         {BLOG_TITLE}
       </h1>
       <h4 className="text-center md:text-left text-lg mt-5 md:pl-8">
-        {BLOG_DESCRIPTION}
+        {BLOG_TAGLINE}
       </h4>
     </section>
   );
