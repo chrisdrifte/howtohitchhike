@@ -4,11 +4,11 @@ import { BLOG_TITLE } from '../lib/constants';
 
 const Header = () => {
   return (
-    <h2 className="text-4xl font-serif font-bold tracking-tight md:tracking-tighter leading-tight mb-20 mt-8">
+    <div className="text-4xl font-serif font-bold tracking-tight md:tracking-tighter leading-tight mb-20 mt-8">
       <Link href="/" className="hover:underline">
-        {BLOG_TITLE}
+        <img src="/assets/logo.svg" alt={BLOG_TITLE} style={{ width: 250 }} />
       </Link>
-    </h2>
+    </div>
   );
 };
 
