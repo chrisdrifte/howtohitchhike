@@ -3,23 +3,26 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 import BookExtractHeader from '../../components/book-extract-header';
+import BookExtractPreview from '../../components/book-extract-preview';
 import Container from '../../components/container';
 import Header from '../../components/header';
 import Layout from '../../components/layout';
+import MoreBookExtracts from '../../components/more-book-extracts';
 import PostBody from '../../components/post-body';
 import PostTitle from '../../components/post-title';
-import { getAllBookExtracts, getBookExtractBySlug } from '../../lib/api';
+import SectionSeparator from '../../components/section-separator';
+import { getAllBookExtracts, getBookExtractBySlug, getNextBookExtractBySlug } from '../../lib/api';
 import { BLOG_DESCRIPTION, BLOG_TITLE, DEFAULT_OG_IMAGE_URL } from '../../lib/constants';
 import markdownToHtml from '../../lib/markdownToHtml';
 
 import type BookExtract from "../../interfaces/book-extract";
 type Props = {
   post: BookExtract;
-  morePosts: BookExtract[];
+  nextPost?: Pick<BookExtract, "title" | "slug">;
   preview?: boolean;
 };
 
-export default function BookExtractPage({ post, morePosts, preview }: Props) {
+export default function BookExtractPage({ post, nextPost, preview }: Props) {
   const router = useRouter();
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
@@ -56,6 +59,18 @@ export default function BookExtractPage({ post, morePosts, preview }: Props) {
                 coverImage={post.coverImage}
               />
               <PostBody content={post.content} />
+              {nextPost && (
+                <div className="max-w-2xl mx-auto">
+                  <SectionSeparator />
+                  <h3 className="text-xl font-bold tracking-tighter leading-tight">
+                    Next chapter
+                  </h3>
+                  <BookExtractPreview
+                    title={nextPost.title}
+                    slug={nextPost.slug}
+                  />
+                </div>
+              )}
             </article>
           </>
         )}
@@ -82,6 +97,7 @@ export async function getStaticProps({ params }: Params) {
     "coverImage",
   ]);
   const content = await markdownToHtml(post.content || "");
+  const nextPost = getNextBookExtractBySlug(params.slug, ["title", "slug"]);
 
   return {
     props: {
@@ -89,6 +105,7 @@ export async function getStaticProps({ params }: Params) {
         ...post,
         content,
       },
+      nextPost,
     },
   };
 }
