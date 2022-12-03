@@ -62,7 +62,7 @@ export default function BookExtractPage({ post, nextPost, preview }: Props) {
               {nextPost && (
                 <div className="max-w-2xl mx-auto">
                   <SectionSeparator />
-                  <h3 className="text-xl font-bold tracking-tighter leading-tight">
+                  <h3 className="text-3xl font-serif font-bold tracking-tighter leading-tight">
                     Next chapter
                   </h3>
                   <BookExtractPreview

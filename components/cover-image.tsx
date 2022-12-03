@@ -7,9 +7,10 @@ type Props = {
   src: string;
   dir: string;
   slug?: string;
+  loading?: HTMLImageElement["loading"];
 };
 
-const CoverImage = ({ title, src, dir, slug }: Props) => {
+const CoverImage = ({ title, src, dir, slug, loading }: Props) => {
   const image = (
     <Image
       src={src}
@@ -19,6 +20,9 @@ const CoverImage = ({ title, src, dir, slug }: Props) => {
       })}
       width={1300}
       height={630}
+      sizes="(max-width: 768px) 100vw,
+              1300"
+      loading={loading ?? "lazy"}
     />
   );
   return (

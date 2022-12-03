@@ -10,7 +10,7 @@ type Props = {
 const BookExtractPreview = ({ title, slug }: Props) => {
   return (
     <div className="border-b border-b-black last:border-b-0 py-8">
-      <h2 className="text-4xl leading-snug">
+      <h2 className="text-2xl md:text-4xl leading-snug">
         <Link
           as={`/${BOOK_EXTRACTS_DIR}/${slug}`}
           href={`/${BOOK_EXTRACTS_DIR}/[slug]`}
