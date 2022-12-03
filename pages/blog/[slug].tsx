@@ -9,7 +9,7 @@ import Layout from '../../components/layout';
 import PostBody from '../../components/post-body';
 import PostTitle from '../../components/post-title';
 import { getAllBlogPosts, getBlogPostBySlug } from '../../lib/api';
-import { BLOG_TITLE, DEFAULT_OG_IMAGE_URL } from '../../lib/constants';
+import { BLOG_DESCRIPTION, BLOG_TITLE, DEFAULT_OG_IMAGE_URL } from '../../lib/constants';
 import markdownToHtml from '../../lib/markdownToHtml';
 
 import type BlogPost from "../../interfaces/blog-post";
@@ -27,6 +27,13 @@ export default function BlogPostPage({ post, morePosts, preview }: Props) {
   }
   return (
     <Layout preview={preview}>
+      <Head>
+        <meta
+          name="description"
+          content={post.excerpt || BLOG_DESCRIPTION}
+          key="desc"
+        />
+      </Head>
       <Container>
         <Header />
         {router.isFallback ? (
@@ -72,6 +79,7 @@ export async function getStaticProps({ params }: Params) {
     "date",
     "slug",
     "author",
+    "excerpt",
     "content",
     "ogImage",
     "coverImage",

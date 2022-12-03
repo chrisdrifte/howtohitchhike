@@ -1,9 +1,12 @@
 import fs from 'fs';
 import matter from 'gray-matter';
 import { join } from 'path';
+import RSS from 'rss';
 
-import Author from '../interfaces/author';
-import { AUTHORS_DIR, BLOG_POSTS_DIR, BOOK_EXTRACTS_DIR } from './constants';
+import BlogPost from '../interfaces/blog-post';
+import {
+    AUTHORS_DIR, BLOG_DESCRIPTION, BLOG_POSTS_DIR, BLOG_TITLE, BLOG_URL, BOOK_EXTRACTS_DIR
+} from './constants';
 
 /**
  * Authors
@@ -163,19 +166,58 @@ export function getAllBookExtracts(fields: string[] = []) {
  * Site map
  */
 
-export function getSiteMapUrls(url: string) {
+export function getAllRoutes() {
   return [
-    "",
     // ...getAuthorSlugs().map((slug) => `${AUTHORS_DIR}/${slug}`),
     ...getBlogPostSlugs().map((slug) => `${BLOG_POSTS_DIR}/${slug}`),
     ...getBookExtractSlugs().map((slug) => `${BOOK_EXTRACTS_DIR}/${slug}`),
-  ]
+  ];
+}
+
+export function getSiteMapUrls() {
+  return getAllRoutes()
     .map(
       (route) => `
       <url>
-        <loc>${`${url}/${route}`}</loc>
+        <loc>${`${BLOG_URL}/${route}`}</loc>
         <changefreq>hourly</changefreq>
       </url>`
     )
     .join();
+}
+
+export function getRssFeed() {
+  type FeedPost = { title: string; excerpt: string; url: string; date: string };
+
+  const feedPosts: FeedPost[] = getBlogPostSlugs().map((slug) => ({
+    ...(getBlogPostBySlug(slug, [
+      "title",
+      "excerpt",
+      "date",
+    ]) as unknown as Pick<BlogPost, "title" | "excerpt" | "date">),
+    url: `${BLOG_URL}/${BOOK_EXTRACTS_DIR}/${slug}`,
+  }));
+
+  const feedOptions = {
+    title: BLOG_TITLE,
+    description: BLOG_DESCRIPTION,
+    site_url: BLOG_URL,
+    feed_url: `${BLOG_URL}/rss.xml`,
+    image_url: `${BLOG_URL}/assets/favicon/logo.png`,
+    pubDate: new Date(),
+    copyright: `All rights reserved 2022, howtohitchhike.com`,
+  };
+
+  const feed = new RSS(feedOptions);
+
+  feedPosts.map((post) => {
+    feed.item({
+      title: post.title,
+      description: post.excerpt,
+      url: post.url,
+      date: post.date,
+    });
+  });
+
+  return feed.xml({ indent: true });
 }
