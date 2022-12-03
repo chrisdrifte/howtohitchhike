@@ -205,7 +205,7 @@ export function getRssFeed() {
     feed_url: `${BLOG_URL}/rss.xml`,
     image_url: `${BLOG_URL}/assets/favicon/logo.png`,
     pubDate: new Date(),
-    copyright: `All rights reserved ${new Date().getFullYear()}, Chris Drifte`,
+    copyright: `All rights reserved 2022, howtohitchhike.com`,
   };
 
   const feed = new RSS(feedOptions);
