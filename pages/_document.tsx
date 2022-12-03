@@ -10,12 +10,6 @@ export default function Document() {
           as="font"
           type="font/woff2"
         />
-        <link
-          rel="preload"
-          href="/fonts/reenie-beanie-v16-latin-regular.woff"
-          as="font"
-          type="font/woff"
-        />
       </Head>
       <body>
         <Main />
