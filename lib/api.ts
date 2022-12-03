@@ -162,6 +162,17 @@ export function getAllBookExtracts(fields: string[] = []) {
   return posts;
 }
 
+export function getNextBookExtractBySlug(slug: string, fields: string[] = []) {
+  const slugs = getBookExtractSlugs();
+  const nextSlug = slugs[slugs.indexOf(slug) + 1];
+
+  if (!nextSlug) {
+    return null;
+  }
+
+  return getBookExtractBySlug(nextSlug, fields);
+}
+
 /**
  * Site map
  */
