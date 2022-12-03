@@ -1,6 +1,6 @@
 ---
 title: "Tales from the Road: Canada"
-coverImage: "/assets/book/039-tales-from-the-road-canada/hitch-01.jpg"
+coverImage: "/assets/book/039-tales-from-the-road-canada.jpg"
 pageNumber: 39
 excerpt: "Qualicum Beach, Vancouver Island to Tofino, Vancouver Island (165km). A silver haired white woman sat behind the wheel, grinning. “Normally I only stop for Natives,”"
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Tales from the Road: Sweden"
-coverImage: "/assets/book/027-tales-from-the-road-sweden/hitch-02.jpg"
+coverImage: "/assets/book/027-tales-from-the-road-sweden.jpg"
 pageNumber: 27
 excerpt: "Uddebo to Skattunbyn (500km). Branches whipped across the windscreen, the vehicle rose and fell violently over the uneven road, and sharp turns appeared in the headlights almost without warning."
 ---

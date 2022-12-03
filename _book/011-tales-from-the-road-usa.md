@@ -1,6 +1,6 @@
 ---
 title: "Tales from the Road: USA"
-coverImage: "/assets/book/011-tales-from-the-road-usa/hitch-05.jpg"
+coverImage: "/assets/book/011-tales-from-the-road-usa.jpg"
 pageNumber: 11
 excerpt: "Manchester, Tennessee to Boulder, Colorado (2000km). “Let’s try to make it all in one trip,” I said. Smelly, dirty, and hung-over, we stood up to face the traffic and held out our thumbs."
 ---
