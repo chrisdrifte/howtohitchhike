@@ -1,7 +1,7 @@
 import PageHome from '../components/page-home';
 import BlogPost from '../interfaces/blog-post';
 import BookExtract from '../interfaces/book-extract';
-import { getAllBlogPosts, getAllBookExtracts } from '../lib/api';
+import { getAllBlogPosts, getAllBookExtracts, getSiteMapUrls } from '../lib/api';
 
 type Props = {
   allBlogPosts: BlogPost[];

@@ -12,12 +12,13 @@ const authorDirectory = join(process.cwd(), `_${AUTHORS_DIR}`);
 
 export function getAuthorSlugs() {
   if (!fs.existsSync(authorDirectory)) return [];
-  return fs.readdirSync(authorDirectory);
+  return fs
+    .readdirSync(authorDirectory)
+    .map((slug) => slug.replace(/\.md$/, ""));
 }
 
 export function getAuthorBySlug(slug: string, fields: string[] = []) {
-  const realSlug = slug.replace(/\.md$/, "");
-  const fullPath = join(authorDirectory, `${realSlug}.md`);
+  const fullPath = join(authorDirectory, `${slug}.md`);
 
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
@@ -33,7 +34,7 @@ export function getAuthorBySlug(slug: string, fields: string[] = []) {
   // Ensure only the minimal needed data is exposed
   fields.forEach((field) => {
     if (field === "slug") {
-      items[field] = realSlug;
+      items[field] = slug;
     }
     if (field === "content") {
       items[field] = content;
@@ -63,12 +64,11 @@ const blogDirectory = join(process.cwd(), `_${BLOG_POSTS_DIR}`);
 
 export function getBlogPostSlugs() {
   if (!fs.existsSync(blogDirectory)) return [];
-  return fs.readdirSync(blogDirectory);
+  return fs.readdirSync(blogDirectory).map((slug) => slug.replace(/\.md$/, ""));
 }
 
 export function getBlogPostBySlug(slug: string, fields: string[] = []) {
-  const realSlug = slug.replace(/\.md$/, "");
-  const fullPath = join(blogDirectory, `${realSlug}.md`);
+  const fullPath = join(blogDirectory, `${slug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
@@ -83,7 +83,7 @@ export function getBlogPostBySlug(slug: string, fields: string[] = []) {
   // Ensure only the minimal needed data is exposed
   fields.forEach((field) => {
     if (field === "slug") {
-      items[field] = realSlug;
+      items[field] = slug;
     }
     if (field === "content") {
       items[field] = content;
@@ -115,12 +115,11 @@ const bookDirectory = join(process.cwd(), `_${BOOK_EXTRACTS_DIR}`);
 
 export function getBookExtractSlugs() {
   if (!fs.existsSync(bookDirectory)) return [];
-  return fs.readdirSync(bookDirectory);
+  return fs.readdirSync(bookDirectory).map((slug) => slug.replace(/\.md$/, ""));
 }
 
 export function getBookExtractBySlug(slug: string, fields: string[] = []) {
-  const realSlug = slug.replace(/\.md$/, "");
-  const fullPath = join(bookDirectory, `${realSlug}.md`);
+  const fullPath = join(bookDirectory, `${slug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
@@ -135,7 +134,7 @@ export function getBookExtractBySlug(slug: string, fields: string[] = []) {
   // Ensure only the minimal needed data is exposed
   fields.forEach((field) => {
     if (field === "slug") {
-      items[field] = realSlug;
+      items[field] = slug;
     }
     if (field === "content") {
       items[field] = content;
@@ -158,4 +157,25 @@ export function getAllBookExtracts(fields: string[] = []) {
     .sort((post1, post2) => (post1.pageNumber < post2.pageNumber ? -1 : 1));
 
   return posts;
+}
+
+/**
+ * Site map
+ */
+
+export function getSiteMapUrls(url: string) {
+  return [
+    "",
+    // ...getAuthorSlugs().map((slug) => `${AUTHORS_DIR}/${slug}`),
+    ...getBlogPostSlugs().map((slug) => `${BLOG_POSTS_DIR}/${slug}`),
+    ...getBookExtractSlugs().map((slug) => `${BOOK_EXTRACTS_DIR}/${slug}`),
+  ]
+    .map(
+      (route) => `
+      <url>
+        <loc>${`${url}/${route}`}</loc>
+        <changefreq>hourly</changefreq>
+      </url>`
+    )
+    .join();
 }
