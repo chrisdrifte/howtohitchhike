@@ -6,6 +6,12 @@ export default function Document() {
       <Head>
         <link
           rel="preload"
+          href="/assets/logo.svg"
+          as="image"
+          type="image/svg+xml"
+        />
+        <link
+          rel="preload"
           href="/fonts/reenie-beanie-v16-latin-regular.woff2"
           as="font"
           type="font/woff2"
