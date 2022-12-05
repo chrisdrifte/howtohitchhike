@@ -21,7 +21,7 @@ const HeroPost = ({ title, coverImage, excerpt, dir, slug }: Props) => {
       </div>
       <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 mb-20 md:mb-28">
         <div>
-          <h3 className="mb-4 text-4xl lg:text-5xl leading-tight">
+          <h1 className="mb-4 text-4xl lg:text-5xl leading-tight">
             <Link
               as={`/${dir}/${slug}`}
               href={`/${dir}/[slug]`}
@@ -29,7 +29,7 @@ const HeroPost = ({ title, coverImage, excerpt, dir, slug }: Props) => {
             >
               {title}
             </Link>
-          </h3>
+          </h1>
         </div>
         <div>
           <p className="text-lg leading-relaxed mb-4">{excerpt}</p>

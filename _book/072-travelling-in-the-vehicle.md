@@ -5,7 +5,7 @@ pageNumber: 72
 excerpt: "A good way to put someone at ease is to immediately treat them as though they are a friend. You can start the conversation by simply asking “How’s your day going?”"
 ---
 
-It was with some reluctance and hesitation that I first decided to include the section below. I was concerned that many might find these things self-explanatory, and yet, a great number of people whom I have spoken to have often asked about the social side of the hitch-hiking experience. Namely, ways of navigating the unusual hurdles of being dropped into a confined space, for an extended period of time, with a total stranger. Since releasing the 1st Edition of Rules Of Thumb, I have been surprised at the amount of feedback from readers who found this section useful, so I have decided to keep it in, and tried to update it - where possible.
+It was with some reluctance and hesitation that I first decided to include the section below. I was concerned that many might find these things self-explanatory, and yet, a great number of people whom I have spoken to have often asked about the social side of the hitchhiking experience. Namely, ways of navigating the unusual hurdles of being dropped into a confined space, for an extended period of time, with a total stranger. Since releasing the 1st Edition of Rules Of Thumb, I have been surprised at the amount of feedback from readers who found this section useful, so I have decided to keep it in, and tried to update it - where possible.
 
 ## Introducing yourself and making conversation
 
@@ -37,7 +37,7 @@ As you talk you’ll begin to get an idea of the personality and interests of th
 7. Silence.
 8. Sensitive topics including most political, religious, or philosophical discussion.
 
-Is talking about sensitive topics really worse than silence? It depends, of course, and there are some hitch-hikers who enjoy discussing these subjects while travelling in particular. Certainly you have the opportunity to hear a wide range of views and broaden your current beliefs by engaging in this type of discussion. However, you must have a high degree of tact and open-mindedness for this to work and, crucially, so must your driver. These conversations can be a minefield; tread lightly.
+Is talking about sensitive topics really worse than silence? It depends, of course, and there are some hitchhikers who enjoy discussing these subjects while travelling in particular. Certainly you have the opportunity to hear a wide range of views and broaden your current beliefs by engaging in this type of discussion. However, you must have a high degree of tact and open-mindedness for this to work and, crucially, so must your driver. These conversations can be a minefield; tread lightly.
 
 Generally, the more you manage to be the one listening, the better the conversation is – and you get bonus points for finding common ground or learning new things about the world. However, occasionally you’ll get a ride with someone who is not very talkative. In these situations it is up to you to judge if that person would be entertained by one of your longer stories, or if they’d prefer to sit in semi-awkward silence for a while. When you’re spending several hours travelling together, silence can sometimes be a relief.
 
@@ -47,7 +47,7 @@ Most of the time, if you are in someone’s vehicle, it means they have made a d
 
 As you near the end of your time travelling together most drivers will ask you where you want to be dropped off. If you are in a town or city, go through the process of finding the next appropriate road to look for a hitching spot and ask if they can drop you off near that road or near any public transport that can be used to reach that road. If you want to stay on the same road, but they’re leaving it, ask to be dropped off at the last rest stop.
 
-I've found that hitch-hiking goes very smoothly for me when I use this magic phrase:
+I've found that hitchhiking goes very smoothly for me when I use this magic phrase:
 
 “I need to be dropped off on the road which has the most traffic going to [my destination], in a place where it is safe to stop.”
 

@@ -2,10 +2,10 @@
 title: "Can you hitch with more than two people?"
 coverImage: "/assets/book/024-can-you-hitch-with-more-than-two-people.jpg"
 pageNumber: 24
-excerpt: "Anyone can hitch-hike – but some people will spend more time waiting than others."
+excerpt: "Anyone can hitchhike – but some people will spend more time waiting than others."
 ---
 
-For a long time, I had the firm belief that hitch-hiking was impossible with more than two people. Like many people with firm beliefs, I didn't bother to challenge my assumptions. I was amazed when I finally tried hitch-hiking in a group of three: not only is it possible, but the wait times don't feel meaningfully longer than hitch-hiking with two. The only real difference was the extra five minutes it took at the beginning of each lift to pack all our stuff into the vehicles.
+For a long time, I had the firm belief that hitchhiking was impossible with more than two people. Like many people with firm beliefs, I didn't bother to challenge my assumptions. I was amazed when I finally tried hitchhiking in a group of three: not only is it possible, but the wait times don't feel meaningfully longer than hitchhiking with two. The only real difference was the extra five minutes it took at the beginning of each lift to pack all our stuff into the vehicles.
 
 Hitching in a group of four is also surprisingly straightforward. In this situation you can wait in pairs, with the second pair standing a reasonable distance away from the first. When a vehicle stops, the first pair should simply ask the driver if they mind taking two more. If the driver disagrees, then you have the choice of waiting for the next ride or splitting up to get there faster.
 
