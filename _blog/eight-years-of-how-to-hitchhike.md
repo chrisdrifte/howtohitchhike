@@ -6,15 +6,15 @@ date: "2022-12-05T07:38:21.124Z"
 excerpt: "Hitch-hiking brings us together. A good ride renews faith in humanity for all who shared in it. I firmly believe that a world with more hitching is a better world overall."
 ---
 
-8 years ago, I wrote [_Rules of Thumb: How to Hitchhike and Live on the Road_](https://www.amazon.com/Rules-Thumb-Hitch-Hike-Live-Road/dp/1503237419). I was 24 at the time, and had been hitch-hiking across America and Europe since my late teens. I wrote the book because I was struck by how different the common perception of hitch-hiking was to the reality I experienced. Hitch-hiking in popular culture is a precursor to a grisly death. But it was the most fun I knew how to have. And not just me - I met multitudes of other hitch-hikers from all walks of life who were able to live and travel for very little money.
+8 years ago, I wrote [_Rules of Thumb: How to Hitchhike and Live on the Road_](https://www.amazon.com/Rules-Thumb-Hitch-Hike-Live-Road/dp/1503237419). I was 24 at the time, and had been hitch-hiking across America and Europe since my late teens. I wrote the book because I was struck by how different the common perception of hitch-hiking was to the reality I experienced. Hitch-hiking in popular culture is a precursor to a grisly death. But it was the most fun I knew how to have. And it wasn't just me - I met multitudes of other hitch-hikers from all walks of life who were able to live and travel and thoroughly enjoy themselves for very little money.
 
-The world has changed a lot since I wrote the book. Society more divided, weather more extreme, transport more expensive, work harder to find. The perils of travel seem greater than ever. Sadly, someone turning 18 today probably doesn't have the same opportunities that I did.
+The world has changed a lot since I wrote the book. Society is more divided, weather is more extreme, transport is more expensive, work is harder to find. The perils of travel seem greater than ever. Sadly, someone turning 18 today probably doesn't have the same opportunities that I did.
 
-But could, from this barren soil, a hitch-hiking renaissance spring?
+And yet it seems like the perfect time to go hitch-hiking.
 
-The resistance is the same as it always was: a fear of strangers, a fear of discomfort, a fear of not arriving (or perhaps not even getting that first ride) - in essence, all fears of the unknown. But there is a new necessity: cheap travel isn't so cheap any more. Destinations that were once exotic and adventurous have become overwhelmed by churning crowds of tourists who seek instagrammable moments over authentic experience.
+The resistance is the same as it always was: a fear of strangers, a fear of discomfort, a fear of not arriving (or perhaps not even getting picked up) - in essence, all fears of the unknown. But there is a new necessity. The best destinations of previous decades are now overcrowded and superficial. And cheap travel isn't so cheap any more.
 
-Hitch-hiking offers something rare and precious in our modern world: an unbeaten path. A chance to become truly immersed in the places through which you travel; a chance to see through the eyes of the locals, and share in their culture as equals; and often, it's a chance to give something in return - the comfort of good company - perhaps even a lifetime of friendship.
+Hitch-hiking offers something rare and precious in our modern world: the road not taken. A chance to do something different in the places through which you travel; a chance to see through the eyes of the locals, and share in their culture as guests, not tourists; and often, it's a chance to give something in return - the comfort of good company - perhaps even a lifetime of friendship.
 
 ## Making the world a better place, one ride at a time
 
