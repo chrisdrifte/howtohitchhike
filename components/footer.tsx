@@ -2,9 +2,9 @@ import Container from './container';
 
 const Footer = () => {
   return (
-    <footer className="bg-neutral-50 border-t border-neutral-200">
+    <footer className="bg-neutral-50 border-t border-neutral-200 relative pb-8">
       <Container>
-        <div className="py-28 flex flex-col lg:flex-row items-center">
+        <div className="relative py-28 flex flex-col lg:flex-row items-center">
           <h3 className="text-4xl lg:text-[2.5rem] font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
             Want to keep reading on the road?
           </h3>
@@ -24,6 +24,11 @@ const Footer = () => {
           </div>
         </div>
       </Container>
+
+      <div className="absolute bottom-0 left-0 w-full p-4 text-center text-xs opacity-25">
+        Optional purchase: all book content can be read on this website for
+        free.
+      </div>
     </footer>
   );
 };
