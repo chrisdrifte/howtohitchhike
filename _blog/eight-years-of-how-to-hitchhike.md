@@ -1,28 +1,28 @@
 ---
-title: "How to Hitchhike: 8 years later"
+title: "Rules of Thumb: How to Hitchhike and Live on the Road"
 coverImage: "/assets/blog/eight-years-of-how-to-hitchhike/cover.jpg"
 author: chris-drifte
 date: "2022-12-05T07:38:21.124Z"
-excerpt: "Hitchhiking brings us together. A good ride renews faith in humanity for all who shared in it. I firmly believe that a world with more hitching is a better world overall."
+excerpt: "Eight years ago, at 24, I had already spent over half a decade thumbing lifts across America and Europe on a shoestring budget. Most people think of hitchhiking as a precursor to a grisly death. But it was the most fun I knew how to have. So I sat down and wrote a guide on how to do it."
 ---
 
-8 years ago, I wrote [_Rules of Thumb: How to Hitchhike and Live on the Road_](https://www.amazon.com/Rules-Thumb-Hitch-Hike-Live-Road/dp/1503237419). I was 24 at the time, and had been hitchhiking across America and Europe since my late teens. I wrote the book because I was struck by how different the common perception of hitchhiking was to the reality I experienced. Hitchhiking in popular culture is a precursor to a grisly death. But it was the most fun I knew how to have. And it wasn't just me - I met multitudes of other hitchhikers from all walks of life who were able to live and travel and thoroughly enjoy themselves for very little money.
+Eight years ago, at 24, I had already spent over half a decade thumbing lifts across America and Europe on a shoestring budget. Most people think of hitchhiking as a precursor to a grisly death. But it was the most fun I knew how to have. So I sat down and wrote a guide on how to do it.
 
-The world has changed a lot since I wrote the book. Society is more divided, weather is more extreme, transport is more expensive, work is harder to find. The perils of travel seem greater than ever. Sadly, someone turning 18 today probably doesn't have the same opportunities that I did.
+Although [_Rules of Thumb: How to Hitchhike and Live on the Road_](https://www.amazon.com/Rules-Thumb-Hitch-Hike-Live-Road/dp/1503237419) wasn't a best seller, it did sell. I was happy to notice after a few years it has a modest collection of 5 star reviews on Amazon.
+
+The world has changed a lot since _Rules of Thumb_ was first published. Society is more divided, weather is more extreme, transport is more expensive, work is harder to find. The perils of travel seem greater than ever. Sadly, someone turning 18 today probably doesn't have the same opportunities that I did.
 
 And yet it seems like the perfect time to go hitchhiking.
 
 The resistance is the same as it always was: a fear of strangers, a fear of discomfort, a fear of not arriving (or perhaps not even getting picked up) - in essence, all fears of the unknown. But there is a new necessity. The best destinations of previous decades are now overcrowded and superficial. And cheap travel isn't so cheap any more.
 
-Hitchhiking offers something rare and precious in our modern world: the road not taken. A chance to do something different in the places through which you travel; a chance to see through the eyes of the locals, and share in their culture as guests, not tourists; and often, it's a chance to give something in return - the comfort of good company - perhaps even a lifetime of friendship.
+Hitchhiking offers something rare and precious in our modern world: the road not taken. A chance to do something different; a chance to pass through foreign lands as a guest, not a tourist; and often, it's a chance to give something in return - the comfort of good company - perhaps even a lifetime of friendship.
 
 ## Making the world a better place, one ride at a time
 
-Hitchhiking brings us together. A good ride renews faith in humanity for all who shared in it. I firmly believe that a world with more hitching is a better world overall.
+Hitchhiking brings us together. A good ride renews faith in humanity for all who shared in it. But for those who've never hitchhiked before, it's a daunting task, and one that can easily go wrong.
 
-But for those who've never hitchhiked before, it's a daunting task, and one that can easily go wrong.
-
-That's why I wrote _Rules of Thumb_ all those years ago. You can buy it in paperback or on kindle but, from day one, I've given away [a pdf version of the book](/downloads/rules-of-thumb.pdf) for free. And as of today, I'm now distributing the full text on this [open-source website](https://github.com/chrisdrifte/howtohitchhike) for easier reading, sharing, and learning. My intention isn't to make money, but to share the knowledge I've gained as effectively as possible to as many people as possible.
+That's why I wrote _Rules of Thumb_ all those years ago. You can buy it in paperback or on kindle but, from day one, I've also given away [a pdf version of the book](/downloads/rules-of-thumb.pdf) for free. And as of today, I'm now distributing the full text on this [open-source](https://github.com/chrisdrifte/howtohitchhike) website for easier reading, sharing, and learning.
 
 ## A platform for diverse voices
 
