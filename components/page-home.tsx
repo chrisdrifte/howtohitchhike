@@ -5,8 +5,10 @@ import BookExtract from '../interfaces/book-extract';
 import Post from '../interfaces/post';
 import { BLOG_POSTS_DIR, BLOG_TITLE, BOOK_EXTRACTS_DIR } from '../lib/constants';
 import Container from './container';
+import Contribute from './contribute';
 import HeroPost from './hero-post';
 import Intro from './intro';
+import KeepReading from './keep-reading';
 import Layout from './layout';
 import MoreBlogPosts from './more-blog-posts';
 import MoreBookExtracts from './more-book-extracts';
@@ -49,6 +51,9 @@ export default function PageHome({ allBlogPosts, allBookExtracts }: Props) {
               excerpt={heroPost.excerpt}
             />
           )}
+        </Container>
+        <Contribute />
+        <Container>
           {allBlogPosts.length > 0 && (
             <MoreBlogPosts blogPosts={allBlogPosts} />
           )}
@@ -56,6 +61,7 @@ export default function PageHome({ allBlogPosts, allBookExtracts }: Props) {
             <MoreBookExtracts bookExtracts={allBookExtracts} />
           )}
         </Container>
+        <KeepReading />
       </Layout>
     </>
   );

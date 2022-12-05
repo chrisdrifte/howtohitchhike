@@ -29,4 +29,4 @@ It should be stressed that you need to take care to choose projects that will su
 
 Volunteering is an extremely valuable tool for the long-term hitch-hiker. If used correctly, you can find like-minded people to continue your journey with, learn lots of new skills, and live a lifestyle that is far healthier and more enjoyable than the ones most people work full-time jobs for. However, although you benefit considerably from volunteering, remember that the emphasis is always on the giving. Don't take advantage of the hosts generosity. Always be considerate and follow whatever rules they have chosen to live by for the duration of your stay.
 
-Some good websites for finding volunteer work are listed on page . If you've never volunteered, I strongly recommend it – it's essentially the university of travelling.
+Some good websites for finding volunteer work are [WWOOF.net](https://wwoof.net/), [Helpx](https://www.helpx.net/), and [Workaway](https://www.workaway.info/). If you've never volunteered, I strongly recommend it – it's essentially the university of travelling.

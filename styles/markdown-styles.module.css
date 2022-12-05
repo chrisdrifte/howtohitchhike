@@ -9,10 +9,28 @@
   @apply my-6;
 }
 
+.markdown h1,
 .markdown h2 {
   @apply text-3xl mt-12 mb-4 leading-snug;
 }
 
 .markdown h3 {
   @apply text-2xl mt-8 mb-4 leading-snug;
+}
+
+.markdown a {
+  @apply text-link underline;
+}
+
+.markdown ol {
+  @apply list-decimal ml-8;
+}
+
+.markdown ul {
+  @apply list-disc ml-8;
+}
+
+.markdown ol li,
+.markdown ul li {
+  @apply pl-4 pb-4;
 }
