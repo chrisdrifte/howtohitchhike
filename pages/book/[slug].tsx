@@ -13,7 +13,7 @@ import PostTitle from '../../components/post-title';
 import SectionSeparator from '../../components/section-separator';
 import StructuredData from '../../components/structured-data';
 import { getAllBookExtracts, getBookExtractBySlug, getNextBookExtractBySlug } from '../../lib/api';
-import { BLOG_DESCRIPTION, BLOG_TITLE, DEFAULT_OG_IMAGE_URL } from '../../lib/constants';
+import { BLOG_DESCRIPTION, BLOG_TITLE, BLOG_URL, DEFAULT_OG_IMAGE_URL } from '../../lib/constants';
 import markdownToHtml from '../../lib/markdownToHtml';
 
 import type BookExtract from "../../interfaces/book-extract";
@@ -67,7 +67,10 @@ export default function BookExtractPage({ post, nextPost, preview }: Props) {
                 <meta
                   property="og:image"
                   content={
-                    post.ogImage?.url || post.coverImage || DEFAULT_OG_IMAGE_URL
+                    BLOG_URL +
+                    (post.ogImage?.url ||
+                      post.coverImage ||
+                      DEFAULT_OG_IMAGE_URL)
                   }
                 />
               </Head>

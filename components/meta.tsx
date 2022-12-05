@@ -43,7 +43,7 @@ const Meta = () => {
       <meta name="theme-color" content="#ffffff" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta name="description" content={BLOG_DESCRIPTION} />
-      <meta property="og:image" content={DEFAULT_OG_IMAGE_URL} />
+      <meta property="og:image" content={BLOG_URL + DEFAULT_OG_IMAGE_URL} />
       <link rel="canonical" href={canonicalUrl} />
     </Head>
   );

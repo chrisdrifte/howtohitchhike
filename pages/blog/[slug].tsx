@@ -11,7 +11,7 @@ import PostBody from '../../components/post-body';
 import PostTitle from '../../components/post-title';
 import StructuredData from '../../components/structured-data';
 import { getAllBlogPosts, getBlogPostBySlug } from '../../lib/api';
-import { BLOG_DESCRIPTION, BLOG_TITLE, DEFAULT_OG_IMAGE_URL } from '../../lib/constants';
+import { BLOG_DESCRIPTION, BLOG_TITLE, BLOG_URL, DEFAULT_OG_IMAGE_URL } from '../../lib/constants';
 import markdownToHtml from '../../lib/markdownToHtml';
 
 import type BlogPost from "../../interfaces/blog-post";
@@ -66,7 +66,10 @@ export default function BlogPostPage({ post, morePosts, preview }: Props) {
                 <meta
                   property="og:image"
                   content={
-                    post.ogImage?.url || post.coverImage || DEFAULT_OG_IMAGE_URL
+                    BLOG_URL +
+                    (post.ogImage?.url ||
+                      post.coverImage ||
+                      DEFAULT_OG_IMAGE_URL)
                   }
                 />
               </Head>
