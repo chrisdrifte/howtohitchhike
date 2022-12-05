@@ -56,7 +56,7 @@ One roll is enough. Keep it in a waterproof bag if you want it stay useful.
 
 ### Cooking equipment
 
-There are lots of different ways to cook on the road. At a minimum you’ll need a small portable stove, fuel, camping cookware, a spork, and a sharp knife. See page for more detailed advice.
+There are lots of different ways to [eat on the road](/book/092-eating-on-the-road). At a minimum you’ll need a small portable stove, fuel, camping cookware, a spork, and a sharp knife.
 
 ### Water bottle
 
