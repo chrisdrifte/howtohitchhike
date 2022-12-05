@@ -9,6 +9,7 @@ import Header from '../../components/header';
 import Layout from '../../components/layout';
 import PostBody from '../../components/post-body';
 import PostTitle from '../../components/post-title';
+import StructuredData from '../../components/structured-data';
 import { getAllBlogPosts, getBlogPostBySlug } from '../../lib/api';
 import { BLOG_DESCRIPTION, BLOG_TITLE, DEFAULT_OG_IMAGE_URL } from '../../lib/constants';
 import markdownToHtml from '../../lib/markdownToHtml';
@@ -34,6 +35,23 @@ export default function BlogPostPage({ post, morePosts, preview }: Props) {
           key="desc"
         />
       </Head>
+      <StructuredData
+        data={{
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          headline: post.title,
+          description: post.excerpt,
+          author: [
+            {
+              "@type": "Person",
+              name: post.author.name,
+              image: post.author.picture,
+            },
+          ],
+          image: post.coverImage,
+          datePublished: post.date,
+        }}
+      />
       <Container>
         <Header />
         {router.isFallback ? (
