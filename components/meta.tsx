@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import { BLOG_DESCRIPTION, DEFAULT_OG_IMAGE_URL } from '../lib/constants';
+import { BLOG_DESCRIPTION, BLOG_TITLE, DEFAULT_OG_IMAGE_URL } from '../lib/constants';
 
 const Meta = () => {
   return (
@@ -26,12 +26,14 @@ const Meta = () => {
       <link
         rel="mask-icon"
         href="/favicon/safari-pinned-tab.svg"
-        color="#000000"
+        color="#5bbad5"
       />
       <link rel="shortcut icon" href="/favicon/favicon.ico" />
-      <meta name="msapplication-TileColor" content="#000000" />
+      <meta name="apple-mobile-web-app-title" content={BLOG_TITLE} />
+      <meta name="application-name" content={BLOG_TITLE} />
+      <meta name="msapplication-TileColor" content="#da532c" />
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
-      <meta name="theme-color" content="#000" />
+      <meta name="theme-color" content="#ffffff" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta name="description" content={BLOG_DESCRIPTION} />
       <meta property="og:image" content={DEFAULT_OG_IMAGE_URL} />
