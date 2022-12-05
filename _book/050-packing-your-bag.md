@@ -28,7 +28,7 @@ Toothbrush, shampoo, and whatever else you need to keep yourself looking present
 
 ### Wet weather gear
 
-This is absolutely vital. People don’t tend to welcome wet hitch-hikers into their vehicles and it can be hard to dry clothing on the road. Wet weather gear also helps prevent illness and discomfort on the road.
+This is absolutely vital. People don’t tend to welcome wet hitchhikers into their vehicles and it can be hard to dry clothing on the road. Wet weather gear also helps prevent illness and discomfort on the road.
 
 ### Bivi bag or Tent
 
@@ -80,7 +80,7 @@ Should you carry a weapon? Most people will advise you to carry a knife, but you
 
 Given your probable lack of experience with using a knife as a weapon (and hopefully your hesitance to hurt someone badly) you will be unlikely to be better at defending yourself than if you had no weapon at all. Bear in mind that carrying a knife in some situations may also be illegal and you may face tougher consequences if you do have trouble with the police. Finally, consciously choosing to carry a weapon puts you into a fear mind-set instead of a friend-making one, which doesn’t make for much of a fun adventure.
 
-That said, I have always carried a knife in my pocket when hitch-hiking. Its main use is for cooking and I do not really consider it a weapon to be resorted to if things go wrong. For a while when camping outdoors in the USA I carried bear spray, and if anything desperately untoward had taken place then maybe I would have tried to make use of that. The fact is, however, that I have never felt my safety deliberately threatened at any point in any of my travelling. In fact I’ve had many rides with people I might have felt threatened by in different circumstances and they were often the ones who helped me out the most.
+That said, I have always carried a knife in my pocket when hitchhiking. Its main use is for cooking and I do not really consider it a weapon to be resorted to if things go wrong. For a while when camping outdoors in the USA I carried bear spray, and if anything desperately untoward had taken place then maybe I would have tried to make use of that. The fact is, however, that I have never felt my safety deliberately threatened at any point in any of my travelling. In fact I’ve had many rides with people I might have felt threatened by in different circumstances and they were often the ones who helped me out the most.
 
 ## The art of packing
 

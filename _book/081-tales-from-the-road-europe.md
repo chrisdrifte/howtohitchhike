@@ -17,7 +17,7 @@ We laughed and thanked him and refused.
 
 “If we got to Berlin today,” I said, “We'd be like a dog that finally caught a rabbit. We wouldn't know what to do.”
 
-The three of us tried to hitch-hike on to the ferry, but the port staff moved us on pretty quickly and instead we boarded as fully paid foot-passengers. Once at sea, Anna and Angela went to work approaching people and asking for rides while I, lacking the feminine arts of persuasion (or perhaps just plain old courage), waited with our bags.
+The three of us tried to hitchhike on to the ferry, but the port staff moved us on pretty quickly and instead we boarded as fully paid foot-passengers. Once at sea, Anna and Angela went to work approaching people and asking for rides while I, lacking the feminine arts of persuasion (or perhaps just plain old courage), waited with our bags.
 
 By the end of the journey they'd found two rides: neither had enough space to fit three extra people, so we split up and arranged to meet at the central station in Lübeck, Germany, which both rides happened to be passing through. My journey was uneventful; I got along well with my driver, a young mountaineer who was on his way back from a trip in Sweden, and conversation was easy. He had a job designing greenhouses to grow tomatoes on an industrial scale. “We would waste less energy if all of Europe's tomatoes were grown in Morocco and transported from there” he said. “You have no idea how much power it takes to grow tomatoes in an unfavourable climate.”
 

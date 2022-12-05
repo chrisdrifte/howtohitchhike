@@ -27,7 +27,7 @@ Huge smiles cracked across our faces and we ran towards the vehicle – a large 
 
 Avesta! Avesta was a small town close to the festival. It was also the home town of two Swedish guys with whom I'd travelled the USA. Not only would we have a comfortable place to sleep, I was also going to have the pleasure of seeing two very close friends again. Cheering with excitement, I began an enthusiastic conversation with Lucas about Sweden. I couldn't believe our luck.
 
-Three hours later, my good mood was waning. There was something about Lucas that was a little bit off. Upon discovering that Anna was German, he had told us a story about how he had met a German girl that “did everything in the bedroom”. When we'd mentioned that we loved hitch-hiking because of the people we meet, he'd told us that talking to some people made him want to puke. He'd also made several references to how he had difficulty controlling his anger. My conversation with him had suddenly become one long effort to avoid provoking either anger or vomit. All of us were tired and looking forward to the end of the journey.
+Three hours later, my good mood was waning. There was something about Lucas that was a little bit off. Upon discovering that Anna was German, he had told us a story about how he had met a German girl that “did everything in the bedroom”. When we'd mentioned that we loved hitchhiking because of the people we meet, he'd told us that talking to some people made him want to puke. He'd also made several references to how he had difficulty controlling his anger. My conversation with him had suddenly become one long effort to avoid provoking either anger or vomit. All of us were tired and looking forward to the end of the journey.
 
 It was with general relief that, as it neared midnight, we finally started to reach the outskirts of Avesta.
 
@@ -39,7 +39,7 @@ Lucas spun the wheel and we lurched on to a single-lane dirt track leading into 
 
 “The lake is really deep. It's an old quarry that's filled with water – it's impossible to reach the bottom,” he said. A great place to dispose of dead bodies, the three of us thought nervously. I checked my phone: no signal.
 
-We'd been driving deep into the forest for 45 minutes now. If we asked Lucas to turn back, would he react with aggression? We'd gone from giving up on our journey to celebrating our good luck to living out the classic hitch-hiker's nightmare – all in the space of just a few hours.
+We'd been driving deep into the forest for 45 minutes now. If we asked Lucas to turn back, would he react with aggression? We'd gone from giving up on our journey to celebrating our good luck to living out the classic hitchhiker's nightmare – all in the space of just a few hours.
 
 Finally we reached the end of the road. Gingerly we got out of the car. Our eyes were fixed on Lucas, waiting to see what he would do. Confused, he gestured towards the lake.
 
