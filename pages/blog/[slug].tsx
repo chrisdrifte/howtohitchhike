@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 
 import BlogPostHeader from '../../components/blog-post-header';
 import Container from '../../components/container';
+import Contribute from '../../components/contribute';
 import Header from '../../components/header';
 import Layout from '../../components/layout';
 import PostBody from '../../components/post-body';
@@ -13,7 +14,6 @@ import { BLOG_DESCRIPTION, BLOG_TITLE, DEFAULT_OG_IMAGE_URL } from '../../lib/co
 import markdownToHtml from '../../lib/markdownToHtml';
 
 import type BlogPost from "../../interfaces/blog-post";
-
 type Props = {
   post: BlogPost;
   morePosts: BlogPost[];
@@ -63,6 +63,7 @@ export default function BlogPostPage({ post, morePosts, preview }: Props) {
           </>
         )}
       </Container>
+      <Contribute />
     </Layout>
   );
 }

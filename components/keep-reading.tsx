@@ -1,6 +1,6 @@
 import Container from './container';
 
-const Footer = () => {
+const KeepReading = () => {
   return (
     <footer className="bg-neutral-50 border-t border-neutral-200 relative pb-8">
       <Container>
@@ -33,4 +33,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default KeepReading;

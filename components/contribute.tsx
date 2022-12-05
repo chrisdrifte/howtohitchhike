@@ -2,7 +2,7 @@ import Container from './container';
 
 const Contribute = () => {
   return (
-    <aside className="bg-neutral-50 mb-16">
+    <aside className="bg-neutral-50">
       <Container>
         <div className="relative py-28 flex flex-col lg:flex-row items-center">
           <h3 className="text-4xl lg:text-[2.5rem] font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">

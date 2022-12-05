@@ -6,8 +6,8 @@ import BookExtractHeader from '../../components/book-extract-header';
 import BookExtractPreview from '../../components/book-extract-preview';
 import Container from '../../components/container';
 import Header from '../../components/header';
+import KeepReading from '../../components/keep-reading';
 import Layout from '../../components/layout';
-import MoreBookExtracts from '../../components/more-book-extracts';
 import PostBody from '../../components/post-body';
 import PostTitle from '../../components/post-title';
 import SectionSeparator from '../../components/section-separator';
@@ -75,6 +75,7 @@ export default function BookExtractPage({ post, nextPost, preview }: Props) {
           </>
         )}
       </Container>
+      <KeepReading />
     </Layout>
   );
 }

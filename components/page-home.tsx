@@ -8,6 +8,7 @@ import Container from './container';
 import Contribute from './contribute';
 import HeroPost from './hero-post';
 import Intro from './intro';
+import KeepReading from './keep-reading';
 import Layout from './layout';
 import MoreBlogPosts from './more-blog-posts';
 import MoreBookExtracts from './more-book-extracts';
@@ -60,6 +61,7 @@ export default function PageHome({ allBlogPosts, allBookExtracts }: Props) {
             <MoreBookExtracts bookExtracts={allBookExtracts} />
           )}
         </Container>
+        <KeepReading />
       </Layout>
     </>
   );
