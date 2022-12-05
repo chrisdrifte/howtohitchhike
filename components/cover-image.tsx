@@ -8,19 +8,21 @@ type Props = {
   dir: string;
   slug?: string;
   loading?: HTMLImageElement["loading"];
+  fill?: boolean;
 };
 
-const CoverImage = ({ title, src, dir, slug, loading }: Props) => {
+const CoverImage = ({ title, src, dir, slug, loading, fill }: Props) => {
+  const sizeProps = fill ? { fill } : { width: 1300, height: 630 };
   const image = (
     <Image
       src={src}
       title={title}
       alt={`Cover Image for ${title}`}
       className={cn("shadow-sm w-full", {
-        "hover:shadow-lg transition-shadow duration-200": slug,
+        "hover:shadow-lg transition-shadow duration-200 max-h-fill max-": slug,
+        "object-cover": fill,
       })}
-      width={1300}
-      height={630}
+      {...sizeProps}
       sizes="(max-width: 768px) 100vw,
               1300"
       loading={loading ?? "lazy"}
