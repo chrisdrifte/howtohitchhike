@@ -10,13 +10,14 @@ type Props = Pick<Post, "title" | "coverImage" | "excerpt" | "slug"> & {
 const HeroPost = ({ title, coverImage, excerpt, dir, slug }: Props) => {
   return (
     <section>
-      <div className="mb-8 md:mb-16">
+      <div className="relative mb-8 md:mb-16 h-64 md:h-96 overflow-hidden">
         <CoverImage
           title={title}
           src={coverImage}
           dir={dir}
           slug={slug}
           loading="eager"
+          fill
         />
       </div>
       <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 mb-20 md:mb-28">
