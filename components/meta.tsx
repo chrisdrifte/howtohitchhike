@@ -1,8 +1,15 @@
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 
-import { BLOG_DESCRIPTION, BLOG_TITLE, DEFAULT_OG_IMAGE_URL } from '../lib/constants';
+import { BLOG_DESCRIPTION, BLOG_TITLE, BLOG_URL, DEFAULT_OG_IMAGE_URL } from '../lib/constants';
 
 const Meta = () => {
+  const router = useRouter();
+
+  const canonicalUrl = (
+    BLOG_URL + (router.asPath === "/" ? "" : router.asPath)
+  ).split("?")[0];
+
   return (
     <Head>
       <link
@@ -37,6 +44,7 @@ const Meta = () => {
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta name="description" content={BLOG_DESCRIPTION} />
       <meta property="og:image" content={DEFAULT_OG_IMAGE_URL} />
+      <link rel="canonical" href={canonicalUrl} />
     </Head>
   );
 };
