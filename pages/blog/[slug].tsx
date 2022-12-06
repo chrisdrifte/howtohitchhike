@@ -3,12 +3,14 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 import BlogPostHeader from '../../components/blog-post-header';
+import BookExtractPreview from '../../components/book-extract-preview';
 import Container from '../../components/container';
 import Contribute from '../../components/contribute';
 import Header from '../../components/header';
 import Layout from '../../components/layout';
 import PostBody from '../../components/post-body';
 import PostTitle from '../../components/post-title';
+import SectionSeparator from '../../components/section-separator';
 import StructuredData from '../../components/structured-data';
 import { getAllBlogPosts, getBlogPostBySlug } from '../../lib/api';
 import { BLOG_DESCRIPTION, BLOG_TITLE, BLOG_URL, DEFAULT_OG_IMAGE_URL } from '../../lib/constants';
@@ -17,11 +19,10 @@ import markdownToHtml from '../../lib/markdownToHtml';
 import type BlogPost from "../../interfaces/blog-post";
 type Props = {
   post: BlogPost;
-  morePosts: BlogPost[];
   preview?: boolean;
 };
 
-export default function BlogPostPage({ post, morePosts, preview }: Props) {
+export default function BlogPostPage({ post, preview }: Props) {
   const router = useRouter();
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
@@ -80,6 +81,16 @@ export default function BlogPostPage({ post, morePosts, preview }: Props) {
                 author={post.author}
               />
               <PostBody content={post.content} />
+              <div className="max-w-2xl mx-auto">
+                <SectionSeparator />
+                <h3 className="text-3xl font-serif font-bold tracking-tighter leading-tight">
+                  Read the book for free
+                </h3>
+                <BookExtractPreview
+                  title="Rules of Thumb: How to Hitchhike and Live on the Road"
+                  slug="011-tales-from-the-road-usa"
+                />
+              </div>
             </article>
           </>
         )}
