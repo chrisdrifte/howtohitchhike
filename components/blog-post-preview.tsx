@@ -31,6 +31,7 @@ const BlogPostPreview = ({
           title={title}
           dir={BLOG_POSTS_DIR}
           src={coverImage}
+          sizes="(max-width: 768px) 100vw, 684px"
         />
       </div>
       <h3 className="text-3xl mb-3 leading-snug">
