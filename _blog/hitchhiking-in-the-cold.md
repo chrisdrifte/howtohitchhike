@@ -46,13 +46,13 @@ It's hard to hitch in the dark, and in winter the nights are long and the days a
 
 If a ride is going to come to an end around sunset, I'll often prefer to get out a little earlier and use the last hour or two of daylight to get another long ride that can take me further and keep me warmer even as darkness falls.
 
-Bad weather can make it harder to hard to see hitchhikers on the side of the road, so bright clothing and clear lines of sight are as important as ever when hitching in winter.
+Bad weather can make it harder to see hitchhikers on the side of the road, so bright clothing and clear lines of sight are as important as ever when hitching in winter.
 
 ## Sleeping in the cold
 
 It's important to keep your body, especially hands and feet, as warm as possible when sleeping in the cold. This generally means having some sort of shelter - whether that's a tent, a bivvy, or a tarp - or finding a source of heat such as a campfire or public building.
 
-The earth will steal all your heat, so always put something between you and the ground if you're going to be touching it for a long time. Even if it's just a few layers of cardboard scavanged from the recycling bin. If you're in nature, making a bed from dry grass can significantly improve your quality of sleep. Of course, carrying an inflatable or foam sleeping mat is the ideal solution here.
+The earth will steal all your heat, so always put something between you and the ground if you're going to be touching it for a long time. Even if it's just a few layers of cardboard scavenged from the recycling bin. If you're in nature, making a bed from dry grass can significantly improve your quality of sleep. Of course, carrying an inflatable or foam sleeping mat is the ideal solution here.
 
 Don't fully submerge your face in your sleeping bag. You'll exhale moisture when you breathe, which could reduce the loft of your sleeping bag and therefore its warmth. Or, if you can't stand how cold your face gets, I've heard of some travellers who have used snorkles to allow them to keep warm without breathing inside their bag. Not something I've done myself but I can see how it might work.
 
