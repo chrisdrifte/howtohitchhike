@@ -23,15 +23,26 @@ export default function PageHome({ allBlogPosts, allBookExtracts }: Props) {
   let heroPostDir: string;
 
   if (!heroPost && typeof allBlogPosts[0] !== "undefined") {
-    heroPost = allBlogPosts[0];
+    let heroPostIndex = allBlogPosts.findIndex(
+      ({ slug }) => slug === "eight-years-of-how-to-hitchhike"
+    );
+    if (heroPostIndex === -1) {
+      heroPostIndex = 0;
+    }
+
+    heroPost = allBlogPosts[heroPostIndex];
     heroPostDir = BLOG_POSTS_DIR;
-    allBlogPosts = allBlogPosts.slice(1);
+    allBlogPosts = allBlogPosts.filter((_blogPost, i) => i !== heroPostIndex);
   }
 
   if (!heroPost && typeof allBookExtracts[0] !== "undefined") {
+    let heroPostIndex = 0;
+
     heroPost = allBookExtracts[0];
     heroPostDir = BOOK_EXTRACTS_DIR;
-    allBookExtracts = allBookExtracts.slice(1);
+    allBookExtracts = allBookExtracts.filter(
+      (_bookExtract, i) => i !== heroPostIndex
+    );
   }
 
   return (
