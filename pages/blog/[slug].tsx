@@ -12,7 +12,7 @@ import PostBody from '../../components/post-body';
 import PostTitle from '../../components/post-title';
 import SectionSeparator from '../../components/section-separator';
 import StructuredData from '../../components/structured-data';
-import { getAllBlogPosts, getBlogPostBySlug, getBookExtractBySlug } from '../../lib/api';
+import { getAllBlogPosts, getBlogPostBySlug } from '../../lib/api';
 import { BLOG_DESCRIPTION, BLOG_TITLE, BLOG_URL, DEFAULT_OG_IMAGE_URL } from '../../lib/constants';
 import markdownToHtml from '../../lib/markdownToHtml';
 
@@ -22,7 +22,7 @@ type Props = {
   preview?: boolean;
 };
 
-export default function BlogPostPage({ post, bookExtract, preview }: Props) {
+export default function BlogPostPage({ post, preview }: Props) {
   const router = useRouter();
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
