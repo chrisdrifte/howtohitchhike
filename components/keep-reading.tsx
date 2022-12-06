@@ -25,7 +25,7 @@ const KeepReading = () => {
         </div>
       </Container>
 
-      <div className="absolute bottom-0 left-0 w-full p-4 text-center text-xs opacity-25">
+      <div className="absolute bottom-0 left-0 w-full p-4 text-center text-xs opacity-75">
         Optional purchase: all book content can be read on this website for
         free.
       </div>
