@@ -12,7 +12,12 @@ const BookExtractHeader = ({ title, coverImage }: Props) => {
     <>
       <PostTitle>{title}</PostTitle>
       <div className="mb-8 md:mb-16 sm:mx-0">
-        <CoverImage title={title} dir={BOOK_EXTRACTS_DIR} src={coverImage} />
+        <CoverImage
+          title={title}
+          dir={BOOK_EXTRACTS_DIR}
+          src={coverImage}
+          loading="eager"
+        />
       </div>
     </>
   );
