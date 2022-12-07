@@ -1,20 +1,29 @@
-import ErrorPage from 'next/error';
-import Head from 'next/head';
-import { useRouter } from 'next/router';
+import ErrorPage from "next/error";
+import Head from "next/head";
+import { useRouter } from "next/router";
 
-import BookExtractHeader from '../../components/BookExtractHeader';
-import BookExtractPreview from '../../components/BookExtractPreview';
-import Container from '../../components/Container';
-import Header from '../../components/Header';
-import KeepReading from '../../components/KeepReading';
-import Layout from '../../components/Layout';
-import PostBody from '../../components/PostBody';
-import PostTitle from '../../components/PostTitle';
-import SectionSeparator from '../../components/SectionSeparator';
-import StructuredData from '../../components/StructuredData';
-import { getAllBookExtracts, getBookExtractBySlug, getNextBookExtractBySlug } from '../../lib/api';
-import { BLOG_DESCRIPTION, BLOG_TITLE, BLOG_URL, DEFAULT_OG_IMAGE_URL } from '../../lib/constants';
-import markdownToHtml from '../../lib/markdownToHtml';
+import {
+  getAllBookExtracts,
+  getBookExtractBySlug,
+  getNextBookExtractBySlug,
+} from "../../api/bookExtracts";
+import BookExtractHeader from "../../components/BookExtractHeader";
+import BookExtractPreview from "../../components/BookExtractPreview";
+import Container from "../../components/Container";
+import Header from "../../components/Header";
+import KeepReading from "../../components/KeepReading";
+import Layout from "../../components/Layout";
+import PostBody from "../../components/PostBody";
+import PostTitle from "../../components/PostTitle";
+import SectionSeparator from "../../components/SectionSeparator";
+import StructuredData from "../../components/StructuredData";
+import {
+  BLOG_DESCRIPTION,
+  BLOG_TITLE,
+  BLOG_URL,
+  DEFAULT_OG_IMAGE_URL,
+} from "../../config";
+import markdownToHtml from "../../utility/markdownToHtml";
 
 import type BookExtract from "../../interfaces/BookExtract";
 type Props = {

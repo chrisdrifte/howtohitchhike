@@ -1,6 +1,6 @@
-import Link from 'next/link';
+import Link from "next/link";
 
-import { BOOK_EXTRACTS_DIR } from '../lib/constants';
+import { BOOK_EXTRACTS_DIR } from "../config";
 
 type Props = {
   title: string;

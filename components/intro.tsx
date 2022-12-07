@@ -1,4 +1,4 @@
-import { BLOG_TAGLINE, BLOG_TITLE } from '../lib/constants';
+import { BLOG_TAGLINE, BLOG_TITLE } from "../config";
 
 const Intro = () => {
   return (

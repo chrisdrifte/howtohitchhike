@@ -1,9 +1,9 @@
-import Link from 'next/link';
+import Link from "next/link";
 
-import { BLOG_POSTS_DIR } from '../lib/constants';
-import Avatar from './Avatar';
-import CoverImage from './CoverImage';
-import DateFormatter from './DateFormatter';
+import { BLOG_POSTS_DIR } from "../config";
+import Avatar from "./Avatar";
+import CoverImage from "./CoverImage";
+import DateFormatter from "./DateFormatter";
 
 import type Author from "../interfaces/Author";
 

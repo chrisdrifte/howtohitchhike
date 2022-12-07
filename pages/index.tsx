@@ -1,7 +1,8 @@
-import PageHome from '../components/PageHome';
-import BlogPost from '../interfaces/BlogPost';
-import BookExtract from '../interfaces/BookExtract';
-import { getAllBlogPosts, getAllBookExtracts, getSiteMapUrls } from '../lib/api';
+import { getAllBlogPosts } from "../api/blogPosts";
+import { getAllBookExtracts } from "../api/bookExtracts";
+import PageHome from "../components/PageHome";
+import BlogPost from "../interfaces/BlogPost";
+import BookExtract from "../interfaces/BookExtract";
 
 type Props = {
   allBlogPosts: BlogPost[];

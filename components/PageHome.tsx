@@ -1,13 +1,9 @@
 import Head from "next/head";
 
+import { BLOG_POSTS_DIR, BLOG_TITLE, BOOK_EXTRACTS_DIR } from "../config";
 import BlogPost from "../interfaces/BlogPost";
 import BookExtract from "../interfaces/BookExtract";
 import Post from "../interfaces/Post";
-import {
-  BLOG_POSTS_DIR,
-  BLOG_TITLE,
-  BOOK_EXTRACTS_DIR,
-} from "../lib/constants";
 import BlogPostList from "./BlogPostList";
 import BookExtractList from "./BookExtractList";
 import Container from "./Container";

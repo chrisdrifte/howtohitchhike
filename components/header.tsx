@@ -1,6 +1,6 @@
-import Link from 'next/link';
+import Link from "next/link";
 
-import { BLOG_TITLE } from '../lib/constants';
+import { BLOG_TITLE } from "../config";
 
 const Header = () => {
   return (

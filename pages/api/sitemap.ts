@@ -1,4 +1,4 @@
-import { getSiteMapUrls } from '../../lib/api';
+import { getSiteMapUrls } from "../../api/siteMap";
 
 export default function SiteMapXml(req, res) {
   res.statusCode = 200;

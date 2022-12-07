@@ -1,6 +1,6 @@
-import { BOOK_EXTRACTS_DIR } from '../lib/constants';
-import CoverImage from './CoverImage';
-import PostTitle from './PostTitle';
+import { BOOK_EXTRACTS_DIR } from "../config";
+import CoverImage from "./CoverImage";
+import PostTitle from "./PostTitle";
 
 type Props = {
   title: string;

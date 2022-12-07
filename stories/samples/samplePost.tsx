@@ -1,5 +1,5 @@
+import { DEFAULT_OG_IMAGE_URL } from "../../config";
 import Post from "../../interfaces/Post";
-import { DEFAULT_OG_IMAGE_URL } from "../../lib/constants";
 import sampleCoverJpg from "./sampleCover.jpg";
 
 export const samplePost: Post = {

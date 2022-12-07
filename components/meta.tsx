@@ -1,7 +1,12 @@
-import Head from 'next/head';
-import { useRouter } from 'next/router';
+import Head from "next/head";
+import { useRouter } from "next/router";
 
-import { BLOG_DESCRIPTION, BLOG_TITLE, BLOG_URL, DEFAULT_OG_IMAGE_URL } from '../lib/constants';
+import {
+  BLOG_DESCRIPTION,
+  BLOG_TITLE,
+  BLOG_URL,
+  DEFAULT_OG_IMAGE_URL,
+} from "../config";
 
 const Meta = () => {
   const router = useRouter();
