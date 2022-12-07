@@ -2,10 +2,10 @@ import ErrorPage from "next/error";
 import { useRouter } from "next/router";
 
 import { getAllBlogPosts, getBlogPostBySlug } from "../../api/blogPosts";
+import AsideContribute from "../../components/AsideContribute";
 import BlogPostHeader from "../../components/BlogPostHeader";
 import BookExtractPreview from "../../components/BookExtractPreview";
 import Container from "../../components/Container";
-import Contribute from "../../components/Contribute";
 import Header from "../../components/Header";
 import Layout from "../../components/Layout";
 import Meta from "../../components/Meta";

@@ -2,7 +2,7 @@ import Button from "./Button";
 import Container from "./Container";
 import Statement from "./Statement";
 
-const Contribute = () => {
+const AsideContribute = () => {
   return (
     <aside className="bg-neutral-50">
       <Container>
@@ -19,4 +19,4 @@ const Contribute = () => {
   );
 };
 
-export default Contribute;
+export default AsideContribute;

@@ -1,8 +1,8 @@
 import BlogPost from "../interfaces/BlogPost";
+import AsideContribute from "./AsideContribute";
 import BlogPostHeader from "./BlogPostHeader";
 import BookExtractPreview from "./BookExtractPreview";
 import Container from "./Container";
-import Contribute from "./Contribute";
 import Header from "./Header";
 import PostBody from "./PostBody";
 import SectionSeparator from "./SectionSeparator";
@@ -38,7 +38,7 @@ export default function PageBlog({ blogPost }: Props) {
           </article>
         )}
       </Container>
-      <Contribute />
+      <AsideContribute />
     </>
   );
 }

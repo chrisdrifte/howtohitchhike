@@ -6,7 +6,7 @@ import PageBlogComponent from "../../components/PageBlog";
 import { sampleBlogPost } from "../samples/sampleBlogPost";
 
 export default {
-  title: "Components/Page/Blog",
+  title: "Page/Blog",
   component: PageBlogComponent,
   argTypes: {},
 } as ComponentMeta<typeof PageBlogComponent>;

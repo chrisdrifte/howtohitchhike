@@ -1,9 +1,9 @@
 import BookExtract from "../interfaces/BookExtract";
+import AsideKeepReading from "./AsideKeepReading";
 import BookExtractHeader from "./BookExtractHeader";
 import BookExtractPreview from "./BookExtractPreview";
 import Container from "./Container";
 import Header from "./Header";
-import KeepReading from "./KeepReading";
 import PostBody from "./PostBody";
 import SectionSeparator from "./SectionSeparator";
 
@@ -37,7 +37,7 @@ export default function PageBlog({ bookExtract, nextBookExtract }: Props) {
           )}
         </article>
       </Container>
-      <KeepReading />
+      <AsideKeepReading />
     </>
   );
 }

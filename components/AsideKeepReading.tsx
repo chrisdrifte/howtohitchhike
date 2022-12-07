@@ -2,7 +2,7 @@ import Button from "./Button";
 import Container from "./Container";
 import Statement from "./Statement";
 
-const KeepReading = () => {
+const AsideKeepReading = () => {
   return (
     <footer className="bg-neutral-50 border-t border-neutral-200 relative pb-8">
       <Container>
@@ -33,4 +33,4 @@ const KeepReading = () => {
   );
 };
 
-export default KeepReading;
+export default AsideKeepReading;

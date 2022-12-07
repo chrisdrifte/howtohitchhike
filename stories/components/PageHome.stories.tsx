@@ -7,7 +7,7 @@ import { sampleBlogPosts } from "../samples/sampleBlogPosts";
 import { sampleBookExtracts } from "../samples/sampleBookExtracts";
 
 export default {
-  title: "Components/Page/Home",
+  title: "Page/Home",
   component: PageHomeComponent,
   argTypes: {},
 } as ComponentMeta<typeof PageHomeComponent>;

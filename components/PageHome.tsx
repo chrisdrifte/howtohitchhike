@@ -1,12 +1,12 @@
 import { BLOG_POSTS_DIR } from "../config";
 import BlogPost from "../interfaces/BlogPost";
 import BookExtract from "../interfaces/BookExtract";
+import AsideContribute from "./AsideContribute";
+import AsideKeepReading from "./AsideKeepReading";
 import BlogPostList from "./BlogPostList";
 import BookExtractList from "./BookExtractList";
 import Container from "./Container";
-import Contribute from "./Contribute";
 import Intro from "./Intro";
-import KeepReading from "./KeepReading";
 import PostHero from "./PostHero";
 
 type Props = {
@@ -34,12 +34,12 @@ export default function PageHome({
           />
         )}
       </Container>
-      <Contribute />
+      <AsideContribute />
       <Container>
         <BlogPostList blogPosts={blogPosts} />
         <BookExtractList bookExtracts={bookExtracts} />
       </Container>
-      <KeepReading />
+      <AsideKeepReading />
     </>
   );
 }
