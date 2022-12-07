@@ -1,4 +1,4 @@
-import OgImage from './ogImage';
+import OgImage from "./OgImage";
 
 type Post = {
   slug: string;

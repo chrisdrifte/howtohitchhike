@@ -1,6 +1,6 @@
-import PageHome from '../components/page-home';
-import BlogPost from '../interfaces/blog-post';
-import BookExtract from '../interfaces/book-extract';
+import PageHome from '../components/PageHome';
+import BlogPost from '../interfaces/BlogPost';
+import BookExtract from '../interfaces/BookExtract';
 import { getAllBlogPosts, getAllBookExtracts, getSiteMapUrls } from '../lib/api';
 
 type Props = {

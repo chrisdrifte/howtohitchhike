@@ -2,21 +2,21 @@ import ErrorPage from 'next/error';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
-import BlogPostHeader from '../../components/blog-post-header';
-import BookExtractPreview from '../../components/book-extract-preview';
-import Container from '../../components/container';
-import Contribute from '../../components/contribute';
-import Header from '../../components/header';
-import Layout from '../../components/layout';
-import PostBody from '../../components/post-body';
-import PostTitle from '../../components/post-title';
-import SectionSeparator from '../../components/section-separator';
-import StructuredData from '../../components/structured-data';
+import BlogPostHeader from '../../components/BlogPostHeader';
+import BookExtractPreview from '../../components/BookExtractPreview';
+import Container from '../../components/Container';
+import Contribute from '../../components/Contribute';
+import Header from '../../components/Header';
+import Layout from '../../components/Layout';
+import PostBody from '../../components/PostBody';
+import PostTitle from '../../components/PostTitle';
+import SectionSeparator from '../../components/SectionSeparator';
+import StructuredData from '../../components/StructuredData';
 import { getAllBlogPosts, getBlogPostBySlug } from '../../lib/api';
 import { BLOG_DESCRIPTION, BLOG_TITLE, BLOG_URL, DEFAULT_OG_IMAGE_URL } from '../../lib/constants';
 import markdownToHtml from '../../lib/markdownToHtml';
 
-import type BlogPost from "../../interfaces/blog-post";
+import type BlogPost from "../../interfaces/BlogPost";
 type Props = {
   post: BlogPost;
   preview?: boolean;

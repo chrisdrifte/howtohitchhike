@@ -3,7 +3,7 @@ import matter from 'gray-matter';
 import { join } from 'path';
 import RSS from 'rss';
 
-import BlogPost from '../interfaces/blog-post';
+import BlogPost from '../interfaces/BlogPost';
 import {
     AUTHORS_DIR, BLOG_DESCRIPTION, BLOG_POSTS_DIR, BLOG_TITLE, BLOG_URL, BOOK_EXTRACTS_DIR
 } from './constants';

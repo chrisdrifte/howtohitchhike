@@ -1,6 +1,6 @@
 import { getRssFeed } from '../../lib/api';
 
-export default function handler(req, res) {
+export default function FeedXml(req, res) {
   res.statusCode = 200;
   res.setHeader("Content-Type", "text/xml");
   res.setHeader("Cache-control", "stale-while-revalidate, s-maxage=3600");

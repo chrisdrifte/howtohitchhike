@@ -2,8 +2,8 @@ import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import AvatarComponent from '../../components/avatar';
-import { sampleAuthor } from '../samples/sample-author';
+import AvatarComponent from '../../components/Avatar';
+import { sampleAuthor } from '../samples/sampleAuthor';
 
 export default {
   title: "Components/Avatar",

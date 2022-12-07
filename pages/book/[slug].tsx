@@ -2,21 +2,21 @@ import ErrorPage from 'next/error';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
-import BookExtractHeader from '../../components/book-extract-header';
-import BookExtractPreview from '../../components/book-extract-preview';
-import Container from '../../components/container';
-import Header from '../../components/header';
-import KeepReading from '../../components/keep-reading';
-import Layout from '../../components/layout';
-import PostBody from '../../components/post-body';
-import PostTitle from '../../components/post-title';
-import SectionSeparator from '../../components/section-separator';
-import StructuredData from '../../components/structured-data';
+import BookExtractHeader from '../../components/BookExtractHeader';
+import BookExtractPreview from '../../components/BookExtractPreview';
+import Container from '../../components/Container';
+import Header from '../../components/Header';
+import KeepReading from '../../components/KeepReading';
+import Layout from '../../components/Layout';
+import PostBody from '../../components/PostBody';
+import PostTitle from '../../components/PostTitle';
+import SectionSeparator from '../../components/SectionSeparator';
+import StructuredData from '../../components/StructuredData';
 import { getAllBookExtracts, getBookExtractBySlug, getNextBookExtractBySlug } from '../../lib/api';
 import { BLOG_DESCRIPTION, BLOG_TITLE, BLOG_URL, DEFAULT_OG_IMAGE_URL } from '../../lib/constants';
 import markdownToHtml from '../../lib/markdownToHtml';
 
-import type BookExtract from "../../interfaces/book-extract";
+import type BookExtract from "../../interfaces/BookExtract";
 type Props = {
   post: BookExtract;
   nextPost?: Pick<BookExtract, "title" | "slug">;

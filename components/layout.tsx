@@ -1,5 +1,5 @@
-import Alert from './alert';
-import Meta from './meta';
+import Alert from "./Alert";
+import Meta from "./Meta";
 
 type Props = {
   preview?: boolean;

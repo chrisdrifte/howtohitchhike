@@ -1,6 +1,6 @@
 import { getSiteMapUrls } from '../../lib/api';
 
-export default function handler(req, res) {
+export default function SiteMapXml(req, res) {
   res.statusCode = 200;
   res.setHeader("Content-Type", "text/xml");
   res.setHeader("Cache-control", "stale-while-revalidate, s-maxage=3600");

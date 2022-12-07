@@ -2,7 +2,7 @@ import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import FooterComponent from '../../components/keep-reading';
+import FooterComponent from '../../components/KeepReading';
 
 export default {
   title: "Components/Footer",

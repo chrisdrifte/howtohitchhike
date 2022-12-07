@@ -2,7 +2,7 @@ import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import IntroComponent from '../../components/intro';
+import IntroComponent from '../../components/Intro';
 
 export default {
   title: "Components/Intro",
