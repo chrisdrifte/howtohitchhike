@@ -1,5 +1,4 @@
 import { AUTHORS_DIR } from "../config";
-import Author from "../interfaces/Author";
 import getMarkdownFilesFromDirectory from "../utility/getMarkdownFilesFromDirectory";
 import parseMarkdownFile from "../utility/parseMarkdownFile";
 import { sortByNameDesc } from "../utility/sortByNameDesc";
