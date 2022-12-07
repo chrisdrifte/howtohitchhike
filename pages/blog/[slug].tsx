@@ -1,5 +1,4 @@
 import ErrorPage from "next/error";
-import Head from "next/head";
 import { useRouter } from "next/router";
 
 import { getAllBlogPosts, getBlogPostBySlug } from "../../api/blogPosts";
@@ -9,98 +8,56 @@ import Container from "../../components/Container";
 import Contribute from "../../components/Contribute";
 import Header from "../../components/Header";
 import Layout from "../../components/Layout";
+import Meta from "../../components/Meta";
+import PageBlog from "../../components/PageBlog";
 import PostBody from "../../components/PostBody";
 import PostTitle from "../../components/PostTitle";
 import SectionSeparator from "../../components/SectionSeparator";
 import StructuredData from "../../components/StructuredData";
-import {
-  BLOG_DESCRIPTION,
-  BLOG_TITLE,
-  BLOG_URL,
-  DEFAULT_OG_IMAGE_URL,
-} from "../../config";
 import markdownToHtml from "../../utility/markdownToHtml";
 
 import type BlogPost from "../../interfaces/BlogPost";
 type Props = {
-  post: BlogPost;
+  blogPost: BlogPost;
   preview?: boolean;
 };
 
-export default function BlogPostPage({ post, preview }: Props) {
+export default function BlogPostPage({ blogPost, preview }: Props) {
   const router = useRouter();
-  if (!router.isFallback && !post?.slug) {
+
+  if (!router.isFallback && !blogPost?.slug) {
     return <ErrorPage statusCode={404} />;
   }
+
+  if (router.isFallback) {
+    return <PostTitle>Loading...</PostTitle>;
+  }
+
   return (
     <Layout preview={preview}>
-      <Head>
-        <meta
-          name="description"
-          content={post.excerpt || BLOG_DESCRIPTION}
-          key="desc"
-        />
-      </Head>
+      <Meta
+        title={blogPost.title}
+        description={blogPost.excerpt}
+        ogImage={blogPost.ogImage?.url || blogPost.coverImage}
+      />
       <StructuredData
         data={{
           "@context": "https://schema.org",
           "@type": "BlogPosting",
-          headline: post.title,
-          description: post.excerpt,
+          headline: blogPost.title,
+          description: blogPost.excerpt,
           author: [
             {
               "@type": "Person",
-              name: post.author.name,
-              image: post.author.picture,
+              name: blogPost.author.name,
+              image: blogPost.author.picture,
             },
           ],
-          image: post.coverImage,
-          datePublished: post.date,
+          image: blogPost.coverImage,
+          datePublished: blogPost.date,
         }}
       />
-      <Container>
-        <Header />
-        {router.isFallback ? (
-          <PostTitle>Loading…</PostTitle>
-        ) : (
-          <>
-            <article className="mb-32">
-              <Head>
-                <title>
-                  {post.title} | {BLOG_TITLE}
-                </title>
-                <meta
-                  property="og:image"
-                  content={
-                    BLOG_URL +
-                    (post.ogImage?.url ||
-                      post.coverImage ||
-                      DEFAULT_OG_IMAGE_URL)
-                  }
-                />
-              </Head>
-              <BlogPostHeader
-                title={post.title}
-                coverImage={post.coverImage}
-                date={post.date}
-                author={post.author}
-              />
-              <PostBody content={post.content} />
-              <div className="max-w-2xl mx-auto">
-                <SectionSeparator />
-                <h3 className="text-3xl font-serif font-bold tracking-tighter leading-tight">
-                  Read the book for free
-                </h3>
-                <BookExtractPreview
-                  title="Rules of Thumb: How to Hitchhike and Live on the Road"
-                  slug="011-tales-from-the-road-usa"
-                />
-              </div>
-            </article>
-          </>
-        )}
-      </Container>
-      <Contribute />
+      <PageBlog blogPost={blogPost} />
     </Layout>
   );
 }
@@ -112,14 +69,13 @@ type Params = {
 };
 
 export async function getStaticProps({ params }: Params) {
-  const post = getBlogPostBySlug(params.slug);
-
-  const content = await markdownToHtml(post.content.toString() || "");
+  const blogPost = getBlogPostBySlug(params.slug);
+  const content = await markdownToHtml(blogPost.content.toString() || "");
 
   return {
     props: {
-      post: {
-        ...post,
+      blogPost: {
+        ...blogPost,
         content,
       },
     },

@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import PageHomeComponent from '../../components/PageHome';
-import { sampleBlogPosts } from '../samples/sampleBlogPosts';
-import { sampleBookExtracts } from '../samples/sampleBookExtracts';
+import PageHomeComponent from "../../components/PageHome";
+import { sampleBlogPosts } from "../samples/sampleBlogPosts";
+import { sampleBookExtracts } from "../samples/sampleBookExtracts";
 
 export default {
   title: "Components/Page/Home",
@@ -18,6 +18,7 @@ const Template: ComponentStory<typeof PageHomeComponent> = (args) => (
 
 export const Home = Template.bind({});
 Home.args = {
-  allBlogPosts: sampleBlogPosts,
-  allBookExtracts: sampleBookExtracts,
+  featuredBlogPost: sampleBlogPosts[0],
+  blogPosts: sampleBlogPosts,
+  bookExtracts: sampleBookExtracts,
 };

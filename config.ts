@@ -9,3 +9,5 @@ export const BLOG_URL = "https://howtohitchhike.com";
 export const AUTHORS_DIR = "author";
 export const BLOG_POSTS_DIR = "blog";
 export const BOOK_EXTRACTS_DIR = "book";
+
+export const FEATURED_BLOG_POST_SLUG = "eight-years-of-how-to-hitchhike";

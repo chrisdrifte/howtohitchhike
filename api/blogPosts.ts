@@ -33,5 +33,6 @@ export function getAllBlogPosts() {
   const blogPosts = getBlogPostSlugs()
     .map(getBlogPostBySlug)
     .sort(sortByDateDesc);
+
   return blogPosts;
 }

@@ -1,18 +1,17 @@
 import BlogPost from "../interfaces/BlogPost";
 import BlogPostPreview from "./BlogPostPreview";
+import SectionHeading from "./SectionHeading";
 
 type Props = {
   blogPosts: BlogPost[];
 };
 
 const BlogPostList = ({ blogPosts }: Props) => {
-  if (!blogPosts.length) return null;
+  if (!(blogPosts instanceof Array) || !blogPosts.length) return null;
 
   return (
     <section>
-      <h2 className="mt-16 mb-8 text-5xl md:text-7xl font-serif font-bold tracking-tighter leading-tight">
-        From the blog
-      </h2>
+      <SectionHeading>From the blog</SectionHeading>
       <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-32">
         {blogPosts.map((post) => (
           <BlogPostPreview

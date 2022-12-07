@@ -1,25 +1,43 @@
-import { getAllBlogPosts } from "../api/blogPosts";
+import { getAllBlogPosts, getBlogPostBySlug } from "../api/blogPosts";
 import { getAllBookExtracts } from "../api/bookExtracts";
+import Layout from "../components/Layout";
+import Meta from "../components/Meta";
 import PageHome from "../components/PageHome";
+import { FEATURED_BLOG_POST_SLUG } from "../config";
 import BlogPost from "../interfaces/BlogPost";
 import BookExtract from "../interfaces/BookExtract";
 
 type Props = {
-  allBlogPosts: BlogPost[];
-  allBookExtracts: BookExtract[];
+  featuredBlogPost?: BlogPost;
+  blogPosts: BlogPost[];
+  bookExtracts: BookExtract[];
 };
 
-export default function Index({ allBlogPosts, allBookExtracts }: Props) {
+export default function Index({
+  featuredBlogPost,
+  blogPosts,
+  bookExtracts,
+}: Props) {
   return (
-    <PageHome allBlogPosts={allBlogPosts} allBookExtracts={allBookExtracts} />
+    <Layout>
+      <Meta />
+      <PageHome
+        featuredBlogPost={featuredBlogPost}
+        blogPosts={blogPosts}
+        bookExtracts={bookExtracts}
+      />
+    </Layout>
   );
 }
 
 export const getStaticProps = async () => {
-  const allBlogPosts = getAllBlogPosts();
-  const allBookExtracts = getAllBookExtracts();
+  const featuredBlogPost = getBlogPostBySlug(FEATURED_BLOG_POST_SLUG);
+  const blogPosts = getAllBlogPosts().filter(
+    ({ slug }) => slug !== featuredBlogPost.slug
+  );
+  const bookExtracts = getAllBookExtracts();
 
   return {
-    props: { allBlogPosts, allBookExtracts },
+    props: { featuredBlogPost, blogPosts, bookExtracts },
   };
 };
