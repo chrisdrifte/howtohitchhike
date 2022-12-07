@@ -16,22 +16,8 @@ export default function Index({ allBlogPosts, allBookExtracts }: Props) {
 }
 
 export const getStaticProps = async () => {
-  const allBlogPosts = getAllBlogPosts([
-    "title",
-    "date",
-    "slug",
-    "author",
-    "coverImage",
-    "excerpt",
-  ]);
-
-  const allBookExtracts = getAllBookExtracts([
-    "title",
-    "pageNumber",
-    "slug",
-    "coverImage",
-    "excerpt",
-  ]);
+  const allBlogPosts = getAllBlogPosts();
+  const allBookExtracts = getAllBookExtracts();
 
   return {
     props: { allBlogPosts, allBookExtracts },

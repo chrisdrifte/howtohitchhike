@@ -112,16 +112,7 @@ type Params = {
 };
 
 export async function getStaticProps({ params }: Params) {
-  const post = getBlogPostBySlug(params.slug, [
-    "title",
-    "date",
-    "slug",
-    "author",
-    "excerpt",
-    "content",
-    "ogImage",
-    "coverImage",
-  ]);
+  const post = getBlogPostBySlug(params.slug);
 
   const content = await markdownToHtml(post.content.toString() || "");
 
@@ -136,7 +127,7 @@ export async function getStaticProps({ params }: Params) {
 }
 
 export async function getStaticPaths() {
-  const blogPosts = getAllBlogPosts(["slug"]);
+  const blogPosts = getAllBlogPosts();
 
   return {
     paths: blogPosts.map((post) => {

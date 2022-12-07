@@ -1,54 +1,37 @@
-import fs from "fs";
-import matter from "gray-matter";
-import { join } from "path";
-
 import { BLOG_POSTS_DIR } from "../config";
+import BlogPost from "../interfaces/BlogPost";
+import getMarkdownFilesFromDirectory from "../utility/getMarkdownFilesFromDirectory";
+import parseMarkdownFile from "../utility/parseMarkdownFile";
+import { sortByDateDesc } from "../utility/sortByDateDesc";
 import { getAuthorBySlug } from "./authors";
 
-const blogDirectory = join(process.cwd(), `_${BLOG_POSTS_DIR}`);
+const blogPostsContentDir = `_${BLOG_POSTS_DIR}`;
 
 export function getBlogPostSlugs() {
-  if (!fs.existsSync(blogDirectory)) return [];
-  return fs.readdirSync(blogDirectory).map((slug) => slug.replace(/\.md$/, ""));
+  const blogPosts = getMarkdownFilesFromDirectory(blogPostsContentDir);
+  return blogPosts;
 }
 
-export function getBlogPostBySlug(slug: string, fields: string[] = []) {
-  const fullPath = join(blogDirectory, `${slug}.md`);
-  const fileContents = fs.readFileSync(fullPath, "utf8");
-  const { data, content } = matter(fileContents);
+export function getBlogPostBySlug(slug: string) {
+  const data = parseMarkdownFile(blogPostsContentDir, slug);
 
-  type Items = {
-    [key: string]: string | Items;
+  const blogPost: BlogPost = {
+    slug: slug,
+    title: data.title,
+    coverImage: data.coverImage,
+    ogImage: { url: data.coverImage },
+    excerpt: data.excerpt,
+    content: data.content,
+    date: data.date,
+    author: getAuthorBySlug(data.author),
   };
 
-  const items: Items = {
-    type: "blog-post",
-  };
-
-  // Ensure only the minimal needed data is exposed
-  fields.forEach((field) => {
-    if (field === "slug") {
-      items[field] = slug;
-    }
-    if (field === "content") {
-      items[field] = content;
-    }
-    if (typeof data[field] !== "undefined") {
-      items[field] = data[field];
-    }
-    if (field === "author") {
-      items[field] = getAuthorBySlug(data[field], ["slug", "name", "picture"]);
-    }
-  });
-
-  return items;
+  return blogPost;
 }
 
-export function getAllBlogPosts(fields: string[] = []) {
-  const slugs = getBlogPostSlugs();
-  const posts = slugs
-    .map((slug) => getBlogPostBySlug(slug, fields))
-    // sort posts by date in descending order
-    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
-  return posts;
+export function getAllBlogPosts() {
+  const blogPosts = getBlogPostSlugs()
+    .map(getBlogPostBySlug)
+    .sort(sortByDateDesc);
+  return blogPosts;
 }

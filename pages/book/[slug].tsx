@@ -116,18 +116,9 @@ type Params = {
 };
 
 export async function getStaticProps({ params }: Params) {
-  const post = getBookExtractBySlug(params.slug, [
-    "title",
-    "date",
-    "slug",
-    "author",
-    "excerpt",
-    "content",
-    "ogImage",
-    "coverImage",
-  ]);
+  const post = getBookExtractBySlug(params.slug);
   const content = await markdownToHtml(post.content || "");
-  const nextPost = getNextBookExtractBySlug(params.slug, ["title", "slug"]);
+  const nextPost = getNextBookExtractBySlug(params.slug);
 
   return {
     props: {
@@ -141,7 +132,7 @@ export async function getStaticProps({ params }: Params) {
 }
 
 export async function getStaticPaths() {
-  const bookExtracts = getAllBookExtracts(["slug"]);
+  const bookExtracts = getAllBookExtracts();
 
   return {
     paths: bookExtracts.map((post) => {

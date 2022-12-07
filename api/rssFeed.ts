@@ -6,18 +6,13 @@ import {
   BLOG_URL,
   BOOK_EXTRACTS_DIR,
 } from "../config";
-import BlogPost from "../interfaces/BlogPost";
 import { getBlogPostBySlug, getBlogPostSlugs } from "./blogPosts";
 
 export function getRssFeed() {
   type FeedPost = { title: string; excerpt: string; url: string; date: string };
 
   const feedPosts: FeedPost[] = getBlogPostSlugs().map((slug) => ({
-    ...(getBlogPostBySlug(slug, [
-      "title",
-      "excerpt",
-      "date",
-    ]) as unknown as Pick<BlogPost, "title" | "excerpt" | "date">),
+    ...getBlogPostBySlug(slug),
     url: `${BLOG_URL}/${BOOK_EXTRACTS_DIR}/${slug}`,
   }));
 
