@@ -1,22 +1,15 @@
-import ErrorPage from "next/error";
-import { useRouter } from "next/router";
+import ErrorPage from 'next/error';
+import { useRouter } from 'next/router';
 
-import { getAllBlogPosts, getBlogPostBySlug } from "../../api/blogPosts";
-import AsideContribute from "../../components/AsideContribute";
-import BlogPostHeader from "../../components/BlogPostHeader";
-import BookExtractPreview from "../../components/BookExtractPreview";
-import Container from "../../components/Container";
-import Header from "../../components/Header";
-import Layout from "../../components/Layout";
-import Meta from "../../components/Meta";
-import PageBlog from "../../components/PageBlog";
-import PostBody from "../../components/PostBody";
-import PostTitle from "../../components/PostTitle";
-import SectionSeparator from "../../components/SectionSeparator";
-import StructuredData from "../../components/StructuredData";
-import markdownToHtml from "../../utility/markdownToHtml";
+import { getAllBlogPosts, getBlogPostBySlug } from '../../api/blogPosts';
+import Layout from '../../components/Layout';
+import Meta from '../../components/Meta';
+import PageBlog from '../../components/PageBlog';
+import PostTitle from '../../components/PostTitle';
+import StructuredData from '../../components/StructuredData';
+import BlogPost from '../../interfaces/BlogPost';
+import markdownToHtml from '../../utility/markdownToHtml';
 
-import type BlogPost from "../../interfaces/BlogPost";
 type Props = {
   blogPost: BlogPost;
   preview?: boolean;

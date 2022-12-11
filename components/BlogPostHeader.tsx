@@ -1,10 +1,9 @@
-import { BLOG_POSTS_DIR } from "../config";
-import Avatar from "./Avatar";
-import CoverImage from "./CoverImage";
-import DateFormatter from "./DateFormatter";
-import PostTitle from "./PostTitle";
-
-import type Author from "../interfaces/Author";
+import { BLOG_POSTS_DIR } from '../config';
+import Author from '../interfaces/Author';
+import Avatar from './Avatar';
+import CoverImage from './CoverImage';
+import DateFormatter from './DateFormatter';
+import PostTitle from './PostTitle';
 
 type Props = {
   title: string;

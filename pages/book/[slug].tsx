@@ -1,18 +1,16 @@
-import ErrorPage from "next/error";
-import { useRouter } from "next/router";
+import ErrorPage from 'next/error';
+import { useRouter } from 'next/router';
 
 import {
-  getAllBookExtracts,
-  getBookExtractBySlug,
-  getNextBookExtractBySlug,
-} from "../../api/bookExtracts";
-import Layout from "../../components/Layout";
-import Meta from "../../components/Meta";
-import PageBook from "../../components/PageBook";
-import StructuredData from "../../components/StructuredData";
-import markdownToHtml from "../../utility/markdownToHtml";
+    getAllBookExtracts, getBookExtractBySlug, getNextBookExtractBySlug
+} from '../../api/bookExtracts';
+import Layout from '../../components/Layout';
+import Meta from '../../components/Meta';
+import PageBook from '../../components/PageBook';
+import StructuredData from '../../components/StructuredData';
+import BookExtract from '../../interfaces/BookExtract';
+import markdownToHtml from '../../utility/markdownToHtml';
 
-import type BookExtract from "../../interfaces/BookExtract";
 type Props = {
   bookExtract: BookExtract;
   nextBookExtract?: Pick<BookExtract, "title" | "slug">;

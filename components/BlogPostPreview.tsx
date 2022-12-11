@@ -1,11 +1,10 @@
-import Link from "next/link";
+import Link from 'next/link';
 
-import { BLOG_POSTS_DIR } from "../config";
-import Avatar from "./Avatar";
-import CoverImage from "./CoverImage";
-import DateFormatter from "./DateFormatter";
-
-import type Author from "../interfaces/Author";
+import { BLOG_POSTS_DIR } from '../config';
+import Author from '../interfaces/Author';
+import Avatar from './Avatar';
+import CoverImage from './CoverImage';
+import DateFormatter from './DateFormatter';
 
 type Props = {
   title: string;
