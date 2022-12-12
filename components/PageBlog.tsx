@@ -1,11 +1,12 @@
-import BlogPost from "../interfaces/BlogPost";
-import AsideContribute from "./AsideContribute";
-import BlogPostHeader from "./BlogPostHeader";
-import BookExtractPreview from "./BookExtractPreview";
-import Container from "./Container";
-import Header from "./Header";
-import PostBody from "./PostBody";
-import SectionSeparator from "./SectionSeparator";
+import BlogPost from '../interfaces/BlogPost';
+import AsideContribute from './AsideContribute';
+import BlogPostHeader from './BlogPostHeader';
+import BookExtractPreview from './BookExtractPreview';
+import Container from './Container';
+import Credit from './Credit';
+import Header from './Header';
+import PostBody from './PostBody';
+import SectionSeparator from './SectionSeparator';
 
 type Props = {
   blogPost?: BlogPost;
@@ -25,6 +26,7 @@ export default function PageBlog({ blogPost }: Props) {
               author={blogPost.author}
             />
             <PostBody content={blogPost.content} />
+
             <div className="max-w-2xl mx-auto">
               <SectionSeparator />
               <h3 className="text-3xl font-serif font-bold tracking-tighter leading-tight">
@@ -34,6 +36,22 @@ export default function PageBlog({ blogPost }: Props) {
                 title="Rules of Thumb: How to Hitchhike and Live on the Road"
                 slug="011-tales-from-the-road-usa"
               />
+            </div>
+
+            <div className="max-w-2xl mx-auto mt-14 bg-neutral-50 p-5 flex flex-col items-center ">
+              <strong>Words by</strong>
+              <Credit
+                name={blogPost.author.name}
+                picture={blogPost.author.picture}
+                instagram={blogPost.author.instagram}
+                website={blogPost.author.website}
+              />
+              {blogPost.author.content && (
+                <div
+                  className="m-5"
+                  dangerouslySetInnerHTML={{ __html: blogPost.author.content }}
+                />
+              )}
             </div>
           </article>
         )}

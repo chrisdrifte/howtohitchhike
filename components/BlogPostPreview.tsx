@@ -2,8 +2,8 @@ import Link from 'next/link';
 
 import { BLOG_POSTS_DIR } from '../config';
 import Author from '../interfaces/Author';
-import Avatar from './Avatar';
 import CoverImage from './CoverImage';
+import Credit from './Credit';
 import DateFormatter from './DateFormatter';
 
 type Props = {
@@ -47,7 +47,12 @@ const BlogPostPreview = ({
         <DateFormatter dateString={date} />
       </div>
       <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-      <Avatar name={author.name} picture={author.picture} />
+      <Credit
+        name={author.name}
+        picture={author.picture}
+        instagram={author.instagram}
+        website={author.website}
+      />
     </div>
   );
 };

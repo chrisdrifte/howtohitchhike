@@ -17,6 +17,9 @@ export function getAuthorBySlug(slug: string) {
   const author: Author = {
     name: data.name,
     picture: data.picture,
+    instagram: data.instagram,
+    website: data.website,
+    content: data.content,
   };
 
   return author;

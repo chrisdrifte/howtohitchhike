@@ -2,7 +2,7 @@ import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import AvatarComponent from '../../components/Avatar';
+import AvatarComponent from '../../components/Credit';
 import { sampleAuthor } from '../samples/sampleAuthor';
 
 export default {

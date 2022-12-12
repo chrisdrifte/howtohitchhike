@@ -63,13 +63,18 @@ type Params = {
 
 export async function getStaticProps({ params }: Params) {
   const blogPost = getBlogPostBySlug(params.slug);
-  const content = await markdownToHtml(blogPost.content.toString() || "");
+  const blogPostHtml = await markdownToHtml(`${blogPost.content || ""}`);
+  const authorHtml = await markdownToHtml(`${blogPost.author.content || ""}`);
 
   return {
     props: {
       blogPost: {
         ...blogPost,
-        content,
+        author: {
+          ...blogPost.author,
+          content: authorHtml,
+        },
+        content: blogPostHtml,
       },
     },
   };
