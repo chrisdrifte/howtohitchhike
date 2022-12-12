@@ -1,13 +1,13 @@
 import ErrorPage from 'next/error';
 import { useRouter } from 'next/router';
 
-import {
-    getAllBookExtracts, getBookExtractBySlug, getNextBookExtractBySlug
-} from '../../api/bookExtracts';
 import Layout from '../../components/Layout';
 import Meta from '../../components/Meta';
 import PageBook from '../../components/PageBook';
 import StructuredData from '../../components/StructuredData';
+import {
+    getAllBookExtracts, getBookExtractBySlug, getNextBookExtractBySlug
+} from '../../content-api/bookExtracts';
 import BookExtract from '../../interfaces/BookExtract';
 import markdownToHtml from '../../utility/markdownToHtml';
 

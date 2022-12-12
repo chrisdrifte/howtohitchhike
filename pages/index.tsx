@@ -1,11 +1,11 @@
-import { getAllBlogPosts, getBlogPostBySlug } from "../api/blogPosts";
-import { getAllBookExtracts } from "../api/bookExtracts";
-import Layout from "../components/Layout";
-import Meta from "../components/Meta";
-import PageHome from "../components/PageHome";
-import { FEATURED_BLOG_POST_SLUG } from "../config";
-import BlogPost from "../interfaces/BlogPost";
-import BookExtract from "../interfaces/BookExtract";
+import Layout from '../components/Layout';
+import Meta from '../components/Meta';
+import PageHome from '../components/PageHome';
+import { FEATURED_BLOG_POST_SLUG } from '../config';
+import { getAllBlogPosts, getBlogPostBySlug } from '../content-api/blogPosts';
+import { getAllBookExtracts } from '../content-api/bookExtracts';
+import BlogPost from '../interfaces/BlogPost';
+import BookExtract from '../interfaces/BookExtract';
 
 type Props = {
   featuredBlogPost?: BlogPost;

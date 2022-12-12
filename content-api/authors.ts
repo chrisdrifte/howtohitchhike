@@ -1,9 +1,10 @@
-import { AUTHORS_DIR } from "../config";
-import getMarkdownFilesFromDirectory from "../utility/getMarkdownFilesFromDirectory";
-import parseMarkdownFile from "../utility/parseMarkdownFile";
-import { sortByNameDesc } from "../utility/sortByNameDesc";
+import { AUTHORS_DIR } from '../config';
+import Author from '../interfaces/Author';
+import getMarkdownFilesFromDirectory from '../utility/getMarkdownFilesFromDirectory';
+import parseMarkdownFile from '../utility/parseMarkdownFile';
+import { sortByNameDesc } from '../utility/sortByNameDesc';
 
-const authorsContentDir = `_${AUTHORS_DIR}`;
+const authorsContentDir = `/content/${AUTHORS_DIR}`;
 
 export function getAuthorSlugs() {
   const authorSlugs = getMarkdownFilesFromDirectory(authorsContentDir);
@@ -13,7 +14,7 @@ export function getAuthorSlugs() {
 export function getAuthorBySlug(slug: string) {
   const data = parseMarkdownFile(authorsContentDir, slug);
 
-  const author = {
+  const author: Author = {
     name: data.name,
     picture: data.picture,
   };

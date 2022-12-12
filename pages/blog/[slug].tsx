@@ -1,12 +1,12 @@
 import ErrorPage from 'next/error';
 import { useRouter } from 'next/router';
 
-import { getAllBlogPosts, getBlogPostBySlug } from '../../api/blogPosts';
 import Layout from '../../components/Layout';
 import Meta from '../../components/Meta';
 import PageBlog from '../../components/PageBlog';
 import PostTitle from '../../components/PostTitle';
 import StructuredData from '../../components/StructuredData';
+import { getAllBlogPosts, getBlogPostBySlug } from '../../content-api/blogPosts';
 import BlogPost from '../../interfaces/BlogPost';
 import markdownToHtml from '../../utility/markdownToHtml';
 

@@ -1,4 +1,4 @@
-import { getRssFeed } from "../../api/rssFeed";
+import { getRssFeed } from '../../content-api/rssFeed';
 
 export default function FeedXml(req, res) {
   res.statusCode = 200;

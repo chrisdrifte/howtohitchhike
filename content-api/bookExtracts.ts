@@ -1,10 +1,10 @@
-import { BOOK_EXTRACTS_DIR } from "../config";
-import BookExtract from "../interfaces/BookExtract";
-import getMarkdownFilesFromDirectory from "../utility/getMarkdownFilesFromDirectory";
-import parseMarkdownFile from "../utility/parseMarkdownFile";
-import { sortByPageNumberAsc } from "../utility/sortByPageNumberDesc";
+import { BOOK_EXTRACTS_DIR } from '../config';
+import BookExtract from '../interfaces/BookExtract';
+import getMarkdownFilesFromDirectory from '../utility/getMarkdownFilesFromDirectory';
+import parseMarkdownFile from '../utility/parseMarkdownFile';
+import { sortByPageNumberAsc } from '../utility/sortByPageNumberDesc';
 
-const bookExtractsContentDir = `_${BOOK_EXTRACTS_DIR}`;
+const bookExtractsContentDir = `/content/${BOOK_EXTRACTS_DIR}`;
 
 export function getBookExtractSlugs() {
   return getMarkdownFilesFromDirectory(bookExtractsContentDir);
