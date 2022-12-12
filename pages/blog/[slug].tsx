@@ -1,101 +1,73 @@
 import ErrorPage from 'next/error';
-import Head from 'next/head';
 import { useRouter } from 'next/router';
 
-import BlogPostHeader from '../../components/blog-post-header';
-import BookExtractPreview from '../../components/book-extract-preview';
-import Container from '../../components/container';
-import Contribute from '../../components/contribute';
-import Header from '../../components/header';
-import Layout from '../../components/layout';
-import PostBody from '../../components/post-body';
-import PostTitle from '../../components/post-title';
-import SectionSeparator from '../../components/section-separator';
-import StructuredData from '../../components/structured-data';
-import { getAllBlogPosts, getBlogPostBySlug } from '../../lib/api';
-import { BLOG_DESCRIPTION, BLOG_TITLE, BLOG_URL, DEFAULT_OG_IMAGE_URL } from '../../lib/constants';
-import markdownToHtml from '../../lib/markdownToHtml';
+import { enhanceBlogPost, getAllBlogPosts, getBlogPostBySlug } from '../../api-ssr/blogPosts';
+import { enhanceBookExtract, getAllBookExtracts } from '../../api-ssr/bookExtracts';
+import { getNextSlug } from '../../api-ssr/slugs';
+import Layout from '../../components/Layout';
+import Meta from '../../components/Meta';
+import NoticeSuggestedPost from '../../components/NoticeSuggestedPost';
+import PageBlog from '../../components/PageBlog';
+import PostTitle from '../../components/PostTitle';
+import StructuredData from '../../components/StructuredData';
+import useReadHistory from '../../hooks/useReadHistory';
+import BlogPost from '../../models/BlogPost';
+import { ContentType } from '../../models/Content';
+import Post from '../../models/Post';
 
-import type BlogPost from "../../interfaces/blog-post";
 type Props = {
-  post: BlogPost;
+  blogPost: BlogPost;
+  nextPost: Post;
   preview?: boolean;
 };
 
-export default function BlogPostPage({ post, preview }: Props) {
+export default function BlogPostPage({ blogPost, nextPost, preview }: Props) {
   const router = useRouter();
-  if (!router.isFallback && !post?.slug) {
+
+  if (!router.isFallback && !blogPost?.slug) {
     return <ErrorPage statusCode={404} />;
   }
+
+  if (router.isFallback) {
+    return <PostTitle>Loading...</PostTitle>;
+  }
+
+  const readHistory = useReadHistory();
+  readHistory.addEntry(blogPost);
+
   return (
     <Layout preview={preview}>
-      <Head>
-        <meta
-          name="description"
-          content={post.excerpt || BLOG_DESCRIPTION}
-          key="desc"
-        />
-      </Head>
+      <Meta
+        title={blogPost.title}
+        description={blogPost.excerpt}
+        ogImage={blogPost.ogImage?.url || blogPost.coverImage}
+      />
       <StructuredData
         data={{
           "@context": "https://schema.org",
           "@type": "BlogPosting",
-          headline: post.title,
-          description: post.excerpt,
+          headline: blogPost.title,
+          description: blogPost.excerpt,
           author: [
             {
               "@type": "Person",
-              name: post.author.name,
-              image: post.author.picture,
+              name: blogPost.author.title,
+              image: blogPost.author.picture,
             },
           ],
-          image: post.coverImage,
-          datePublished: post.date,
+          image: blogPost.coverImage,
+          datePublished: blogPost.date,
         }}
       />
-      <Container>
-        <Header />
-        {router.isFallback ? (
-          <PostTitle>Loading…</PostTitle>
-        ) : (
-          <>
-            <article className="mb-32">
-              <Head>
-                <title>
-                  {post.title} | {BLOG_TITLE}
-                </title>
-                <meta
-                  property="og:image"
-                  content={
-                    BLOG_URL +
-                    (post.ogImage?.url ||
-                      post.coverImage ||
-                      DEFAULT_OG_IMAGE_URL)
-                  }
-                />
-              </Head>
-              <BlogPostHeader
-                title={post.title}
-                coverImage={post.coverImage}
-                date={post.date}
-                author={post.author}
-              />
-              <PostBody content={post.content} />
-              <div className="max-w-2xl mx-auto">
-                <SectionSeparator />
-                <h3 className="text-3xl font-serif font-bold tracking-tighter leading-tight">
-                  Read the book for free
-                </h3>
-                <BookExtractPreview
-                  title="Rules of Thumb: How to Hitchhike and Live on the Road"
-                  slug="011-tales-from-the-road-usa"
-                />
-              </div>
-            </article>
-          </>
-        )}
-      </Container>
-      <Contribute />
+      {nextPost && (
+        <NoticeSuggestedPost
+          isFirstSuggestion={false}
+          type={nextPost.type}
+          slug={nextPost.slug}
+          title={nextPost.title}
+        />
+      )}
+      <PageBlog blogPost={blogPost} />
     </Layout>
   );
 }
@@ -107,31 +79,31 @@ type Params = {
 };
 
 export async function getStaticProps({ params }: Params) {
-  const post = getBlogPostBySlug(params.slug, [
-    "title",
-    "date",
-    "slug",
-    "author",
-    "excerpt",
-    "content",
-    "ogImage",
-    "coverImage",
-  ]);
+  const blogPost = getBlogPostBySlug(params.slug);
+  const nextSlug = getNextSlug(ContentType.BlogPost, params.slug);
 
-  const content = await markdownToHtml(post.content.toString() || "");
+  const nextBlogPost = getBlogPostBySlug(nextSlug);
+
+  let nextPostEnhanced;
+  if (nextBlogPost) {
+    nextPostEnhanced = await enhanceBlogPost(nextBlogPost);
+  } else {
+    const firstBookExtract = getAllBookExtracts()[0];
+    if (firstBookExtract) {
+      nextPostEnhanced = await enhanceBookExtract(firstBookExtract);
+    }
+  }
 
   return {
     props: {
-      post: {
-        ...post,
-        content,
-      },
+      blogPost: await enhanceBlogPost(blogPost),
+      nextPost: nextPostEnhanced,
     },
   };
 }
 
 export async function getStaticPaths() {
-  const blogPosts = getAllBlogPosts(["slug"]);
+  const blogPosts = getAllBlogPosts();
 
   return {
     paths: blogPosts.map((post) => {

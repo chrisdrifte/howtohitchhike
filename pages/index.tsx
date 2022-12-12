@@ -1,38 +1,56 @@
-import PageHome from '../components/page-home';
-import BlogPost from '../interfaces/blog-post';
-import BookExtract from '../interfaces/book-extract';
-import { getAllBlogPosts, getAllBookExtracts, getSiteMapUrls } from '../lib/api';
+import dynamic from 'next/dynamic';
+
+import generateFeaturedPost from '../api-client/generateFeaturedPost';
+import generateSuggestedPost from '../api-client/generateSuggestedPost';
+import { getAllBlogPosts } from '../api-ssr/blogPosts';
+import { getAllBookExtracts } from '../api-ssr/bookExtracts';
+import Layout from '../components/Layout';
+import Meta from '../components/Meta';
+import PageHome from '../components/PageHome';
+import useReadHistory from '../hooks/useReadHistory';
+import BlogPost from '../models/BlogPost';
+import BookExtract from '../models/BookExtract';
+import Post from '../models/Post';
+
+const SuggestedPost = dynamic(
+  () => import("../components-dynamic/SuggestedPost"),
+  {
+    ssr: false,
+  }
+);
 
 type Props = {
-  allBlogPosts: BlogPost[];
-  allBookExtracts: BookExtract[];
+  featuredPost?: Post;
+  blogPosts: BlogPost[];
+  bookExtracts: BookExtract[];
 };
 
-export default function Index({ allBlogPosts, allBookExtracts }: Props) {
+export default function Index({
+  featuredPost,
+  blogPosts,
+  bookExtracts,
+}: Props) {
   return (
-    <PageHome allBlogPosts={allBlogPosts} allBookExtracts={allBookExtracts} />
+    <Layout>
+      <Meta />
+      <SuggestedPost posts={[...blogPosts, ...bookExtracts]} />
+      <PageHome
+        featuredPost={featuredPost}
+        blogPosts={blogPosts}
+        bookExtracts={bookExtracts}
+      />
+    </Layout>
   );
 }
 
 export const getStaticProps = async () => {
-  const allBlogPosts = getAllBlogPosts([
-    "title",
-    "date",
-    "slug",
-    "author",
-    "coverImage",
-    "excerpt",
-  ]);
+  const featuredPost = generateFeaturedPost();
+  const filterNotFeatured = ({ slug }) => slug !== featuredPost.slug;
 
-  const allBookExtracts = getAllBookExtracts([
-    "title",
-    "pageNumber",
-    "slug",
-    "coverImage",
-    "excerpt",
-  ]);
+  const blogPosts = getAllBlogPosts().filter(filterNotFeatured);
+  const bookExtracts = getAllBookExtracts().filter(filterNotFeatured);
 
   return {
-    props: { allBlogPosts, allBookExtracts },
+    props: { featuredPost, blogPosts, bookExtracts },
   };
 };

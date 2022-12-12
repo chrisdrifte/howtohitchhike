@@ -2,8 +2,8 @@ import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import AvatarComponent from '../../components/avatar';
-import { sampleAuthor } from '../samples/sample-author';
+import AvatarComponent from '../../components/Credit';
+import { sampleContributor } from '../samples/sampleContributor';
 
 export default {
   title: "Components/Avatar",
@@ -17,6 +17,6 @@ const Template: ComponentStory<typeof AvatarComponent> = (args) => (
 
 export const Avatar = Template.bind({});
 Avatar.args = {
-  name: sampleAuthor.name,
-  picture: sampleAuthor.picture,
+  name: sampleContributor.title,
+  picture: sampleContributor.picture,
 };

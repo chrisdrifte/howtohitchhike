@@ -2,8 +2,8 @@ import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import ContainerComponent from '../../components/container';
-import { samplePost } from '../samples/sample-post';
+import ContainerComponent from '../../components/Container';
+import { samplePost } from '../samples/samplePost';
 
 export default {
   title: "Components/Container",

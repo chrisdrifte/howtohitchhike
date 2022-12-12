@@ -1,4 +1,4 @@
-import { Head, Html, Main, NextScript } from 'next/document';
+import { Head, Html, Main, NextScript } from "next/document";
 
 export default function Document() {
   return (
@@ -9,6 +9,7 @@ export default function Document() {
           href="/fonts/reenie-beanie-v16-latin-regular.woff2"
           as="font"
           type="font/woff2"
+          crossOrigin="anonymous"
         />
       </Head>
       <body>

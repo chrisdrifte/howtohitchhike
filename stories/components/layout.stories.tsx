@@ -2,8 +2,8 @@ import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import LayoutComponent from '../../components/layout';
-import { samplePost } from '../samples/sample-post';
+import LayoutComponent from '../../components/Layout';
+import { samplePost } from '../samples/samplePost';
 
 export default {
   title: "Components/Layout",

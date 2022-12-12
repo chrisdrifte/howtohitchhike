@@ -1,6 +1,8 @@
-import { getSiteMapUrls } from '../../lib/api';
+import { NextApiRequest, NextApiResponse } from 'next';
 
-export default function handler(req, res) {
+import { getSiteMapUrls } from '../../api-ssr/siteMap';
+
+export default function SiteMapXml(_req: NextApiRequest, res: NextApiResponse) {
   res.statusCode = 200;
   res.setHeader("Content-Type", "text/xml");
   res.setHeader("Cache-control", "stale-while-revalidate, s-maxage=3600");
