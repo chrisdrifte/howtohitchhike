@@ -1,6 +1,6 @@
-import { BOOK_EXTRACTS_DIR } from "../config";
-import CoverImage from "./CoverImage";
-import PostTitle from "./PostTitle";
+import { ContentType } from '../models/Content';
+import CoverImage from './CoverImage';
+import PostTitle from './PostTitle';
 
 type Props = {
   title: string;
@@ -13,8 +13,8 @@ const BookExtractHeader = ({ title, coverImage }: Props) => {
       <PostTitle>{title}</PostTitle>
       <div className="mb-8 md:mb-16 sm:mx-0">
         <CoverImage
+          type={ContentType.BookExtract}
           title={title}
-          dir={BOOK_EXTRACTS_DIR}
           src={coverImage}
           loading="eager"
         />

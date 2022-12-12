@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import PostHeroComponent from "../../components/PostHero";
-import { sampleBlogPost } from "../samples/sampleBlogPost";
+import PostHeroComponent from '../../components/PostHero';
+import { sampleBlogPost } from '../samples/sampleBlogPost';
 
 export default {
   title: "Components/Post/Hero",
@@ -25,6 +25,6 @@ Hero.args = {
   coverImage: sampleBlogPost.coverImage,
   date: sampleBlogPost.date,
   excerpt: sampleBlogPost.excerpt,
-  author: sampleBlogPost.author,
+  contributor: sampleBlogPost.author,
   slug: sampleBlogPost.slug,
 };

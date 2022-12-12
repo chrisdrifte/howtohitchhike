@@ -1,22 +1,26 @@
-import { BLOG_POSTS_DIR } from "../config";
-import BlogPost from "../interfaces/BlogPost";
-import BookExtract from "../interfaces/BookExtract";
-import AsideContribute from "./AsideContribute";
-import AsideKeepReading from "./AsideKeepReading";
-import BlogPostList from "./BlogPostList";
-import BookExtractList from "./BookExtractList";
-import Container from "./Container";
-import Intro from "./Intro";
-import PostHero from "./PostHero";
+import dynamic from 'next/dynamic';
+
+import { BLOG_POSTS_DIR } from '../config';
+import useReadHistory from '../hooks/useReadHistory';
+import BlogPost from '../models/BlogPost';
+import BookExtract from '../models/BookExtract';
+import Post from '../models/Post';
+import AsideContribute from './AsideContribute';
+import AsideKeepReading from './AsideKeepReading';
+import BlogPostList from './BlogPostList';
+import BookExtractList from './BookExtractList';
+import Container from './Container';
+import Intro from './Intro';
+import PostHero from './PostHero';
 
 type Props = {
-  featuredBlogPost?: BlogPost;
+  featuredPost?: Post;
   blogPosts: BlogPost[];
   bookExtracts: BookExtract[];
 };
 
 export default function PageHome({
-  featuredBlogPost,
+  featuredPost,
   blogPosts,
   bookExtracts,
 }: Props) {
@@ -24,13 +28,13 @@ export default function PageHome({
     <>
       <Container>
         <Intro />
-        {featuredBlogPost && (
+        {featuredPost && (
           <PostHero
-            title={featuredBlogPost.title}
-            coverImage={featuredBlogPost.coverImage}
-            dir={BLOG_POSTS_DIR}
-            slug={featuredBlogPost.slug}
-            excerpt={featuredBlogPost.excerpt}
+            type={featuredPost.type}
+            slug={featuredPost.slug}
+            title={featuredPost.title}
+            coverImage={featuredPost.coverImage}
+            excerpt={featuredPost.excerpt}
           />
         )}
       </Container>

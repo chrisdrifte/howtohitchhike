@@ -1,9 +1,9 @@
-import Author from './Author';
+import Contributor from './Contributor';
 import Post from './Post';
 
 interface BlogPost extends Post {
   date: string;
-  author: Author;
+  author: Contributor;
 }
 
 export default BlogPost;

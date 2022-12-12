@@ -1,4 +1,4 @@
-import BlogPost from '../interfaces/BlogPost';
+import BlogPost from '../models/BlogPost';
 import AsideContribute from './AsideContribute';
 import BlogPostHeader from './BlogPostHeader';
 import BookExtractPreview from './BookExtractPreview';
@@ -41,7 +41,7 @@ export default function PageBlog({ blogPost }: Props) {
             <div className="max-w-2xl mx-auto mt-14 bg-neutral-50 p-5 flex flex-col items-center ">
               <strong>Words by</strong>
               <Credit
-                name={blogPost.author.name}
+                title={blogPost.author.title}
                 picture={blogPost.author.picture}
                 instagram={blogPost.author.instagram}
                 website={blogPost.author.website}
@@ -49,7 +49,9 @@ export default function PageBlog({ blogPost }: Props) {
               {blogPost.author.content && (
                 <div
                   className="m-5"
-                  dangerouslySetInnerHTML={{ __html: blogPost.author.content }}
+                  dangerouslySetInnerHTML={{
+                    __html: blogPost.author.content,
+                  }}
                 />
               )}
             </div>

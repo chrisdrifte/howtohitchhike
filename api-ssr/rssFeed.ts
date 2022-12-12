@@ -1,20 +1,17 @@
-import RSS from "rss";
+import RSS from 'rss';
 
-import {
-  BLOG_DESCRIPTION,
-  BLOG_TITLE,
-  BLOG_URL,
-  BOOK_EXTRACTS_DIR,
-} from "../config";
-import { getBlogPostBySlug, getBlogPostSlugs } from "./blogPosts";
+import { BLOG_DESCRIPTION, BLOG_TITLE, BLOG_URL } from '../config';
+import { getAllBlogPosts } from './blogPosts';
 
 export function getRssFeed() {
-  type FeedPost = { title: string; excerpt: string; url: string; date: string };
+  type FeedPost = {
+    title: string;
+    excerpt: string;
+    path: string;
+    date: string;
+  };
 
-  const feedPosts: FeedPost[] = getBlogPostSlugs().map((slug) => ({
-    ...getBlogPostBySlug(slug),
-    url: `${BLOG_URL}/${BOOK_EXTRACTS_DIR}/${slug}`,
-  }));
+  const feedPosts: FeedPost[] = getAllBlogPosts();
 
   const feedOptions = {
     title: BLOG_TITLE,
@@ -32,7 +29,7 @@ export function getRssFeed() {
     feed.item({
       title: post.title,
       description: post.excerpt,
-      url: post.url,
+      url: BLOG_URL + post.path,
       date: post.date,
     });
   });

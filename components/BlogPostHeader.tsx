@@ -1,5 +1,5 @@
-import { BLOG_POSTS_DIR } from '../config';
-import Author from '../interfaces/Author';
+import { ContentType } from '../models/Content';
+import Contributor from '../models/Contributor';
 import CoverImage from './CoverImage';
 import Credit from './Credit';
 import DateFormatter from './DateFormatter';
@@ -9,7 +9,7 @@ type Props = {
   title: string;
   coverImage: string;
   date: string;
-  author: Author;
+  author: Contributor;
 };
 
 const BlogPostHeader = ({ title, coverImage, date, author }: Props) => {
@@ -18,7 +18,7 @@ const BlogPostHeader = ({ title, coverImage, date, author }: Props) => {
       <PostTitle>{title}</PostTitle>
       <div className="hidden md:block md:mb-12">
         <Credit
-          name={author.name}
+          title={author.title}
           picture={author.picture}
           instagram={author.instagram}
           website={author.website}
@@ -26,15 +26,15 @@ const BlogPostHeader = ({ title, coverImage, date, author }: Props) => {
       </div>
       <div className="mb-8 md:mb-16 sm:mx-0">
         <CoverImage
+          type={ContentType.BlogPost}
           title={title}
-          dir={BLOG_POSTS_DIR}
           src={coverImage}
           loading="eager"
         />
       </div>
       <div className="max-w-2xl mx-auto">
         <div className="block md:hidden mb-6">
-          <Credit name={author.name} picture={author.picture} />
+          <Credit title={author.title} picture={author.picture} />
         </div>
         <div className="mb-6 text-lg">
           <DateFormatter dateString={date} />

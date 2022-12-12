@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import BlogPostHeaderComponent from "../../components/BlogPostHeader";
-import { sampleBlogPost } from "../samples/sampleBlogPost";
+import BlogPostHeaderComponent from '../../components/BlogPostHeader';
+import { sampleBlogPost } from '../samples/sampleBlogPost';
 
 export default {
   title: "Components/Post/Blog Post/Header",
@@ -20,5 +20,5 @@ Header.args = {
   title: sampleBlogPost.title,
   coverImage: sampleBlogPost.coverImage,
   date: sampleBlogPost.date,
-  author: sampleBlogPost.author,
+  contributor: sampleBlogPost.author,
 };

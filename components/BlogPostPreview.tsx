@@ -1,57 +1,52 @@
-import Link from 'next/link';
-
-import { BLOG_POSTS_DIR } from '../config';
-import Author from '../interfaces/Author';
+import { ContentType } from '../models/Content';
+import Contributor from '../models/Contributor';
 import CoverImage from './CoverImage';
 import Credit from './Credit';
 import DateFormatter from './DateFormatter';
+import LinkContent from './LinkContent';
 
 type Props = {
+  slug: string;
   title: string;
   coverImage: string;
   date: string;
   excerpt: string;
-  author: Author;
-  slug: string;
+  contributor: Contributor;
 };
 
 const BlogPostPreview = ({
+  slug,
   title,
   coverImage,
   date,
   excerpt,
-  author,
-  slug,
+  contributor,
 }: Props) => {
   return (
     <div>
       <div className="mb-5">
         <CoverImage
+          type={ContentType.BlogPost}
           slug={slug}
           title={title}
-          dir={BLOG_POSTS_DIR}
           src={coverImage}
           sizes="(max-width: 768px) 100vw, 684px"
         />
       </div>
       <h3 className="text-3xl mb-3 leading-snug">
-        <Link
-          as={`/${BLOG_POSTS_DIR}/${slug}`}
-          href={`/${BLOG_POSTS_DIR}/[slug]`}
-          className="hover:underline"
-        >
+        <LinkContent type={ContentType.BlogPost} slug={slug}>
           {title}
-        </Link>
+        </LinkContent>
       </h3>
       <div className="text-lg mb-4">
         <DateFormatter dateString={date} />
       </div>
       <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
       <Credit
-        name={author.name}
-        picture={author.picture}
-        instagram={author.instagram}
-        website={author.website}
+        title={contributor.title}
+        picture={contributor.picture}
+        instagram={contributor.instagram}
+        website={contributor.website}
       />
     </div>
   );

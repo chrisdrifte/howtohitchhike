@@ -4,13 +4,13 @@ import LinkInstagram from './LinkInstagram';
 import LinkWebsite from './LinkWebsite';
 
 type Props = {
-  name: string;
+  title: string;
   picture: string;
   instagram?: string;
   website?: string;
 };
 
-const Credit = ({ name, picture, instagram, website }: Props) => {
+const Credit = ({ title, picture, instagram, website }: Props) => {
   const hasSocialMedia = !!(instagram || website);
 
   return (
@@ -18,11 +18,11 @@ const Credit = ({ name, picture, instagram, website }: Props) => {
       <Image
         src={picture}
         className="w-12 h-12 rounded-full mr-4"
-        alt={name}
+        alt={title}
         width={48}
         height={48}
       />
-      <div className="text-xl font-bold">{name}</div>
+      <div className="text-xl font-bold">{title}</div>
       {hasSocialMedia && (
         <ul className="flex m-4">
           <li className="m-1">

@@ -1,4 +1,4 @@
-import BlogPost from '../../interfaces/BlogPost';
+import BlogPost from '../../models/BlogPost';
 import { sampleBlogPost } from './sampleBlogPost';
 
 export const sampleBlogPosts: BlogPost[] = [

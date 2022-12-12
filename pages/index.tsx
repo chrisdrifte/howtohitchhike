@@ -1,28 +1,41 @@
+import dynamic from 'next/dynamic';
+
+import generateFeaturedPost from '../api-client/generateFeaturedPost';
+import generateSuggestedPost from '../api-client/generateSuggestedPost';
+import { getAllBlogPosts } from '../api-ssr/blogPosts';
+import { getAllBookExtracts } from '../api-ssr/bookExtracts';
 import Layout from '../components/Layout';
 import Meta from '../components/Meta';
 import PageHome from '../components/PageHome';
-import { FEATURED_BLOG_POST_SLUG } from '../config';
-import { getAllBlogPosts, getBlogPostBySlug } from '../content-api/blogPosts';
-import { getAllBookExtracts } from '../content-api/bookExtracts';
-import BlogPost from '../interfaces/BlogPost';
-import BookExtract from '../interfaces/BookExtract';
+import useReadHistory from '../hooks/useReadHistory';
+import BlogPost from '../models/BlogPost';
+import BookExtract from '../models/BookExtract';
+import Post from '../models/Post';
+
+const SuggestedPost = dynamic(
+  () => import("../components-dynamic/SuggestedPost"),
+  {
+    ssr: false,
+  }
+);
 
 type Props = {
-  featuredBlogPost?: BlogPost;
+  featuredPost?: Post;
   blogPosts: BlogPost[];
   bookExtracts: BookExtract[];
 };
 
 export default function Index({
-  featuredBlogPost,
+  featuredPost,
   blogPosts,
   bookExtracts,
 }: Props) {
   return (
     <Layout>
       <Meta />
+      <SuggestedPost posts={[...blogPosts, ...bookExtracts]} />
       <PageHome
-        featuredBlogPost={featuredBlogPost}
+        featuredPost={featuredPost}
         blogPosts={blogPosts}
         bookExtracts={bookExtracts}
       />
@@ -31,13 +44,13 @@ export default function Index({
 }
 
 export const getStaticProps = async () => {
-  const featuredBlogPost = getBlogPostBySlug(FEATURED_BLOG_POST_SLUG);
-  const blogPosts = getAllBlogPosts().filter(
-    ({ slug }) => slug !== featuredBlogPost.slug
-  );
-  const bookExtracts = getAllBookExtracts();
+  const featuredPost = generateFeaturedPost();
+  const filterNotFeatured = ({ slug }) => slug !== featuredPost.slug;
+
+  const blogPosts = getAllBlogPosts().filter(filterNotFeatured);
+  const bookExtracts = getAllBookExtracts().filter(filterNotFeatured);
 
   return {
-    props: { featuredBlogPost, blogPosts, bookExtracts },
+    props: { featuredPost, blogPosts, bookExtracts },
   };
 };

@@ -1,21 +1,24 @@
-import Link from "next/link";
+import { ContentType } from '../models/Content';
+import CoverImage from './CoverImage';
+import LinkContent from './LinkContent';
 
-import Post from "../interfaces/Post";
-import CoverImage from "./CoverImage";
-
-type Props = Pick<Post, "title" | "coverImage" | "excerpt" | "slug"> & {
-  dir: string;
+type Props = {
+  type: ContentType;
+  slug: string;
+  title: string;
+  coverImage: string;
+  excerpt: string;
 };
 
-const PostHero = ({ title, coverImage, excerpt, dir, slug }: Props) => {
+const PostHero = ({ type, slug, title, coverImage, excerpt }: Props) => {
   return (
     <section>
       <div className="relative mb-8 md:mb-16 h-64 md:h-96 overflow-hidden">
         <CoverImage
+          type={type}
+          slug={slug}
           title={title}
           src={coverImage}
-          dir={dir}
-          slug={slug}
           loading="eager"
           fill
         />
@@ -23,13 +26,9 @@ const PostHero = ({ title, coverImage, excerpt, dir, slug }: Props) => {
       <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 mb-20 md:mb-28">
         <div>
           <h1 className="mb-4 text-4xl lg:text-5xl leading-tight">
-            <Link
-              as={`/${dir}/${slug}`}
-              href={`/${dir}/[slug]`}
-              className="hover:underline"
-            >
+            <LinkContent type={type} slug={slug}>
               {title}
-            </Link>
+            </LinkContent>
           </h1>
         </div>
         <div>

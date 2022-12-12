@@ -1,14 +1,15 @@
-import BlogPost from "../interfaces/BlogPost";
-import BookExtract from "../interfaces/BookExtract";
-import BookExtractPreview from "./BookExtractPreview";
-import SectionHeading from "./SectionHeading";
+import BookExtract from '../models/BookExtract';
+import BookExtractPreview from './BookExtractPreview';
+import SectionHeading from './SectionHeading';
 
 type Props = {
   bookExtracts: BookExtract[];
 };
 
 const BookExtractList = ({ bookExtracts }: Props) => {
-  if (!(bookExtracts instanceof Array) || !bookExtracts.length) return null;
+  if (!(bookExtracts instanceof Array) || !bookExtracts.length) {
+    return null;
+  }
 
   return (
     <section>
@@ -17,8 +18,8 @@ const BookExtractList = ({ bookExtracts }: Props) => {
         {bookExtracts.map((bookExtract) => (
           <BookExtractPreview
             key={bookExtract.slug}
-            title={bookExtract.title}
             slug={bookExtract.slug}
+            title={bookExtract.title}
           />
         ))}
       </div>

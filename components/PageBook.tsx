@@ -1,15 +1,18 @@
-import BookExtract from "../interfaces/BookExtract";
-import AsideKeepReading from "./AsideKeepReading";
-import BookExtractHeader from "./BookExtractHeader";
-import BookExtractPreview from "./BookExtractPreview";
-import Container from "./Container";
-import Header from "./Header";
-import PostBody from "./PostBody";
-import SectionSeparator from "./SectionSeparator";
+import BookExtract from '../models/BookExtract';
+import AsideKeepReading from './AsideKeepReading';
+import BookExtractHeader from './BookExtractHeader';
+import BookExtractPreview from './BookExtractPreview';
+import Container from './Container';
+import Header from './Header';
+import PostBody from './PostBody';
+import SectionSeparator from './SectionSeparator';
 
 type Props = {
   bookExtract?: BookExtract;
-  nextBookExtract?: Pick<BookExtract, "title" | "slug">;
+  nextBookExtract?: {
+    slug: string;
+    title: string;
+  };
 };
 
 export default function PageBlog({ bookExtract, nextBookExtract }: Props) {

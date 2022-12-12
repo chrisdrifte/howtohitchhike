@@ -1,4 +1,4 @@
-import BookExtract from '../../interfaces/BookExtract';
+import BookExtract from '../../models/BookExtract';
 import { sampleBookExtract } from './sampleBookExtract';
 
 export const sampleBookExtracts: BookExtract[] = [

@@ -1,6 +1,6 @@
 ---
-name: Chris Drifte
-picture: "/assets/author/chris-drifte.jpg"
+title: Chris Drifte
+picture: "/assets/contributor/chris-drifte.jpg"
 instagram: "@chrisdrifte"
 website: "https://chrisdrifte.com"
 ---

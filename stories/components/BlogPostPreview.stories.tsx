@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import BlogPostPreviewComponent from "../../components/BlogPostPreview";
-import { sampleBlogPost } from "../samples/sampleBlogPost";
+import BlogPostPreviewComponent from '../../components/BlogPostPreview';
+import { sampleBlogPost } from '../samples/sampleBlogPost';
 
 export default {
   title: "Components/Post/Blog Post/Preview",
@@ -21,5 +21,5 @@ Preview.args = {
   coverImage: sampleBlogPost.coverImage,
   date: sampleBlogPost.date,
   excerpt: sampleBlogPost.excerpt,
-  author: sampleBlogPost.author,
+  contributor: sampleBlogPost.author,
 };

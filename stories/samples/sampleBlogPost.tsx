@@ -1,15 +1,18 @@
-import BlogPost from '../../interfaces/BlogPost';
-import { sampleAuthor } from './sampleAuthor';
+import BlogPost from '../../models/BlogPost';
+import { ContentType } from '../../models/Content';
+import { sampleContributor } from './sampleContributor';
 import { sampleDate } from './sampleDate';
 import { samplePost } from './samplePost';
 
 export const sampleBlogPost: BlogPost = {
+  type: ContentType.BlogPost,
   slug: samplePost.slug,
+  path: samplePost.path,
   title: samplePost.title,
   coverImage: samplePost.coverImage,
   ogImage: samplePost.ogImage,
   content: samplePost.content,
   excerpt: samplePost.excerpt,
   date: sampleDate,
-  author: sampleAuthor,
+  author: sampleContributor,
 };

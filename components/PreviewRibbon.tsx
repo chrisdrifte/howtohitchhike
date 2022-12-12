@@ -1,14 +1,6 @@
 import Container from './Container';
 
-type Props = {
-  preview?: boolean;
-};
-
-const Alert = ({ preview }: Props) => {
-  if (!preview) {
-    return null;
-  }
-
+const PreviewRibbon = () => {
   return (
     <div className="border-b bg-neutral-800 border-neutral-800 text-white">
       <Container>
@@ -29,4 +21,4 @@ const Alert = ({ preview }: Props) => {
   );
 };
 
-export default Alert;
+export default PreviewRibbon;

@@ -1,10 +1,14 @@
-import fs from "fs";
-import matter from "gray-matter";
-import { join } from "path";
+import fs from 'fs';
+import matter from 'gray-matter';
+import { join } from 'path';
 
 function parseMarkdownFile(dir: string, slug: string) {
   const fullDir = join(process.cwd(), dir);
   const fullPath = join(fullDir, `${slug}.md`);
+
+  if (!fs.existsSync(fullPath)) {
+    return;
+  }
 
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);

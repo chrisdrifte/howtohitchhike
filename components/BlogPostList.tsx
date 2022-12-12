@@ -1,13 +1,15 @@
-import BlogPost from "../interfaces/BlogPost";
-import BlogPostPreview from "./BlogPostPreview";
-import SectionHeading from "./SectionHeading";
+import BlogPost from '../models/BlogPost';
+import BlogPostPreview from './BlogPostPreview';
+import SectionHeading from './SectionHeading';
 
 type Props = {
   blogPosts: BlogPost[];
 };
 
 const BlogPostList = ({ blogPosts }: Props) => {
-  if (!(blogPosts instanceof Array) || !blogPosts.length) return null;
+  if (!(blogPosts instanceof Array) || !blogPosts.length) {
+    return null;
+  }
 
   return (
     <section>
@@ -16,11 +18,11 @@ const BlogPostList = ({ blogPosts }: Props) => {
         {blogPosts.map((post) => (
           <BlogPostPreview
             key={post.slug}
+            slug={post.slug}
             title={post.title}
             coverImage={post.coverImage}
             date={post.date}
-            author={post.author}
-            slug={post.slug}
+            contributor={post.author}
             excerpt={post.excerpt}
           />
         ))}

@@ -1,4 +1,4 @@
-import Alert from "./Alert";
+import PreviewRibbon from './PreviewRibbon';
 
 type Props = {
   preview?: boolean;
@@ -8,7 +8,7 @@ type Props = {
 const Layout = ({ preview, children }: Props) => {
   return (
     <div className="min-h-screen">
-      <Alert preview={preview} />
+      {preview && <PreviewRibbon />}
       <main>{children}</main>
     </div>
   );

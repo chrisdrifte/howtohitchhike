@@ -1,15 +1,18 @@
 import ErrorPage from 'next/error';
 import { useRouter } from 'next/router';
 
+import {
+    enhanceBookExtract, getAllBookExtracts, getBookExtractBySlug
+} from '../../api-ssr/bookExtracts';
+import { getNextSlug } from '../../api-ssr/slugs';
 import Layout from '../../components/Layout';
 import Meta from '../../components/Meta';
+import NoticeSuggestedPost from '../../components/NoticeSuggestedPost';
 import PageBook from '../../components/PageBook';
 import StructuredData from '../../components/StructuredData';
-import {
-    getAllBookExtracts, getBookExtractBySlug, getNextBookExtractBySlug
-} from '../../content-api/bookExtracts';
-import BookExtract from '../../interfaces/BookExtract';
-import markdownToHtml from '../../utility/markdownToHtml';
+import useReadHistory from '../../hooks/useReadHistory';
+import BookExtract from '../../models/BookExtract';
+import { ContentType } from '../../models/Content';
 
 type Props = {
   bookExtract: BookExtract;
@@ -23,9 +26,14 @@ export default function BookExtractPage({
   preview,
 }: Props) {
   const router = useRouter();
+
   if (!router.isFallback && !bookExtract?.slug) {
     return <ErrorPage statusCode={404} />;
   }
+
+  const readHistory = useReadHistory();
+  readHistory.addEntry(bookExtract);
+
   return (
     <Layout preview={preview}>
       <Meta
@@ -49,6 +57,14 @@ export default function BookExtractPage({
           datePublished: "2022-12-05T07:38:21.124Z",
         }}
       />
+      {nextBookExtract && (
+        <NoticeSuggestedPost
+          isFirstSuggestion={false}
+          type={ContentType.BookExtract}
+          slug={nextBookExtract.slug}
+          title={nextBookExtract.title}
+        />
+      )}
       <PageBook bookExtract={bookExtract} nextBookExtract={nextBookExtract} />
     </Layout>
   );
@@ -62,16 +78,13 @@ type Params = {
 
 export async function getStaticProps({ params }: Params) {
   const bookExtract = getBookExtractBySlug(params.slug);
-  const content = await markdownToHtml(bookExtract.content || "");
-  const nextBookExtract = getNextBookExtractBySlug(params.slug);
+  const nextSlug = getNextSlug(ContentType.BookExtract, params.slug);
+  const nextBookExtract = getBookExtractBySlug(nextSlug);
 
   return {
     props: {
-      bookExtract: {
-        ...bookExtract,
-        content,
-      },
-      nextBookExtract,
+      bookExtract: await enhanceBookExtract(bookExtract),
+      nextBookExtract: await enhanceBookExtract(nextBookExtract),
     },
   };
 }

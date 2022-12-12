@@ -1,18 +1,33 @@
 import cn from 'classnames';
 import Image from 'next/image';
-import Link from 'next/link';
+import { ComponentProps } from 'react';
 
-type Props = {
+import { ContentType } from '../models/Content';
+import LinkContent from './LinkContent';
+
+type InheritedImageProps = Omit<
+  ComponentProps<typeof Image>,
+  "alt" | "className" | "width" | "height"
+>;
+
+interface Props extends InheritedImageProps {
+  slug?: string;
+  type: ContentType;
   title: string;
   src: string;
-  dir: string;
-  slug?: string;
-  loading?: HTMLImageElement["loading"];
-  sizes?: HTMLImageElement["sizes"];
   fill?: boolean;
-};
+}
 
-const CoverImage = ({ title, src, dir, slug, loading, fill, sizes }: Props) => {
+const CoverImage = ({
+  slug,
+  type,
+  title,
+  src,
+  fill,
+  sizes,
+  loading,
+  ...ImageProps
+}: Props) => {
   const sizeProps = fill ? { fill } : { width: 1300, height: 630 };
   const image = (
     <Image
@@ -26,14 +41,15 @@ const CoverImage = ({ title, src, dir, slug, loading, fill, sizes }: Props) => {
       {...sizeProps}
       sizes={sizes ?? "(max-width: 1300px) 100vw, 1300px"}
       loading={loading ?? "lazy"}
+      {...ImageProps}
     />
   );
   return (
     <div className="sm:mx-0">
-      {slug ? (
-        <Link as={`/${dir}/${slug}`} href={`/${dir}/[slug]`} aria-label={title}>
+      {type && slug ? (
+        <LinkContent type={type} slug={slug} title={title}>
           {image}
-        </Link>
+        </LinkContent>
       ) : (
         image
       )}
