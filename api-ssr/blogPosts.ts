@@ -45,7 +45,7 @@ export async function enhanceBlogPost(blogPost: BlogPost) {
   return {
     ...blogPost,
     content: await markdownToHtml(`${blogPost.content || ""}`),
-    contributor: {
+    author: {
       ...blogPost.author,
       content: await markdownToHtml(`${blogPost.author.content || ""}`),
     },
