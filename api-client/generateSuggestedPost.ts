@@ -10,20 +10,25 @@ function generateSuggestedPost(
   // get the last read post
   const lastEntry = entries.pop();
 
+  // start at beginning if nothing read yet
+  if (!lastEntry) {
+    return posts[0];
+  }
+
   // create an index for searching entries
   const entryKeys = entries.map(getPostKey);
 
   // remove all posts that exist in entries
+  // (last read post is not removed because we popped it earlier)
   const unreadPosts = posts.filter(
     (post) => !entryKeys.includes(getPostKey(post))
   );
 
-  // get the index after the last read post
-  const nextIndex = !lastEntry
-    ? 0
-    : unreadPosts.findIndex((post) => post.slug === lastEntry.slug);
+  // get the post after the last read post
+  const nextIndex = unreadPosts.findIndex(
+    (post) => post.slug === lastEntry.slug
+  );
 
-  // suggest the post at that index
   const nextPost = unreadPosts[nextIndex + 1];
 
   return nextPost;
