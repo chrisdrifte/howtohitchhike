@@ -8,7 +8,7 @@ const Notice = ({ children }: React.PropsWithChildren<Props>) => {
   }
 
   return (
-    <aside className="sticky top-0 z-50 bg-neutral-100 p-2 text-center text-sm md:text-base">
+    <aside className="fixed bottom-0 w-full md:sticky md:top-0 z-50 bg-neutral-100 p-2 text-center text-sm md:text-base">
       <Container>{children}</Container>
     </aside>
   );
