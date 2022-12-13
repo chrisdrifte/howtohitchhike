@@ -34,7 +34,12 @@ const BlogPostHeader = ({ title, coverImage, date, author }: Props) => {
       </div>
       <div className="max-w-2xl mx-auto">
         <div className="block md:hidden mb-6">
-          <Credit title={author.title} picture={author.picture} />
+          <Credit
+            title={author.title}
+            picture={author.picture}
+            instagram={author.instagram}
+            website={author.website}
+          />
         </div>
         <div className="mb-6 text-lg">
           <DateFormatter dateString={date} />

@@ -1,3 +1,4 @@
+import { getPostKey } from '../api-client/getPostKey';
 import BlogPost from '../models/BlogPost';
 import BlogPostPreview from './BlogPostPreview';
 import SectionHeading from './SectionHeading';
@@ -17,7 +18,7 @@ const BlogPostList = ({ blogPosts }: Props) => {
       <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-32">
         {blogPosts.map((post) => (
           <BlogPostPreview
-            key={post.slug}
+            key={getPostKey(post)}
             slug={post.slug}
             title={post.title}
             coverImage={post.coverImage}

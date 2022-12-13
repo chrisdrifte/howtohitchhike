@@ -1,3 +1,4 @@
+import { getPostKey } from '../api-client/getPostKey';
 import BookExtract from '../models/BookExtract';
 import BookExtractPreview from './BookExtractPreview';
 import SectionHeading from './SectionHeading';
@@ -17,7 +18,7 @@ const BookExtractList = ({ bookExtracts }: Props) => {
       <div className="grid grid-cols-1 mb-32">
         {bookExtracts.map((bookExtract) => (
           <BookExtractPreview
-            key={bookExtract.slug}
+            key={getPostKey(bookExtract)}
             slug={bookExtract.slug}
             title={bookExtract.title}
           />
