@@ -20,13 +20,13 @@ The heavier your pack, the harder the hike on your body. So [only take what you 
 
 ## Refuel often
 
-Millenia of persitance hunting has fine-tuned our human bodies to walk long distances. But we still need energy to walk.
+Millennia of persistence hunting has fine-tuned our human bodies to walk long distances. But we still need energy to walk.
 
 When hiking long distances, I try to eat an energy bar every hour or so. Bars with dates and nuts as their primary ingredients work best for me. Trail mix, dried meats, and cheeses can also be good. I avoid chocolate, ice cream, and candy as the sugar crash is rarely worth the short-term boost.
 
 Things which take longer to digest (think pasta, pizza, etc.) are best saved for longer breaks.
 
-Hiking supresses appetite, and processing the food into fuel takes a little time, so it's best to eat proactively rather than wait until you're hungry. Make sure you drink a little water each time you eat. These techniques have allowed me to rapidly hike distances of 50km+ without fatigue.
+Hiking suppresses appetite, and processing the food into fuel takes a little time, so it's best to eat proactively rather than wait until you're hungry. Make sure you drink a little water each time you eat. These techniques have allowed me to rapidly hike distances of 50km+ without fatigue.
 
 ## Play mental games
 
@@ -50,9 +50,9 @@ The key is not to deny the pain, but to acknowledge it and frame it as something
 
 ### Pick milestones
 
-Occaisionally, you'll enter into a zone of suffering where the pain is to significant to ignore. At this point it's probably best to stop and rest - but if you have to keep going, the last mental game goes like this: pick a milestone, around 3-5m away. Reach that milestone. Then pick another one.
+Occasionally, you'll enter into a zone of suffering where the pain is to significant to ignore. At this point it's probably best to stop and rest - but if you have to keep going, the last mental game goes like this: pick a milestone, around 3-5m away. Reach that milestone. Then pick another one.
 
-It's essential not to pick a milestone that's too far -- even 5-10m is too distant if you're seriously exhausted. It should be a distance that is easily achieveable in your current state, in order to avoid feelings of doubt or fear from setting in.
+It's essential not to pick a milestone that's too far -- even 5-10m is too distant if you're seriously exhausted. It should be a distance that is easily achievable in your current state, in order to avoid feelings of doubt or fear from setting in.
 
 When I fell sick in the mountains of Spain, this technique helped me cover 18km to the nearest road for help - well after total exhaustion had set in.
 
