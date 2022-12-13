@@ -29,7 +29,12 @@ function generateSuggestedPost(
     (post) => post.slug === lastEntry.slug
   );
 
-  const nextPost = unreadPosts[nextIndex + 1];
+  let nextPost = unreadPosts[nextIndex + 1];
+
+  // if no next post, catch up on missed content
+  if (!nextPost) {
+    nextPost = unreadPosts[0];
+  }
 
   return nextPost;
 }
