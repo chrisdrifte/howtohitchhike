@@ -2,7 +2,7 @@ import ErrorPage from 'next/error';
 import { useRouter } from 'next/router';
 
 import {
-    enhanceBookExtract, getAllBookExtracts, getBookExtractBySlug
+    enhanceBookExtract, getAllBookExtracts, getBookExtractBySlug, getBookExtractPaths
 } from '../../api-ssr/bookExtracts';
 import { getNextSlug } from '../../api-ssr/slugs';
 import Layout from '../../components/Layout';
@@ -74,12 +74,14 @@ type Params = {
   params: {
     slug: string;
   };
+  locale: string;
 };
 
-export async function getStaticProps({ params }: Params) {
-  const bookExtract = getBookExtractBySlug(params.slug);
-  const nextSlug = getNextSlug(ContentType.BookExtract, params.slug);
-  const nextBookExtract = getBookExtractBySlug(nextSlug);
+export async function getStaticProps({ params, locale }: Params) {
+  const bookExtract = getBookExtractBySlug(params.slug, locale);
+
+  const nextSlug = getNextSlug(ContentType.BookExtract, params.slug, locale);
+  const nextBookExtract = getBookExtractBySlug(nextSlug, locale);
 
   return {
     props: {
@@ -89,8 +91,8 @@ export async function getStaticProps({ params }: Params) {
   };
 }
 
-export async function getStaticPaths() {
-  const bookExtracts = getAllBookExtracts();
+export async function getStaticPaths({ locales }) {
+  const bookExtracts = getBookExtractPaths(locales);
 
   return {
     paths: bookExtracts.map((post) => {
@@ -98,6 +100,7 @@ export async function getStaticPaths() {
         params: {
           slug: post.slug,
         },
+        locale: post.locale,
       };
     }),
     fallback: false,

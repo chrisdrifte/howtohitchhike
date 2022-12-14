@@ -1,6 +1,4 @@
 import generateSuggestedPost from '../api-client/generateSuggestedPost';
-import LinkContent from '../components/LinkContent';
-import Notice from '../components/Notice';
 import NoticeSuggestedPost from '../components/NoticeSuggestedPost';
 import useReadHistory from '../hooks/useReadHistory';
 import BlogPost from '../models/BlogPost';

@@ -23,7 +23,6 @@ function generateSuggestedPost(
   const unreadPosts = posts.filter(
     (post) => !entryKeys.includes(getPostKey(post))
   );
-
   // get the post after the last read post
   const nextIndex = unreadPosts.findIndex(
     (post) => post.slug === lastEntry.slug

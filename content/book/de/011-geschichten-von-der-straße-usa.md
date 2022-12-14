@@ -2,8 +2,8 @@
 title: "Geschichten von der Straße: USA"
 coverImage: "/assets/book/011-tales-from-the-road-usa.jpg"
 pageNumber: 11
-excerpt: '"Komm, wir schaffen die Fahrt in einem Stück", sagte ich. Stinkend, dreckig und verkatert traten wir mit ausgestreckten Daumen an den Straßenrand.'
-language: de
+excerpt: '„Komm, wir schaffen die Fahrt in einem Stück", sagte ich. Stinkend, dreckig und verkatert traten wir mit ausgestreckten Daumen an den Straßenrand.'
+translationSource: 011-tales-from-the-road-usa
 translator: lena-kraus
 ---
 

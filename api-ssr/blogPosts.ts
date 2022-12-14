@@ -8,11 +8,18 @@ import { sortByDateDesc } from '../utility/sortByDateDesc';
 import { getContributorBySlug } from './contributors';
 import { getSlugs } from './slugs';
 
-export function getBlogPostBySlug(slug: string) {
-  const data = parseMarkdownFile(getContentDir(ContentType.BlogPost), slug);
+export function getBlogPostBySlug(slug: string, locale: string) {
+  if (!slug) {
+    return null;
+  }
+
+  const data = parseMarkdownFile(
+    getContentDir(ContentType.BlogPost, locale),
+    slug
+  );
 
   if (!data) {
-    return;
+    return null;
   }
 
   const blogPost: BlogPost = {
@@ -26,14 +33,17 @@ export function getBlogPostBySlug(slug: string) {
     content: data.content,
     date: data.date,
     author: getContributorBySlug(data.author),
+    locale: locale,
+    translationSource: data.translationSource || null,
+    translator: getContributorBySlug(data.translator),
   };
 
   return blogPost;
 }
 
-export function getAllBlogPosts() {
-  const blogPosts = getSlugs(ContentType.BlogPost)
-    .map(getBlogPostBySlug)
+export function getAllBlogPosts(locale: string) {
+  const blogPosts = getSlugs(ContentType.BlogPost, locale)
+    .map((slug) => getBlogPostBySlug(slug, locale))
     .sort(sortByDateDesc);
 
   return blogPosts;
@@ -50,4 +60,13 @@ export async function enhanceBlogPost(blogPost: BlogPost) {
       content: await markdownToHtml(`${blogPost.author.content || ""}`),
     },
   };
+}
+
+export function getBlogPostPaths(locales: string[]) {
+  const byLocales = locales.map((locale) =>
+    getSlugs(ContentType.BlogPost, locale).map((slug) =>
+      getBlogPostBySlug(slug, locale)
+    )
+  );
+  return Object.values(byLocales).flat();
 }

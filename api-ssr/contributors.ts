@@ -7,26 +7,33 @@ import { sortByTitleDesc } from '../utility/sortByTitle';
 import { getSlugs } from './slugs';
 
 export function getContributorBySlug(slug: string) {
-  const data = parseMarkdownFile(getContentDir(ContentType.Contributor), slug);
+  if (!slug) {
+    return null;
+  }
+
+  const data = parseMarkdownFile(
+    getContentDir(ContentType.Contributor, ""),
+    slug
+  );
 
   if (!data) {
-    return;
+    return null;
   }
 
   const contributor: Contributor = {
     type: ContentType.Contributor,
     title: data.title,
     picture: data.picture,
-    instagram: data.instagram,
-    website: data.website,
-    content: data.content,
+    instagram: data.instagram || null,
+    website: data.website || null,
+    content: data.content || null,
   };
 
   return contributor;
 }
 
 export function getAllContributors() {
-  const contributors = getSlugs(ContentType.Contributor)
+  const contributors = getSlugs(ContentType.Contributor, "")
     .map(getContributorBySlug)
     .sort(sortByTitleDesc);
   return contributors;

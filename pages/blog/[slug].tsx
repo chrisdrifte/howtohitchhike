@@ -1,7 +1,9 @@
 import ErrorPage from 'next/error';
 import { useRouter } from 'next/router';
 
-import { enhanceBlogPost, getAllBlogPosts, getBlogPostBySlug } from '../../api-ssr/blogPosts';
+import {
+    enhanceBlogPost, getAllBlogPosts, getBlogPostBySlug, getBlogPostPaths
+} from '../../api-ssr/blogPosts';
 import { enhanceBookExtract, getAllBookExtracts } from '../../api-ssr/bookExtracts';
 import { getNextSlug } from '../../api-ssr/slugs';
 import Layout from '../../components/Layout';
@@ -76,19 +78,20 @@ type Params = {
   params: {
     slug: string;
   };
+  locale: string;
 };
 
-export async function getStaticProps({ params }: Params) {
-  const blogPost = getBlogPostBySlug(params.slug);
-  const nextSlug = getNextSlug(ContentType.BlogPost, params.slug);
+export async function getStaticProps({ params, locale }: Params) {
+  const blogPost = getBlogPostBySlug(params.slug, locale);
+  const nextSlug = getNextSlug(ContentType.BlogPost, params.slug, locale);
 
-  const nextBlogPost = getBlogPostBySlug(nextSlug);
+  const nextBlogPost = getBlogPostBySlug(nextSlug, locale);
 
   let nextPostEnhanced;
   if (nextBlogPost) {
     nextPostEnhanced = await enhanceBlogPost(nextBlogPost);
   } else {
-    const firstBookExtract = getAllBookExtracts()[0];
+    const firstBookExtract = getAllBookExtracts(locale)[0];
     if (firstBookExtract) {
       nextPostEnhanced = await enhanceBookExtract(firstBookExtract);
     }
@@ -102,8 +105,8 @@ export async function getStaticProps({ params }: Params) {
   };
 }
 
-export async function getStaticPaths() {
-  const blogPosts = getAllBlogPosts();
+export async function getStaticPaths({ locales }) {
+  const blogPosts = getBlogPostPaths(locales);
 
   return {
     paths: blogPosts.map((post) => {
@@ -111,6 +114,7 @@ export async function getStaticPaths() {
         params: {
           slug: post.slug,
         },
+        locale: post.locale,
       };
     }),
     fallback: false,

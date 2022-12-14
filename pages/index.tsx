@@ -1,13 +1,11 @@
 import dynamic from 'next/dynamic';
 
 import generateFeaturedPost from '../api-client/generateFeaturedPost';
-import generateSuggestedPost from '../api-client/generateSuggestedPost';
 import { getAllBlogPosts } from '../api-ssr/blogPosts';
 import { getAllBookExtracts } from '../api-ssr/bookExtracts';
 import Layout from '../components/Layout';
 import Meta from '../components/Meta';
 import PageHome from '../components/PageHome';
-import useReadHistory from '../hooks/useReadHistory';
 import BlogPost from '../models/BlogPost';
 import BookExtract from '../models/BookExtract';
 import Post from '../models/Post';
@@ -43,14 +41,11 @@ export default function Index({
   );
 }
 
-export const getStaticProps = async () => {
-  const featuredPost = generateFeaturedPost();
-  const filterNotFeatured = ({ slug }) => slug !== featuredPost.slug;
-
-  const blogPosts = getAllBlogPosts().filter(filterNotFeatured);
-  const bookExtracts = getAllBookExtracts().filter(filterNotFeatured);
-
-  console.log(bookExtracts[1]);
+export const getStaticProps = async ({ locale }) => {
+  const featuredPost = generateFeaturedPost(locale);
+  const filterNotFeatured = ({ slug }) => slug !== featuredPost?.slug;
+  const blogPosts = getAllBlogPosts(locale).filter(filterNotFeatured);
+  const bookExtracts = getAllBookExtracts(locale).filter(filterNotFeatured);
 
   return {
     props: { featuredPost, blogPosts, bookExtracts },
