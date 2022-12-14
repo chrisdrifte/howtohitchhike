@@ -18,16 +18,14 @@ const Meta = ({ title, description, ogImage, translations }: Props) => {
     BLOG_URL + (router.asPath === "/" ? "" : router.asPath)
   ).split("?")[0];
 
-  const alternateUrls = (translations || [])
-    .map((translation) => [
-      translation.locale,
-      BLOG_URL +
-        (translation.locale !== router.defaultLocale
-          ? `/${translation.locale}`
-          : "") +
-        translation.path,
-    ])
-    .filter(([, url]) => url !== canonicalUrl);
+  const alternateUrls = (translations || []).map((translation) => [
+    translation.locale,
+    BLOG_URL +
+      (translation.locale !== router.defaultLocale
+        ? `/${translation.locale}`
+        : "") +
+      translation.path,
+  ]);
 
   return (
     <Head>

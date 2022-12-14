@@ -12,4 +12,5 @@ export type Translation = {
   locale: string;
   slug: string;
   path: string;
+  fullPath: string;
 };

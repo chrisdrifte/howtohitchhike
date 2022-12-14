@@ -30,7 +30,6 @@ export default function Index({
   bookExtracts,
 }: Props) {
   const router = useRouter();
-  const isDefaultLocale = router.locale === router.defaultLocale;
 
   return (
     <Layout>
@@ -40,8 +39,7 @@ export default function Index({
         featuredPost={featuredPost}
         blogPosts={blogPosts}
         bookExtracts={bookExtracts}
-        locales={router.locales}
-        isDefaultLocale={isDefaultLocale}
+        locale={router.locale}
       />
     </Layout>
   );

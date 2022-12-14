@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { ComponentProps } from 'react';
 
 import {
-    enhanceBookExtract, getAllBookExtracts, getBookExtractBySlug, getBookExtractPaths
+    enhanceBookExtract, getBookExtractBySlug, getBookExtractPaths
 } from '../../api-ssr/bookExtracts';
 import { getNextSlug, getTranslatedSlugs } from '../../api-ssr/slugs';
 import Layout from '../../components/Layout';
@@ -30,7 +30,6 @@ export default function BookExtractPage({
   preview,
 }: Props) {
   const router = useRouter();
-  const isDefaultLocale = router.locale === router.defaultLocale;
 
   if (!router.isFallback && !bookExtract?.slug) {
     return <ErrorPage statusCode={404} />;
@@ -75,7 +74,7 @@ export default function BookExtractPage({
         bookExtract={bookExtract}
         nextBookExtract={nextBookExtract}
         translations={translations}
-        isDefaultLocale={isDefaultLocale}
+        locale={router.locale}
       />
     </Layout>
   );
@@ -90,17 +89,13 @@ type Params = {
   locales: string[];
 };
 
-export async function getStaticProps({ params, locale, locales }: Params) {
+export async function getStaticProps({ params, locale }: Params) {
   const bookExtract = getBookExtractBySlug(params.slug, locale);
 
   const nextSlug = getNextSlug(ContentType.BookExtract, params.slug, locale);
   const nextBookExtract = getBookExtractBySlug(nextSlug, locale);
 
-  const translations = getTranslatedSlugs(
-    ContentType.BookExtract,
-    params.slug,
-    locales
-  );
+  const translations = getTranslatedSlugs(ContentType.BookExtract, params.slug);
 
   return {
     props: {
@@ -111,8 +106,8 @@ export async function getStaticProps({ params, locale, locales }: Params) {
   };
 }
 
-export async function getStaticPaths({ locales }) {
-  const bookExtracts = getBookExtractPaths(locales);
+export async function getStaticPaths() {
+  const bookExtracts = getBookExtractPaths();
 
   return {
     paths: bookExtracts.map((post) => {

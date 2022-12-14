@@ -3,7 +3,7 @@ import RSS from 'rss';
 import { BLOG_DESCRIPTION, BLOG_TITLE, BLOG_URL } from '../config';
 import { getAllBlogPosts } from './blogPosts';
 
-export function getRssFeed() {
+export function getRssFeed(locale: string) {
   type FeedPost = {
     title: string;
     excerpt: string;
@@ -11,7 +11,7 @@ export function getRssFeed() {
     date: string;
   };
 
-  const feedPosts: FeedPost[] = getAllBlogPosts();
+  const feedPosts: FeedPost[] = getAllBlogPosts(locale);
 
   const feedOptions = {
     title: BLOG_TITLE,

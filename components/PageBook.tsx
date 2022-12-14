@@ -2,6 +2,7 @@ import { ComponentProps } from 'react';
 
 import BookExtract from '../models/BookExtract';
 import { Translation } from '../models/Translation';
+import { i18n } from '../next.config';
 import AsideKeepReading from './AsideKeepReading';
 import BookExtractHeader from './BookExtractHeader';
 import BookExtractPreview from './BookExtractPreview';
@@ -19,15 +20,17 @@ type Props = {
     title: string;
   };
   translations: ComponentProps<typeof BookExtractHeader>["translations"];
-  isDefaultLocale: boolean;
+  locale: string;
 };
 
 export default function PageBlog({
   bookExtract,
   nextBookExtract,
   translations,
-  isDefaultLocale,
+  locale,
 }: Props) {
+  const isDefaultLocale = i18n.defaultLocale === locale;
+
   return (
     <>
       <Container>

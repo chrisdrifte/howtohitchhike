@@ -1,14 +1,15 @@
 import { getContentPath } from '../api-client/getContentPath';
 import { ContentType } from '../models/Content';
 import { Translation } from '../models/Translation';
+import { i18n } from '../next.config';
 import { getBlogPostBySlug } from './blogPosts';
 import { getBookExtractBySlug } from './bookExtracts';
 import { getSlugs } from './slugs';
 
-export function getTranslations(type: ContentType, locales: string[]) {
+export function getTranslations(type: ContentType) {
   const translationMap = new Map<string, Translation[]>();
 
-  locales
+  i18n.locales
     .map((locale) => getSlugs(type, locale).map((slug) => [locale, slug]))
     .flat()
     .forEach(([locale, slug]) => {
@@ -33,11 +34,16 @@ export function getTranslations(type: ContentType, locales: string[]) {
       }
 
       const sources = translationMap.get(source);
+      const path = getContentPath(type, slug);
+      const fullPath =
+        locale === i18n.defaultLocale ? path : `/${locale}` + path;
+
       sources.push({
         type,
         locale,
-        slug: slug,
-        path: getContentPath(type, slug),
+        slug,
+        path,
+        fullPath,
       });
 
       if (!translationMap.get(slug)) {

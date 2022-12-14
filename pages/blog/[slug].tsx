@@ -105,8 +105,8 @@ export async function getStaticProps({ params, locale }: Params) {
   };
 }
 
-export async function getStaticPaths({ locales }) {
-  const blogPosts = getBlogPostPaths(locales);
+export async function getStaticPaths() {
+  const blogPosts = getBlogPostPaths();
 
   return {
     paths: blogPosts.map((post) => {

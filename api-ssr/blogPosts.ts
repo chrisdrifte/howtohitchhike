@@ -2,6 +2,7 @@ import { getContentDir } from '../api-client/getContentDir';
 import { getContentPath } from '../api-client/getContentPath';
 import BlogPost from '../models/BlogPost';
 import { ContentType } from '../models/Content';
+import { i18n } from '../next.config';
 import markdownToHtml from '../utility/markdownToHtml';
 import parseMarkdownFile from '../utility/parseMarkdownFile';
 import { sortByDateDesc } from '../utility/sortByDateDesc';
@@ -62,8 +63,8 @@ export async function enhanceBlogPost(blogPost: BlogPost) {
   };
 }
 
-export function getBlogPostPaths(locales: string[]) {
-  const byLocales = locales.map((locale) =>
+export function getBlogPostPaths() {
+  const byLocales = i18n.locales.map((locale) =>
     getSlugs(ContentType.BlogPost, locale).map((slug) =>
       getBlogPostBySlug(slug, locale)
     )

@@ -2,6 +2,7 @@ import { getContentDir } from '../api-client/getContentDir';
 import { getContentPath } from '../api-client/getContentPath';
 import BookExtract from '../models/BookExtract';
 import { ContentType } from '../models/Content';
+import { i18n } from '../next.config';
 import markdownToHtml from '../utility/markdownToHtml';
 import parseMarkdownFile from '../utility/parseMarkdownFile';
 import { sortByPageNumberAsc } from '../utility/sortByPageNumberDesc';
@@ -57,8 +58,8 @@ export async function enhanceBookExtract(bookExtract: BookExtract) {
   };
 }
 
-export function getBookExtractPaths(locales: string[]) {
-  const byLocales = locales.map((locale) =>
+export function getBookExtractPaths() {
+  const byLocales = i18n.locales.map((locale) =>
     getSlugs(ContentType.BookExtract, locale).map((slug) =>
       getBookExtractBySlug(slug, locale)
     )

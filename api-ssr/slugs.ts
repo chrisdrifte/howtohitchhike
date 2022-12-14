@@ -13,11 +13,7 @@ export function getNextSlug(type: ContentType, slug: string, locale: string) {
   return nextSlug;
 }
 
-export function getTranslatedSlugs(
-  type: ContentType,
-  slug: string,
-  locales: string[]
-) {
-  const translationMap = getTranslations(type, locales);
+export function getTranslatedSlugs(type: ContentType, slug: string) {
+  const translationMap = getTranslations(type);
   return translationMap.get(slug);
 }
