@@ -50,6 +50,8 @@ export const getStaticProps = async () => {
   const blogPosts = getAllBlogPosts().filter(filterNotFeatured);
   const bookExtracts = getAllBookExtracts().filter(filterNotFeatured);
 
+  console.log(bookExtracts[1]);
+
   return {
     props: { featuredPost, blogPosts, bookExtracts },
   };

@@ -10,6 +10,8 @@ import { getSlugs } from './slugs';
 export function getBookExtractBySlug(slug: string) {
   const data = parseMarkdownFile(getContentDir(ContentType.BookExtract), slug);
 
+  console.log({ data });
+
   if (!data) {
     return;
   }
