@@ -10,8 +10,8 @@ export default {
   argTypes: {},
 } as ComponentMeta<typeof IntroComponent>;
 
-const Template: ComponentStory<typeof IntroComponent> = () => (
-  <IntroComponent />
+const Template: ComponentStory<typeof IntroComponent> = (args) => (
+  <IntroComponent {...args} />
 );
 
 export const Intro = Template.bind({});
