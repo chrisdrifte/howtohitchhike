@@ -1,10 +1,14 @@
+import { ComponentProps } from 'react';
+
 import BookExtract from '../models/BookExtract';
+import { Translation } from '../models/Translation';
 import AsideKeepReading from './AsideKeepReading';
 import BookExtractHeader from './BookExtractHeader';
 import BookExtractPreview from './BookExtractPreview';
 import Container from './Container';
 import Credit from './Credit';
 import Header from './Header';
+import { MenuTranslations } from './MenuTranslation';
 import PostBody from './PostBody';
 import SectionSeparator from './SectionSeparator';
 
@@ -14,9 +18,16 @@ type Props = {
     slug: string;
     title: string;
   };
+  translations: ComponentProps<typeof BookExtractHeader>["translations"];
+  isDefaultLocale: boolean;
 };
 
-export default function PageBlog({ bookExtract, nextBookExtract }: Props) {
+export default function PageBlog({
+  bookExtract,
+  nextBookExtract,
+  translations,
+  isDefaultLocale,
+}: Props) {
   return (
     <>
       <Container>
@@ -25,6 +36,7 @@ export default function PageBlog({ bookExtract, nextBookExtract }: Props) {
           <BookExtractHeader
             title={bookExtract.title}
             coverImage={bookExtract.coverImage}
+            translations={translations}
           />
 
           {bookExtract.translator && (
@@ -62,7 +74,7 @@ export default function PageBlog({ bookExtract, nextBookExtract }: Props) {
           )}
         </article>
       </Container>
-      <AsideKeepReading />
+      {isDefaultLocale && <AsideKeepReading />}
     </>
   );
 }

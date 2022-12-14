@@ -23,7 +23,7 @@ export function getContributorBySlug(slug: string) {
   const contributor: Contributor = {
     type: ContentType.Contributor,
     title: data.title,
-    picture: data.picture,
+    picture: data.picture || null,
     instagram: data.instagram || null,
     website: data.website || null,
     content: data.content || null,

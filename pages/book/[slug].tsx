@@ -1,10 +1,11 @@
 import ErrorPage from 'next/error';
 import { useRouter } from 'next/router';
+import { ComponentProps } from 'react';
 
 import {
     enhanceBookExtract, getAllBookExtracts, getBookExtractBySlug, getBookExtractPaths
 } from '../../api-ssr/bookExtracts';
-import { getNextSlug } from '../../api-ssr/slugs';
+import { getNextSlug, getTranslatedSlugs } from '../../api-ssr/slugs';
 import Layout from '../../components/Layout';
 import Meta from '../../components/Meta';
 import NoticeSuggestedPost from '../../components/NoticeSuggestedPost';
@@ -13,19 +14,23 @@ import StructuredData from '../../components/StructuredData';
 import useReadHistory from '../../hooks/useReadHistory';
 import BookExtract from '../../models/BookExtract';
 import { ContentType } from '../../models/Content';
+import { Translation } from '../../models/Translation';
 
 type Props = {
   bookExtract: BookExtract;
   nextBookExtract?: Pick<BookExtract, "title" | "slug">;
+  translations: ComponentProps<typeof Meta>["translations"];
   preview?: boolean;
 };
 
 export default function BookExtractPage({
   bookExtract,
   nextBookExtract,
+  translations,
   preview,
 }: Props) {
   const router = useRouter();
+  const isDefaultLocale = router.locale === router.defaultLocale;
 
   if (!router.isFallback && !bookExtract?.slug) {
     return <ErrorPage statusCode={404} />;
@@ -40,6 +45,7 @@ export default function BookExtractPage({
         title={bookExtract.title}
         description={bookExtract.excerpt}
         ogImage={bookExtract.ogImage?.url || bookExtract.coverImage}
+        translations={translations}
       />
       <StructuredData
         data={{
@@ -65,7 +71,12 @@ export default function BookExtractPage({
           title={nextBookExtract.title}
         />
       )}
-      <PageBook bookExtract={bookExtract} nextBookExtract={nextBookExtract} />
+      <PageBook
+        bookExtract={bookExtract}
+        nextBookExtract={nextBookExtract}
+        translations={translations}
+        isDefaultLocale={isDefaultLocale}
+      />
     </Layout>
   );
 }
@@ -73,20 +84,29 @@ export default function BookExtractPage({
 type Params = {
   params: {
     slug: string;
+    translations: Translation[];
   };
   locale: string;
+  locales: string[];
 };
 
-export async function getStaticProps({ params, locale }: Params) {
+export async function getStaticProps({ params, locale, locales }: Params) {
   const bookExtract = getBookExtractBySlug(params.slug, locale);
 
   const nextSlug = getNextSlug(ContentType.BookExtract, params.slug, locale);
   const nextBookExtract = getBookExtractBySlug(nextSlug, locale);
 
+  const translations = getTranslatedSlugs(
+    ContentType.BookExtract,
+    params.slug,
+    locales
+  );
+
   return {
     props: {
       bookExtract: await enhanceBookExtract(bookExtract),
       nextBookExtract: await enhanceBookExtract(nextBookExtract),
+      translations: translations,
     },
   };
 }

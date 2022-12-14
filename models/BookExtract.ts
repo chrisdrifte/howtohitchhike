@@ -1,6 +1,6 @@
 import Post from './Post';
-import { Translation } from './Translation';
+import { Translated } from './Translation';
 
-export default interface BookExtract extends Post, Partial<Translation> {
+export default interface BookExtract extends Post, Partial<Translated> {
   pageNumber: number;
 }

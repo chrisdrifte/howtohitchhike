@@ -1,4 +1,5 @@
 import dynamic from 'next/dynamic';
+import { useRouter } from 'next/router';
 
 import generateFeaturedPost from '../api-client/generateFeaturedPost';
 import { getAllBlogPosts } from '../api-ssr/blogPosts';
@@ -28,6 +29,9 @@ export default function Index({
   blogPosts,
   bookExtracts,
 }: Props) {
+  const router = useRouter();
+  const isDefaultLocale = router.locale === router.defaultLocale;
+
   return (
     <Layout>
       <Meta />
@@ -36,6 +40,8 @@ export default function Index({
         featuredPost={featuredPost}
         blogPosts={blogPosts}
         bookExtracts={bookExtracts}
+        locales={router.locales}
+        isDefaultLocale={isDefaultLocale}
       />
     </Layout>
   );

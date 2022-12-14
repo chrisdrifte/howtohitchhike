@@ -1,25 +1,33 @@
-import Head from "next/head";
-import { useRouter } from "next/router";
+import Head from 'next/head';
+import { useRouter } from 'next/router';
 
-import {
-  BLOG_DESCRIPTION,
-  BLOG_TITLE,
-  BLOG_URL,
-  DEFAULT_OG_IMAGE_URL,
-} from "../config";
+import { BLOG_DESCRIPTION, BLOG_TITLE, BLOG_URL, DEFAULT_OG_IMAGE_URL } from '../config';
+import { Translation } from '../models/Translation';
 
 type Props = {
   title?: string;
   description?: string;
   ogImage?: string;
+  translations?: Translation[];
 };
 
-const Meta = ({ title, description, ogImage }: Props) => {
+const Meta = ({ title, description, ogImage, translations }: Props) => {
   const router = useRouter();
 
   const canonicalUrl = (
     BLOG_URL + (router.asPath === "/" ? "" : router.asPath)
   ).split("?")[0];
+
+  const alternateUrls = (translations || [])
+    .map((translation) => [
+      translation.locale,
+      BLOG_URL +
+        (translation.locale !== router.defaultLocale
+          ? `/${translation.locale}`
+          : "") +
+        translation.path,
+    ])
+    .filter(([, url]) => url !== canonicalUrl);
 
   return (
     <Head>
@@ -59,6 +67,9 @@ const Meta = ({ title, description, ogImage }: Props) => {
         content={BLOG_URL + (ogImage || DEFAULT_OG_IMAGE_URL)}
       />
       <link rel="canonical" href={canonicalUrl} />
+      {alternateUrls.map(([locale, href]) => (
+        <link rel="alternate" hrefLang={locale} href={href} />
+      ))}
       <title>{title ? `${title} | ${BLOG_TITLE}` : BLOG_TITLE}</title>
     </Head>
   );

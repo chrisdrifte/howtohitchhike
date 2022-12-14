@@ -15,13 +15,15 @@ const Credit = ({ title, picture, instagram, website }: Props) => {
 
   return (
     <div className="flex items-center">
-      <Image
-        src={picture}
-        className="w-12 h-12 rounded-full mr-4"
-        alt={title}
-        width={48}
-        height={48}
-      />
+      {picture && (
+        <Image
+          src={picture}
+          className="w-12 h-12 rounded-full mr-4"
+          alt={title}
+          width={48}
+          height={48}
+        />
+      )}
       <div className="text-xl font-bold">{title}</div>
       {hasSocialMedia && (
         <ul className="flex m-4">
