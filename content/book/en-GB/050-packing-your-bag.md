@@ -6,6 +6,7 @@ excerpt: "You need to take into account how long you will be travelling for, the
 ---
 
 Deciding what to bring with you on your travels is a skill all on its own. You need to take into account how long you will be travelling for, the different environments and weather conditions you’ll be travelling through, how you will eat and sleep, and how much you are physically able to carry.
+
 This section is going to assume you will be making a trip over several days and that you’re planning to cook and sleep outdoors for free. If you’re hitching for less than a day you can skip this advice – all you really need is a mobile phone for emergencies, some water, and a packed lunch.
 
 As a general rule I try to carry as little, and as little of value, as possible. Despite this, I always find myself throwing or giving away things when I move on during long term travel. Here is a list of the gear that has remained with me throughout:

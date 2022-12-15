@@ -2,10 +2,12 @@
 title: "Geschichten von der Straße: USA"
 coverImage: "/assets/book/011-tales-from-the-road-usa.jpg"
 pageNumber: 11
-excerpt: '„Komm, wir schaffen die Fahrt in einem Stück", sagte ich. Stinkend, dreckig und verkatert traten wir mit ausgestreckten Daumen an den Straßenrand.'
+excerpt: 'Manchester, Tennessee nach Boulder, Colorado (2000km). „Komm, wir schaffen die Fahrt in einem Stück", sagte ich. Stinkend, dreckig und verkatert traten wir mit ausgestreckten Daumen an den Straßenrand.'
 translationSource: 011-tales-from-the-road-usa
 translator: lena-kraus
 ---
+
+**Manchester, Tennessee nach Boulder, Colorado (2000km)**
 
 „Das hier ist ´ne gute Stelle", sagte ich zu Lauren. Der lange, gerade Straßenabschnitt, der sich vor uns erstreckte, wurde zwar von Bäumen gesäumt, es gab jedoch trotzdem einen ausreichend breiten Seitenstreifen auf beiden Seiten, sodass Fahrzeuge gefahrlos anhalten konnten. Ein stetiger Strom besagter Fahrzeuge kroch in der stillen Sommerluft die Straße entlang. Stoßstange an Stoßstange reihten sich die Autos der Festivalbesucher auf ihrem Nachhauseweg.
 
