@@ -2,7 +2,7 @@
 title: "Tales from the road: Canada"
 coverImage: "/assets/book/039-tales-from-the-road-canada.jpg"
 pageNumber: 39
-excerpt: "Qualicum Beach, Vancouver Island to Tofino, Vancouver Island (165km). A silver haired white woman sat behind the wheel, grinning. “Normally I only stop for Natives,” she said."
+excerpt: "Qualicum Beach, Vancouver Island to Tofino, Vancouver Island (165km). A silver haired white woman sat behind the wheel, grinning. “Normally I only stop for Natives,”"
 ---
 
 **Qualicum Beach, Vancouver Island to Tofino, Vancouver Island (165km)**
@@ -33,9 +33,9 @@ She drove us to a better place, and when she let us out Barne made meaningful ey
 
 “Well, we're on our way,” I said. “The next ride won't take so long.”
 
-The next ride was from a man who took us less than 2km down the road to a gas station. Then we got a lift with two old loggers who told us stories of the girls they'd slept with in the forests that we drove past. We had time to hear several detailed stories before they dropped us off at a roadside liquor store. Unfortunately another hitchhiker was already there trying his luck. While we waited for him to get a ride we sat and chatted on the liquor store bench with a Native Canadian.
+The next ride was from a man who took us less than 2km down the road to a gas station. Then we got a lift with two old loggers who told us stories of the girls they'd slept with in the forests that we drove past. We had time to hear several detailed stories before they dropped us off at a roadside liquor store. Unfortunately another hitchhiker was already there trying his luck. While we waited for him to get a ride we sat and chatted on the liquor store bench with a Native American.
 
-The three of us had an easy conversation about all best times we'd had drinking. “You want a beer?” the Native Canadian kept offering, amazed that we kept turning him down. Eventually the hitchhiker got a ride and it was our turn. “Remember,” the Native Canadian said as we left, “Every day is a good day when you can walk Mother Earth.”
+The three of us had an easy conversation about all best times we'd had drinking. “You want a beer?” the Native American kept offering, amazed that we kept turning him down. Eventually the hitchhiker got a ride and it was our turn. “Remember,” the Native American said as we left, “Every day is a good day when you can walk Mother Earth.”
 
 And then: “Change your sign to 'TUFF', and you'll have better luck. That's how we say Tofino around here.”
 

@@ -5,6 +5,8 @@ pageNumber: 72
 excerpt: "A good way to put someone at ease is to immediately treat them as though they are a friend. You can start the conversation by simply asking “How’s your day going?”"
 ---
 
+It was with some reluctance and hesitation that I first decided to include the section below. I was concerned that many might find these things self-explanatory, and yet, a great number of people whom I have spoken to have often asked about the social side of the hitchhiking experience. Namely, ways of navigating the unusual hurdles of being dropped into a confined space, for an extended period of time, with a total stranger. Since releasing the 1st Edition of Rules Of Thumb, I have been surprised at the amount of feedback from readers who found this section useful, so I have decided to keep it in, and tried to update it - where possible.
+
 ## Introducing yourself and making conversation
 
 Once you’ve accepted a ride from someone and entered their vehicle, introduce yourself and, if possible, shake hands with the driver. Thank them for picking you up, but don't go over the top - some people can feel uncomfortable with elaborate displays of gratitude. A good way to put someone at ease is to immediately treat them as though they are a friend. You can start the conversation by simply asking “How’s your day going?”
