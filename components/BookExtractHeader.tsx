@@ -1,6 +1,6 @@
 import { ComponentProps } from 'react';
 
-import { ContentType } from '../models/Content';
+import ContentType from '../models/ContentType';
 import CoverImage from './CoverImage';
 import { MenuTranslations } from './MenuTranslation';
 import PostTitle from './PostTitle';

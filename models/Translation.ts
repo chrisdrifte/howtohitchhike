@@ -1,16 +1,11 @@
-import { ContentType } from './Content';
-import Contributor from './Contributor';
+import ContentType from './ContentType';
 
-export interface Translated {
-  locale: string;
-  translationSource: string;
-  translator: Contributor;
-}
-
-export type Translation = {
+type Translation = {
   type: ContentType;
   locale: string;
   slug: string;
   path: string;
   fullPath: string;
 };
+
+export default Translation;

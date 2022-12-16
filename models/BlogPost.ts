@@ -1,8 +1,7 @@
 import Contributor from './Contributor';
 import Post from './Post';
-import { Translated } from './Translation';
 
-interface BlogPost extends Post, Partial<Translated> {
+interface BlogPost extends Post {
   date: string;
   author: Contributor;
 }

@@ -2,7 +2,7 @@ import cn from 'classnames';
 import Image from 'next/image';
 import { ComponentProps } from 'react';
 
-import { ContentType } from '../models/Content';
+import ContentType from '../models/ContentType';
 import LinkContent from './LinkContent';
 
 type InheritedImageProps = Omit<

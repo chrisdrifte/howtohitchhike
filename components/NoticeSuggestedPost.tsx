@@ -1,5 +1,4 @@
-import { ContentType } from '../models/Content';
-import Post from '../models/Post';
+import ContentType from '../models/ContentType';
 import LinkContent from './LinkContent';
 import Notice from './Notice';
 

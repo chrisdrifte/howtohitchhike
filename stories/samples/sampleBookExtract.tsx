@@ -1,9 +1,10 @@
 import BookExtract from '../../models/BookExtract';
-import { ContentType } from '../../models/Content';
+import ContentType from '../../models/ContentType';
 import { samplePost } from './samplePost';
 
 export const sampleBookExtract: BookExtract = {
   type: ContentType.BookExtract,
+  locale: samplePost.locale,
   slug: samplePost.slug,
   path: samplePost.path,
   title: samplePost.title,

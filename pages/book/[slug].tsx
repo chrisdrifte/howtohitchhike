@@ -1,11 +1,13 @@
+import { GetStaticProps } from 'next';
 import ErrorPage from 'next/error';
 import { useRouter } from 'next/router';
 import { ComponentProps } from 'react';
 
-import {
-    enhanceBookExtract, getBookExtractBySlug, getBookExtractPaths
-} from '../../api-ssr/bookExtracts';
-import { getNextSlug, getTranslatedSlugs } from '../../api-ssr/slugs';
+import getBookExtract from '../../cms/getBookExtract';
+import getNextSlug from '../../cms/getNextSlug';
+import getPaths from '../../cms/getPaths';
+import getTranslations from '../../cms/getTranslations';
+import getTranslationMap from '../../cms/getTranslationsMap';
 import Layout from '../../components/Layout';
 import Meta from '../../components/Meta';
 import NoticeSuggestedPost from '../../components/NoticeSuggestedPost';
@@ -13,8 +15,9 @@ import PageBook from '../../components/PageBook';
 import StructuredData from '../../components/StructuredData';
 import useReadHistory from '../../hooks/useReadHistory';
 import BookExtract from '../../models/BookExtract';
-import { ContentType } from '../../models/Content';
-import { Translation } from '../../models/Translation';
+import ContentType from '../../models/ContentType';
+import Translation from '../../models/Translation';
+import { i18n } from '../../next.config';
 
 type Props = {
   bookExtract: BookExtract;
@@ -83,34 +86,39 @@ export default function BookExtractPage({
 type Params = {
   params: {
     slug: string;
-    translations: Translation[];
   };
   locale: string;
   locales: string[];
 };
 
-export async function getStaticProps({ params, locale }: Params) {
-  const bookExtract = getBookExtractBySlug(params.slug, locale);
+export const getStaticProps: GetStaticProps = async ({
+  params,
+  locale,
+}: Params) => {
+  const type = ContentType.BookExtract;
+  const slug = params.slug;
 
-  const nextSlug = getNextSlug(ContentType.BookExtract, params.slug, locale);
-  const nextBookExtract = getBookExtractBySlug(nextSlug, locale);
+  const bookExtract = await getBookExtract({ locale, slug });
 
-  const translations = getTranslatedSlugs(ContentType.BookExtract, params.slug);
+  const nextSlug = await getNextSlug(bookExtract);
+  const nextBookExtract = await getBookExtract({ locale, slug: nextSlug });
+
+  const translations = await getTranslations({ type, slug });
 
   return {
     props: {
-      bookExtract: await enhanceBookExtract(bookExtract),
-      nextBookExtract: await enhanceBookExtract(nextBookExtract),
-      translations: translations,
+      bookExtract,
+      nextBookExtract,
+      translations,
     },
   };
-}
+};
 
 export async function getStaticPaths() {
-  const bookExtracts = getBookExtractPaths();
+  const paths = await getPaths(ContentType.BookExtract);
 
   return {
-    paths: bookExtracts.map((post) => {
+    paths: paths.map((post) => {
       return {
         params: {
           slug: post.slug,

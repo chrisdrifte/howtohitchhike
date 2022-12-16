@@ -1,7 +1,6 @@
 import { ComponentProps } from 'react';
 
 import BookExtract from '../models/BookExtract';
-import { Translation } from '../models/Translation';
 import { i18n } from '../next.config';
 import AsideKeepReading from './AsideKeepReading';
 import BookExtractHeader from './BookExtractHeader';
@@ -9,7 +8,6 @@ import BookExtractPreview from './BookExtractPreview';
 import Container from './Container';
 import Credit from './Credit';
 import Header from './Header';
-import { MenuTranslations } from './MenuTranslation';
 import PostBody from './PostBody';
 import SectionSeparator from './SectionSeparator';
 

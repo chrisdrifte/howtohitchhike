@@ -1,9 +1,10 @@
+import { GetStaticProps } from 'next';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 
-import generateFeaturedPost from '../api-client/generateFeaturedPost';
-import { getAllBlogPosts } from '../api-ssr/blogPosts';
-import { getAllBookExtracts } from '../api-ssr/bookExtracts';
+import generateFeaturedPost from '../cms/generateFeaturedPost';
+import getBlogPosts from '../cms/getBlogPosts';
+import getBookExtracts from '../cms/getBookExtracts';
 import Layout from '../components/Layout';
 import Meta from '../components/Meta';
 import PageHome from '../components/PageHome';
@@ -45,13 +46,22 @@ export default function Index({
   );
 }
 
-export const getStaticProps = async ({ locale }) => {
-  const featuredPost = generateFeaturedPost(locale);
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  const blogPosts = await getBlogPosts({ locale });
+  const bookExtracts = await getBookExtracts({ locale });
+
+  const featuredPost = await generateFeaturedPost([
+    ...blogPosts,
+    ...bookExtracts,
+  ]);
+
   const filterNotFeatured = ({ slug }) => slug !== featuredPost?.slug;
-  const blogPosts = getAllBlogPosts(locale).filter(filterNotFeatured);
-  const bookExtracts = getAllBookExtracts(locale).filter(filterNotFeatured);
 
   return {
-    props: { featuredPost, blogPosts, bookExtracts },
+    props: {
+      featuredPost,
+      blogPosts: blogPosts.filter(filterNotFeatured),
+      bookExtracts: bookExtracts.filter(filterNotFeatured),
+    },
   };
 };

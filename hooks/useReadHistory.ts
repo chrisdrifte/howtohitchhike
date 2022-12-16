@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-import { ContentType } from '../models/Content';
+import ContentType from '../models/ContentType';
 import useLocalStorage from './useLocalStorage';
 
 export type HistoryEntry = {

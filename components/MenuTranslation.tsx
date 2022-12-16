@@ -1,8 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { getPostKey } from '../api-client/getPostKey';
-import { ContentType } from '../models/Content';
+import getKey from '../cms/getKey';
 
 type Props = {
   translations: { locale: string; slug: string }[];
@@ -24,7 +23,11 @@ export function MenuTranslations({ translations }: Props) {
         />
       </div>
       {translations.map((translation) => (
-        <div key={`${translation.locale}:${translation.slug}`} className="px-2">
+        <div
+          key={translation.locale}
+          data-key={getKey(translation)}
+          className="px-2"
+        >
           <Link href={translation.slug} locale={translation.locale}>
             <Image
               src={`/assets/icons/flag.${translation.locale}.png`}

@@ -1,28 +1,32 @@
 import { HistoryEntry } from '../hooks/useReadHistory';
 import BlogPost from '../models/BlogPost';
 import BookExtract from '../models/BookExtract';
-import { getPostKey } from './getPostKey';
+import getKey from './getKey';
 
+/**
+ * Predict the next post a user will be interested in reading.
+ */
 function generateSuggestedPost(
   posts: (BlogPost | BookExtract)[],
-  entries: HistoryEntry[]
+  history: HistoryEntry[]
 ) {
   // get the last read post
-  const lastEntry = entries.pop();
+  const lastEntry = history.pop();
 
   // start at beginning if nothing read yet
   if (!lastEntry) {
     return posts[0];
   }
 
-  // create an index for searching entries
-  const entryKeys = entries.map(getPostKey);
+  // create an search index for history entries
+  const historyKeys = history.map(getKey);
 
   // remove all posts that exist in entries
   // (last read post is not removed because we popped it earlier)
   const unreadPosts = posts.filter(
-    (post) => !entryKeys.includes(getPostKey(post))
+    (post) => !historyKeys.includes(getKey(post))
   );
+
   // get the post after the last read post
   const nextIndex = unreadPosts.findIndex(
     (post) => post.slug === lastEntry.slug

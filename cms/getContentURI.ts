@@ -1,8 +1,16 @@
 import { BLOG_POSTS_DIR, BOOK_EXTRACTS_DIR, CONTRIBUTORS_DIR } from '../config';
-import { ContentType } from '../models/Content';
+import ContentType from '../models/ContentType';
 
-export function getContentPath(contentType: ContentType, slug: string) {
-  switch (contentType) {
+type ContentURIQuery = {
+  type: ContentType;
+  slug: string;
+};
+
+/**
+ * Get relative URI with `/` prefix
+ */
+function getContentURI({ type, slug }: ContentURIQuery) {
+  switch (type) {
     case ContentType.Contributor:
       return `/${CONTRIBUTORS_DIR}/${slug}`;
 
@@ -13,3 +21,5 @@ export function getContentPath(contentType: ContentType, slug: string) {
       return `/${BOOK_EXTRACTS_DIR}/${slug}`;
   }
 }
+
+export default getContentURI;

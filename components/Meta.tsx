@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 import { BLOG_DESCRIPTION, BLOG_TITLE, BLOG_URL, DEFAULT_OG_IMAGE_URL } from '../config';
-import { Translation } from '../models/Translation';
+import Translation from '../models/Translation';
 
 type Props = {
   title?: string;

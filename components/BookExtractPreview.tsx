@@ -1,4 +1,4 @@
-import { ContentType } from '../models/Content';
+import ContentType from '../models/ContentType';
 import LinkContent from './LinkContent';
 
 type Props = {

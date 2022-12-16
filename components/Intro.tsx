@@ -1,6 +1,6 @@
 import { ComponentProps } from 'react';
 
-import { BLOG_LOGO, BLOG_TAGLINE, BLOG_TITLE } from '../config';
+import { BLOG_LOGO, BLOG_TITLE } from '../config';
 import { MenuTranslations } from './MenuTranslation';
 
 type Props = {

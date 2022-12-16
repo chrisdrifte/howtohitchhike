@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import { PropsWithChildren } from 'react';
 
-import { getContentPath } from '../api-client/getContentPath';
-import { ContentType } from '../models/Content';
+import getContentURI from '../cms/getContentURI';
+import ContentType from '../models/ContentType';
 
 type Props = {
   type: ContentType;
@@ -18,8 +18,8 @@ function LinkContent({
 }: PropsWithChildren<Props>) {
   return (
     <Link
-      as={getContentPath(type, slug)}
-      href={getContentPath(type, "[slug]")}
+      as={getContentURI({ type, slug })}
+      href={getContentURI({ type, slug: "[slug]" })}
       aria-label={title}
       className="hover:underline"
     >

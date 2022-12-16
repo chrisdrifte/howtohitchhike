@@ -1,11 +1,11 @@
+import { GetStaticProps } from 'next';
 import ErrorPage from 'next/error';
 import { useRouter } from 'next/router';
 
-import {
-    enhanceBlogPost, getAllBlogPosts, getBlogPostBySlug, getBlogPostPaths
-} from '../../api-ssr/blogPosts';
-import { enhanceBookExtract, getAllBookExtracts } from '../../api-ssr/bookExtracts';
-import { getNextSlug } from '../../api-ssr/slugs';
+import getBlogPost from '../../cms/getBlogPost';
+import getBookExtracts from '../../cms/getBookExtracts';
+import getNextSlug from '../../cms/getNextSlug';
+import getPaths from '../../cms/getPaths';
 import Layout from '../../components/Layout';
 import Meta from '../../components/Meta';
 import NoticeSuggestedPost from '../../components/NoticeSuggestedPost';
@@ -14,7 +14,7 @@ import PostTitle from '../../components/PostTitle';
 import StructuredData from '../../components/StructuredData';
 import useReadHistory from '../../hooks/useReadHistory';
 import BlogPost from '../../models/BlogPost';
-import { ContentType } from '../../models/Content';
+import ContentType from '../../models/ContentType';
 import Post from '../../models/Post';
 
 type Props = {
@@ -81,40 +81,38 @@ type Params = {
   locale: string;
 };
 
-export async function getStaticProps({ params, locale }: Params) {
-  const blogPost = getBlogPostBySlug(params.slug, locale);
-  const nextSlug = getNextSlug(ContentType.BlogPost, params.slug, locale);
+export const getStaticProps: GetStaticProps = async ({
+  params,
+  locale,
+}: Params) => {
+  const slug = params.slug;
 
-  const nextBlogPost = getBlogPostBySlug(nextSlug, locale);
+  const blogPost = await getBlogPost({ locale, slug });
+  const nextSlug = await getNextSlug(blogPost);
 
-  let nextPostEnhanced;
-  if (nextBlogPost) {
-    nextPostEnhanced = await enhanceBlogPost(nextBlogPost);
-  } else {
-    const firstBookExtract = getAllBookExtracts(locale)[0];
-    if (firstBookExtract) {
-      nextPostEnhanced = await enhanceBookExtract(firstBookExtract);
-    }
-  }
+  let nextPost: Post =
+    (await getBlogPost({ locale, slug: nextSlug })) ||
+    (await getBookExtracts({ locale }))[0] ||
+    null;
 
   return {
     props: {
-      blogPost: await enhanceBlogPost(blogPost),
-      nextPost: nextPostEnhanced,
+      blogPost,
+      nextPost,
     },
   };
-}
+};
 
 export async function getStaticPaths() {
-  const blogPosts = getBlogPostPaths();
+  const paths = await getPaths(ContentType.BlogPost);
 
   return {
-    paths: blogPosts.map((post) => {
+    paths: paths.map((path) => {
       return {
         params: {
-          slug: post.slug,
+          slug: path.slug,
         },
-        locale: post.locale,
+        locale: path.locale,
       };
     }),
     fallback: false,
