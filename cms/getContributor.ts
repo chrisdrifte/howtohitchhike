@@ -25,6 +25,7 @@ const getContributor = async function ({
       title: post.title,
       picture: post.picture || null,
       instagram: post.instagram || null,
+      linkedIn: post.linkedIn || null,
       website: post.website || null,
       content: await markdownToHtml(`${post.content || ""}`),
     }

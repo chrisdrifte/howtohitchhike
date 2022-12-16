@@ -4,6 +4,7 @@ interface Contributor extends Content {
   title: string;
   picture?: string;
   instagram?: string;
+  linkedIn?: string;
   website?: string;
   content?: string;
 }

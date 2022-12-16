@@ -47,6 +47,7 @@ export default function PageBlog({
                 title={bookExtract.translator.title}
                 picture={bookExtract.translator.picture}
                 instagram={bookExtract.translator.instagram}
+                linkedIn={bookExtract.translator.linkedIn}
                 website={bookExtract.translator.website}
               />
               {bookExtract.translator.content && (

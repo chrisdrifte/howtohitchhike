@@ -1,17 +1,19 @@
 import Image from 'next/image';
 
 import LinkInstagram from './LinkInstagram';
+import LinkLinkedIn from './LinkLinkedIn';
 import LinkWebsite from './LinkWebsite';
 
 type Props = {
   title: string;
   picture: string;
   instagram?: string;
+  linkedIn?: string;
   website?: string;
 };
 
-const Credit = ({ title, picture, instagram, website }: Props) => {
-  const hasSocialMedia = !!(instagram || website);
+const Credit = ({ title, picture, instagram, linkedIn, website }: Props) => {
+  const hasSocialMedia = !!(instagram || linkedIn || website);
 
   return (
     <div className="flex items-center">
@@ -27,10 +29,21 @@ const Credit = ({ title, picture, instagram, website }: Props) => {
       <div className="text-xl font-bold">{title}</div>
       {hasSocialMedia && (
         <ul className="flex m-4">
-          <li className="m-1">
-            {instagram && <LinkInstagram username={instagram} />}
-          </li>
-          <li className="m-1">{website && <LinkWebsite url={website} />}</li>
+          {instagram && (
+            <li className="m-1">
+              <LinkInstagram username={instagram} />
+            </li>
+          )}
+          {linkedIn && (
+            <li className="m-1">
+              <LinkLinkedIn url={linkedIn} />
+            </li>
+          )}
+          {website && (
+            <li className="m-1">
+              <LinkWebsite url={website} />
+            </li>
+          )}
         </ul>
       )}
     </div>
