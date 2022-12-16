@@ -66,7 +66,7 @@ const Meta = ({ title, description, ogImage, translations }: Props) => {
       />
       <link rel="canonical" href={canonicalUrl} />
       {alternateUrls.map(([locale, href]) => (
-        <link rel="alternate" hrefLang={locale} href={href} />
+        <link key={locale} rel="alternate" hrefLang={locale} href={href} />
       ))}
       <title>{title ? `${title} | ${BLOG_TITLE}` : BLOG_TITLE}</title>
     </Head>
