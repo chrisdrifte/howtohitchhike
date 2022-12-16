@@ -1,8 +1,7 @@
 import Image from 'next/image';
 
+import LinkIcon from './LinkIcon';
 import LinkInstagram from './LinkInstagram';
-import LinkLinkedIn from './LinkLinkedIn';
-import LinkWebsite from './LinkWebsite';
 
 type Props = {
   title: string;
@@ -36,12 +35,16 @@ const Credit = ({ title, picture, instagram, linkedIn, website }: Props) => {
           )}
           {linkedIn && (
             <li className="m-1">
-              <LinkLinkedIn url={linkedIn} />
+              <LinkIcon
+                iconSrc="/assets/icons/linkedin.svg"
+                url={linkedIn}
+                nofollow
+              />
             </li>
           )}
           {website && (
             <li className="m-1">
-              <LinkWebsite url={website} />
+              <LinkIcon iconSrc="/assets/icons/website.svg" url={website} />
             </li>
           )}
         </ul>
