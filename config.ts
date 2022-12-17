@@ -1,3 +1,5 @@
+export const GA_MEASUREMENT_ID = "G-SCFEB0JZ0M";
+
 export const DEFAULT_OG_IMAGE_URL = "/assets/ogimage/ogimage-default.png";
 
 export const BLOG_TITLE = "How to Hitchhike";
