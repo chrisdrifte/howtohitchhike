@@ -1,4 +1,4 @@
-import { ContentType } from '../models/Content';
+import ContentType from '../models/ContentType';
 import CoverImage from './CoverImage';
 import LinkContent from './LinkContent';
 

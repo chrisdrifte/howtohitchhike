@@ -1,10 +1,7 @@
-import dynamic from 'next/dynamic';
-
-import { BLOG_POSTS_DIR } from '../config';
-import useReadHistory from '../hooks/useReadHistory';
 import BlogPost from '../models/BlogPost';
 import BookExtract from '../models/BookExtract';
 import Post from '../models/Post';
+import { i18n } from '../next.config';
 import AsideContribute from './AsideContribute';
 import AsideKeepReading from './AsideKeepReading';
 import BlogPostList from './BlogPostList';
@@ -17,17 +14,26 @@ type Props = {
   featuredPost?: Post;
   blogPosts: BlogPost[];
   bookExtracts: BookExtract[];
+  locale: string;
 };
 
 export default function PageHome({
   featuredPost,
   blogPosts,
   bookExtracts,
+  locale,
 }: Props) {
+  const isDefaultLocale = i18n.defaultLocale === locale;
+
   return (
     <>
       <Container>
-        <Intro />
+        <Intro
+          translations={i18n.locales.map((locale) => ({
+            locale,
+            slug: "/",
+          }))}
+        />
         {featuredPost && (
           <PostHero
             type={featuredPost.type}
@@ -38,12 +44,12 @@ export default function PageHome({
           />
         )}
       </Container>
-      <AsideContribute />
+      {isDefaultLocale && <AsideContribute />}
       <Container>
         <BlogPostList blogPosts={blogPosts} />
         <BookExtractList bookExtracts={bookExtracts} />
       </Container>
-      <AsideKeepReading />
+      {isDefaultLocale && <AsideKeepReading />}
     </>
   );
 }

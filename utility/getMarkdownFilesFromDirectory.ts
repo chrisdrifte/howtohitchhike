@@ -1,16 +1,16 @@
-import fs from "fs";
-import { join } from "path";
+import fs from 'fs';
+import { join } from 'path';
 
-function getMarkdownFilesFromDirectory(dir: string) {
+async function getMarkdownFilesFromDirectory(dir: string) {
   const fullDir = join(process.cwd(), dir);
 
   if (!fs.existsSync(fullDir)) {
     return [];
   }
 
-  const slugs = fs
-    .readdirSync(fullDir)
-    .map((slug) => slug.replace(/\.md$/, ""));
+  const slugs = (await fs.promises.readdir(fullDir)).map((slug) =>
+    slug.replace(/\.md$/, "")
+  );
 
   return slugs;
 }

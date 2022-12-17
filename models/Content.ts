@@ -1,9 +1,8 @@
-export enum ContentType {
-  Contributor = "Contributor",
-  BlogPost = "BlogPost",
-  BookExtract = "BookExtract",
+import ContentType from './ContentType';
+
+interface Content {
+  type: ContentType;
+  slug: string;
 }
 
-export interface Content {
-  type: ContentType;
-}
+export default Content;

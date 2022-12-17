@@ -1,10 +1,13 @@
+import { GetStaticProps } from 'next';
 import ErrorPage from 'next/error';
 import { useRouter } from 'next/router';
+import { ComponentProps } from 'react';
 
-import {
-    enhanceBookExtract, getAllBookExtracts, getBookExtractBySlug
-} from '../../api-ssr/bookExtracts';
-import { getNextSlug } from '../../api-ssr/slugs';
+import queryBookExtract from '../../cms/queryBookExtract';
+import queryNextSlug from '../../cms/queryNextSlug';
+import queryPaths from '../../cms/queryPaths';
+import queryTranslations from '../../cms/queryTranslations';
+import queryTranslationsMap from '../../cms/queryTranslationsMap';
 import Layout from '../../components/Layout';
 import Meta from '../../components/Meta';
 import NoticeSuggestedPost from '../../components/NoticeSuggestedPost';
@@ -12,17 +15,21 @@ import PageBook from '../../components/PageBook';
 import StructuredData from '../../components/StructuredData';
 import useReadHistory from '../../hooks/useReadHistory';
 import BookExtract from '../../models/BookExtract';
-import { ContentType } from '../../models/Content';
+import ContentType from '../../models/ContentType';
+import Translation from '../../models/Translation';
+import { i18n } from '../../next.config';
 
 type Props = {
   bookExtract: BookExtract;
   nextBookExtract?: Pick<BookExtract, "title" | "slug">;
+  translations: ComponentProps<typeof Meta>["translations"];
   preview?: boolean;
 };
 
 export default function BookExtractPage({
   bookExtract,
   nextBookExtract,
+  translations,
   preview,
 }: Props) {
   const router = useRouter();
@@ -40,6 +47,7 @@ export default function BookExtractPage({
         title={bookExtract.title}
         description={bookExtract.excerpt}
         ogImage={bookExtract.ogImage?.url || bookExtract.coverImage}
+        translations={translations}
       />
       <StructuredData
         data={{
@@ -65,7 +73,12 @@ export default function BookExtractPage({
           title={nextBookExtract.title}
         />
       )}
-      <PageBook bookExtract={bookExtract} nextBookExtract={nextBookExtract} />
+      <PageBook
+        bookExtract={bookExtract}
+        nextBookExtract={nextBookExtract}
+        translations={translations}
+        locale={router.locale}
+      />
     </Layout>
   );
 }
@@ -74,30 +87,43 @@ type Params = {
   params: {
     slug: string;
   };
+  locale: string;
+  locales: string[];
 };
 
-export async function getStaticProps({ params }: Params) {
-  const bookExtract = getBookExtractBySlug(params.slug);
-  const nextSlug = getNextSlug(ContentType.BookExtract, params.slug);
-  const nextBookExtract = getBookExtractBySlug(nextSlug);
+export const getStaticProps: GetStaticProps = async ({
+  params,
+  locale,
+}: Params) => {
+  const type = ContentType.BookExtract;
+  const slug = params.slug;
+
+  const bookExtract = await queryBookExtract({ locale, slug });
+
+  const nextSlug = await queryNextSlug(bookExtract);
+  const nextBookExtract = await queryBookExtract({ locale, slug: nextSlug });
+
+  const translations = await queryTranslations({ type, slug });
 
   return {
     props: {
-      bookExtract: await enhanceBookExtract(bookExtract),
-      nextBookExtract: await enhanceBookExtract(nextBookExtract),
+      bookExtract,
+      nextBookExtract,
+      translations,
     },
   };
-}
+};
 
 export async function getStaticPaths() {
-  const bookExtracts = getAllBookExtracts();
+  const paths = await queryPaths({ type: ContentType.BookExtract });
 
   return {
-    paths: bookExtracts.map((post) => {
+    paths: paths.map((post) => {
       return {
         params: {
           slug: post.slug,
         },
+        locale: post.locale,
       };
     }),
     fallback: false,

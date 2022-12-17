@@ -1,13 +1,13 @@
+import { GetStaticProps } from 'next';
 import dynamic from 'next/dynamic';
+import { useRouter } from 'next/router';
 
-import generateFeaturedPost from '../api-client/generateFeaturedPost';
-import generateSuggestedPost from '../api-client/generateSuggestedPost';
-import { getAllBlogPosts } from '../api-ssr/blogPosts';
-import { getAllBookExtracts } from '../api-ssr/bookExtracts';
+import generateFeaturedPost from '../cms/generateFeaturedPost';
+import queryBlogPosts from '../cms/queryBlogPosts';
+import queryBookExtracts from '../cms/queryBookExtracts';
 import Layout from '../components/Layout';
 import Meta from '../components/Meta';
 import PageHome from '../components/PageHome';
-import useReadHistory from '../hooks/useReadHistory';
 import BlogPost from '../models/BlogPost';
 import BookExtract from '../models/BookExtract';
 import Post from '../models/Post';
@@ -30,6 +30,8 @@ export default function Index({
   blogPosts,
   bookExtracts,
 }: Props) {
+  const router = useRouter();
+
   return (
     <Layout>
       <Meta />
@@ -38,19 +40,28 @@ export default function Index({
         featuredPost={featuredPost}
         blogPosts={blogPosts}
         bookExtracts={bookExtracts}
+        locale={router.locale}
       />
     </Layout>
   );
 }
 
-export const getStaticProps = async () => {
-  const featuredPost = generateFeaturedPost();
-  const filterNotFeatured = ({ slug }) => slug !== featuredPost.slug;
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  const blogPosts = await queryBlogPosts({ locale });
+  const bookExtracts = await queryBookExtracts({ locale });
 
-  const blogPosts = getAllBlogPosts().filter(filterNotFeatured);
-  const bookExtracts = getAllBookExtracts().filter(filterNotFeatured);
+  const featuredPost = await generateFeaturedPost([
+    ...blogPosts,
+    ...bookExtracts,
+  ]);
+
+  const filterNotFeatured = ({ slug }) => slug !== featuredPost?.slug;
 
   return {
-    props: { featuredPost, blogPosts, bookExtracts },
+    props: {
+      featuredPost,
+      blogPosts: blogPosts.filter(filterNotFeatured),
+      bookExtracts: bookExtracts.filter(filterNotFeatured),
+    },
   };
 };

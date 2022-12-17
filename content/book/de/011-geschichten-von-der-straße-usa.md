@@ -1,0 +1,38 @@
+---
+title: "Geschichten von der Straße: USA"
+coverImage: "/assets/book/011-tales-from-the-road-usa.jpg"
+pageNumber: 11
+excerpt: 'Manchester, Tennessee nach Boulder, Colorado (2000km). „Komm, wir schaffen die Fahrt in einem Stück", sagte ich. Stinkend, dreckig und verkatert traten wir mit ausgestreckten Daumen an den Straßenrand.'
+translationSlug: 011-tales-from-the-road-usa
+translator: lena-kraus
+---
+
+**Manchester, Tennessee nach Boulder, Colorado (2000km)**
+
+„Das hier ist ´ne gute Stelle", sagte ich zu Lauren. Der lange, gerade Straßenabschnitt, der sich vor uns erstreckte, wurde zwar von Bäumen gesäumt, es gab jedoch trotzdem einen ausreichend breiten Seitenstreifen auf beiden Seiten, sodass Fahrzeuge gefahrlos anhalten konnten. Ein stetiger Strom besagter Fahrzeuge kroch in der stillen Sommerluft die Straße entlang. Stoßstange an Stoßstange reihten sich die Autos der Festivalbesucher auf ihrem Nachhauseweg.
+
+Wir blieben stehen. Der Wald hatte uns Schatten gespendet, während wir vom Festivalgelände zur Straße wanderten. Beide waren wir nicht bereit, uns den 40° C auszusetzen, die im Sonnenschein von Tennessee herrschten. Unsere Kleider waren vom Schweiß bereits völlig durchnässt, und es war noch nicht einmal Nachmittag. Immerhin hatten wir die Wanderung überstanden. Wir ließen unsere Rucksäcke ein paar Meter von der Straße entfernt ins Gras fallen und tranken gierig aus unseren Wasserflaschen. Einige der Fahrer schauten uns interessiert zu. Außer uns gab es auch nichts, dass es sich anzuschauen lohnte.
+
+Ich kramte in meinem Rucksack nach dem Schild, das ich noch auf dem Campingplatz geschrieben hatte, einem zerrissenen Stück Pappe, auf das ich mit Edding die großen, schwarzen Buchstaben COLORADO gekritzelt hatte. Als ich es in die Hand nahm, fühlte ich, wie sich die altbekannte Aufregung in meinem ganzen Körper verbreitete: Dies war der erste Schritt in ein echtes Abenteuer. „Komm, wir schaffen die Fahrt in einem Stück", sagte ich. Stinkend, dreckig und verkatert traten wir mit ausgestreckten Daumen an den Straßenrand.
+
+Alle waren gut gelaunt, und der Verkehr bewegte sich so langsam, dass wir uns minutenlang mit den Leuten in den Autos unterhalten konnten, bevor sie uns passierten. Wir lachten, scherzten und erzählten Geschichten. Viele reichten uns ihre Reste vom Festival durch die offenen Fenster: Schokolade, Wasserflaschen, Bier, eine riesige Wassermelone. Immer, wenn wir ein Nummernschild aus Colorado entdeckten, rannten wir hin und machten uns lautstark bemerkbar, aber die Fahrer zuckten nur mit den Schultern und lächelten. Niemand hatte genug Platz. Die Leute wollten uns wirklich mitnehmen, das sah ich genau. Wir mussten nur jemanden finden, der uns tatsächlich mitnehmen konnte.
+
+„Wir nehmen sie, aber nicht dich!" war der Witz, der uns am öftesten aus den Autofenstern zugerufen wurde. Ich lachte jedes Mal. „Wir könnten euch bis Nashville mitnehmen", boten uns einige Fahrer etwas ernsthafter an. Einer hätte uns sogar die 400 Meilen bis St. Louis mitgenommen. „Danke, aber wir versuchen, es in Einem zu schaffen", sagte ich, und das glaubte ich auch. Wir standen an so einer guten Stelle, was konnte schon schiefgehen?
+
+Eine Stunde und vier Autos aus Colorado später winkte uns jemand an sein Fenster heran. „Wusstet ihr, dass da hinten noch zwei Jungs stehen, die auch nach Colorado wollen?", fragte die Fahrerin. Lauren und ich schauten uns an. Es war ziemlich wahrscheinlich, dass ein Auto zwei Tramper den ganzen Weg nach Colorado mitnahm. Aber die Wahrscheinlichkeit, zwei solcher Autos zu finden, war verschwindend gering. „Danke fürs Bescheid geben", sagten wir. Ich machte mir bewusst, dass die anderen Tramper nicht wissen konnten, dass wir in dieselbe Richtung wollten, und auch nicht, dass wir schon länger an der Straße standen, als sie. Trotzdem war es frustrierend, so viel Pech zu haben. Wir packten unser Schild ein und entschieden, das nächste Angebot bis Nashville anzunehmen.
+
+Unsere Konkurrenten, zwei junge Kerle aus Denver, kamen nach einer Weile die Straße entlang. Ich winkte sie zu uns herüber. Es war erst Mittag, aber wir waren alles schon völlig erschöpft, weil wir so lange in der prallen Sonne gestanden hatten. Wir machten es uns ein Stück von der Straße entfernt unter ein paar Bäumen bequem. Ich schnitt die Wassermelone auf, die wir geschenkt bekommen hatten, und wir saßen zusammen im Schatten und aßen. Wir waren guter Dinge, obwohl wir alle noch niemanden gefunden hatten, der uns mitnahm. Wir sprachen darüber, was wir uns für den Weg, der noch vor uns lag, wünschten, erzählten uns Reisegeschichten und bemerkten darüber gar nicht, dass der Verkehr auf der Straße langsam aber sicher ausdünnte. Als wir eine Stunde später endlich wieder an der Straße standen, hatten fast alle Besucher das Festival verlassen. Der Verkehrsstrom war vollständig versiegt.
+
+Kein Problem. Wir beschlossen, zusammen zur nächstgrößeren Straße zu wandern, um auch Autos zu erreichen, die nicht vom Festival kamen. Unsere neuen Freunde boten uns an, sich weiter die Straße entlang aufzustellen, damit wir das erste Auto erwischten, das anhielt. ein Angebot, das wir dankbar annahmen.
+
+Als wir die Hauptstraße erreichten mussten wir uns dennoch hinten anstellen. Drei Obdachlose warteten mit geringem Abstand an den Stellen, wo Autos am leichtesten anhalten konnten. Ich konnte unser Pech kaum fassen. Vor diesem Tag war mir auf der Straße noch nie auch nur ein einziger anderer Tramper begegnet. Heute hatten wir schon fünf gesehen, dabei war Trampen in Tennessee eigentlich verboten. Wir unterhielten uns ein paar Minuten lang mit den Obdachlosen, bevor wir weiterzogen. Die Luft fühlte sich plötzlich kühler an. Als wir zum Himmel aufblickten, sahen wir, dass ein Gewitter heraufzog.
+
+Die nächste Stelle, an der wir es versuchten, war furchtbar. Sie lag relativ gefährlich in der Mitte einer vierspurigen Kreuzung, aber wir konnten nicht weiter die Straße entlanggehen, ohne auf der Autobahn zu landen. Zurückgehen konnten wir auch nicht, weil wir sonst mit den Obdachlosen um die Plätze konkurriert hätten. Die Sonne war mittlerweile komplett hinter den Wolken verschwunden, und Lauren begann, nicht mehr daran zu glauben, dass wir an diesem Tag noch weiterkommen würden. Es war schon dreieinhalb Stunden her, dass wir losgelaufen waren, und es schien nun unvermeidlich, in einen Regenschauer zu geraten. Auch meine Zuversicht ließ nach.
+
+Es hatte schon eine ganze Weile stark geregnet, als das Polizeiauto neben uns anhielt. Der Polizist starrte uns ziemlich lange einfach nur an. Dann wuchtete er seinen schweren Körper aus dem Polizeiwagen und begann, sich darüber Gedanken zu machen, dass ich eigentlich nicht das Recht hatte, mich an dem Ort zu befinden, an dem ich gerade stand. Bevor ich jedoch wirklich in Panik geraten konnte, drehte er sich um und verschwand in einem zum Büro umgebauten Bauwagen. Meine verwirrte Erleichterung wurde einen Moment später von einer noch größeren Panik abgelöst, als ich mit Schrecken feststellte, dass wir versucht hatten, direkt gegenüber von einer provisorischen Polizeistation, die für das Festival aufgebaut worden war, zu trampen. Lauren und ich müssen ziemlich bemitleidenswert aussehen, dachte ich, wenn es den Polizisten von Tennessee mehr Spaß macht, uns in unserem Unglück zu beobachten, als herüberzukommen und uns zu verhaften, weil wir gegen das Gesetz verstießen.
+
+Endlich hielt ein weiteres Auto an - ein junger Mann, der alleine unterwegs war.
+
+„Wo fährst du hin?", fragte ich. Eigentlich war mir die Antwort völlig egal, wir würden ohnehin in sein Auto steigen.
+
+„Nashville", sagte er. Perfekt.

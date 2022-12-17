@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { removePrefix } from '../utility/removePrefix';
+import removePrefix from '../utility/removePrefix';
 
 type Props = {
   username: string;

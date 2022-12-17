@@ -3,6 +3,7 @@ import Post from '../../models/Post';
 import sampleCoverJpg from './sampleCover.jpg';
 
 export const samplePost: Omit<Post, "type"> = {
+  locale: "en-GB",
   slug: "hello-world",
   path: "/example/hello-world",
   title: "Learn How to Pre-render Pages Using Static Generation with Next.js",
