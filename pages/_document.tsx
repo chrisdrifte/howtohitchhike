@@ -1,4 +1,7 @@
-import { Head, Html, Main, NextScript } from "next/document";
+import { Head, Html, Main, NextScript } from 'next/document';
+
+import GTag from '../components/GTag';
+import { GA_MEASUREMENT_ID } from '../config';
 
 export default function Document() {
   return (
@@ -13,6 +16,7 @@ export default function Document() {
         />
       </Head>
       <body>
+        <GTag gaMeasurementId={GA_MEASUREMENT_ID} />
         <Main />
         <NextScript />
       </body>
