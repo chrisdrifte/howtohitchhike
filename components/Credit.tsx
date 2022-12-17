@@ -44,7 +44,7 @@ const Credit = ({ title, picture, instagram, linkedIn, website }: Props) => {
           )}
           {website && (
             <li className="m-1">
-              <LinkIcon iconSrc="/assets/icons/website.svg" url={website} />
+              <LinkIcon iconSrc="/assets/icons/external.svg" url={website} />
             </li>
           )}
         </ul>
