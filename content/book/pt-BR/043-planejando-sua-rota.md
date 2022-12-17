@@ -3,7 +3,7 @@ title: "Planejando sua rota"
 coverImage: "/assets/book/043-planning-your-route.jpg"
 pageNumber: 43
 excerpt: "Dependendo de quanto tempo você demora para chegar ao local ideal para a carona, você levará muito mais tempo pegando carona de um ponto a outro do que se você fosse direto de carro ou ônibus."
-translationSource: 043-planning-your-route
+translationSlug: 043-planning-your-route
 translator: joao-roque-sieczkowski-monaco
 ---
 

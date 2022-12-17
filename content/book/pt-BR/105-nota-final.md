@@ -3,7 +3,7 @@ title: "Nota final"
 coverImage: "/assets/book/105-final-note.jpg"
 pageNumber: 105
 excerpt: "Now it's time to put down this book, step out of the door, and put this advice into action. The whole world is out there waiting for you."
-translationSource: 105-final-note
+translationSlug: 105-final-note
 translator: joao-roque-sieczkowski-monaco
 ---
 

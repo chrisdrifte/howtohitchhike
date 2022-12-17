@@ -3,7 +3,7 @@ title: "Risikomanagement"
 coverImage: "/assets/book/102-staying-safe-on-the-road.jpg"
 pageNumber: 102
 excerpt: "Du kannst jede risikoreiche Situation deines Lebens in eine risikoarme verwandeln, einfach, indem du dir der Risiken bewusst bist und richtig damit umgehst."
-translationSource: 102-staying-safe-on-the-road
+translationSlug: 102-staying-safe-on-the-road
 translator: lena-kraus
 ---
 

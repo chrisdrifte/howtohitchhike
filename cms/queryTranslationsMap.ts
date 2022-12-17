@@ -1,86 +1,67 @@
 import memoize from 'lodash.memoize';
 
-import ContentQuery from '../models/ContentQuery';
 import ContentType from '../models/ContentType';
 import Translation from '../models/Translation';
 import { i18n } from '../next.config';
+import sortByLocale from '../utility/sortByLocale';
 import getContentURI from './getContentURI';
 import queryBlogPost from './queryBlogPost';
 import queryBookExtract from './queryBookExtract';
 import querySlugs from './querySlugs';
 
-type TranslationsMapQuery = Pick<ContentQuery, "type">;
-
-type TranslationMap = Map<string, Translation[]>;
+type TranslationsMap = Map<ContentType, SourcesMap>;
+type SourcesMap = Map<string, Translation[]>;
 
 /**
- * Generate a map of content and its translations
- * @todo clean up
+ * Generate map of content translations
  */
-const queryTranslationMap = memoize(
-  async function ({ type }: TranslationsMapQuery) {
-    const translationMap: TranslationMap = new Map();
+const queryTranslationsMap = memoize(async function () {
+  const translationsMap: TranslationsMap = new Map([
+    [ContentType.BlogPost, new Map()],
+    [ContentType.BookExtract, new Map()],
+  ]);
 
-    const postMetaPromises = i18n.locales.map(async (locale) =>
-      (await querySlugs({ type, locale })).map((slug) => [locale, slug])
-    );
+  const queryByType = {
+    [ContentType.BlogPost]: queryBlogPost,
+    [ContentType.BookExtract]: queryBookExtract,
+  };
 
-    const postMeta = (await Promise.all(postMetaPromises)).flat();
+  for (const [type, sourcesMap] of translationsMap.entries()) {
+    for (const locale of i18n.locales) {
+      const slugs = await querySlugs({ type, locale });
 
-    const promises = postMeta.map(async ([locale, slug]) => {
-      let source = slug;
+      for (const slug of slugs) {
+        const data = await queryByType[type]({ locale, slug });
+        const sourceSlug = data.translationSlug || slug;
 
-      switch (type) {
-        case ContentType.BlogPost: {
-          const data = await queryBlogPost({ locale, slug });
-          source = data.translationSource || slug;
-          break;
-        }
+        const translations = sourcesMap.get(sourceSlug) || [];
 
-        case ContentType.BookExtract: {
-          const data = await queryBookExtract({ locale, slug });
-          source = data.translationSource || slug;
-          break;
-        }
+        const path = getContentURI({ type, slug });
+        const fullPath =
+          locale === i18n.defaultLocale ? path : `/${locale}` + path;
+
+        const newTranslation: Translation = {
+          type,
+          locale,
+          slug,
+          path,
+          fullPath,
+        };
+
+        // update by reference
+        translations.push(newTranslation);
+
+        // add reference to new slug
+        sourcesMap.set(slug, translations);
       }
-
-      if (!translationMap.has(source)) {
-        translationMap.set(source, []);
-      }
-
-      const sources = translationMap.get(source);
-      const path = getContentURI({ type, slug });
-      const fullPath =
-        locale === i18n.defaultLocale ? path : `/${locale}` + path;
-
-      sources.push({
-        type,
-        locale,
-        slug,
-        path,
-        fullPath,
-      });
-
-      if (!translationMap.get(slug)) {
-        translationMap.set(slug, sources);
-      }
-    });
-
-    // ensure all data is fetched before continuing
-    await Promise.all(promises);
-
-    // sort translations
-    for (const sources of translationMap.values()) {
-      sources.sort(
-        (a, b) =>
-          i18n.locales.indexOf(a.locale) - i18n.locales.indexOf(b.locale)
-      );
     }
 
-    return translationMap;
-  },
-  // resolver
-  (type) => `${type}`
-);
+    for (const translations of sourcesMap.values()) {
+      translations.sort(sortByLocale);
+    }
+  }
 
-export default queryTranslationMap;
+  return translationsMap;
+});
+
+export default queryTranslationsMap;

@@ -3,7 +3,7 @@ title: "Deixando o veículo"
 coverImage: "/assets/book/077-leaving-the-vehicle.jpg"
 pageNumber: 77
 excerpt: "Não esqueça de agradecer ao motorista e desejar boa viagem quando chegar a hora de deixá-los."
-translationSource: 077-leaving-the-vehicle
+translationSlug: 077-leaving-the-vehicle
 translator: joao-roque-sieczkowski-monaco
 ---
 

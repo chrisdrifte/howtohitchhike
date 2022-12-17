@@ -3,7 +3,7 @@ title: "Wer kann trampen?"
 coverImage: "/assets/book/022-who-can-hitch-hike.jpg"
 pageNumber: 22
 excerpt: "Trampen können grundsätzlich alle - manche werden etwas länger warten müssen als andere."
-translationSource: 022-who-can-hitch-hike
+translationSlug: 022-who-can-hitch-hike
 translator: lena-kraus
 ---
 

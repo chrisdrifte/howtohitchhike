@@ -3,7 +3,7 @@ title: "Você deveria viajar com um parceiro?"
 coverImage: "/assets/book/023-should-you-travel-with-a-partner.jpg"
 pageNumber: 23
 excerpt: "Ter um parceiro para compartilhar os riscos, as dificuldades, os desafios que vocês estão enfrentando, sem dúvida melhora a experiência - se você achar o parceiro ideal."
-translationSource: 023-should-you-travel-with-a-partner
+translationSlug: 023-should-you-travel-with-a-partner
 translator: joao-roque-sieczkowski-monaco
 ---
 

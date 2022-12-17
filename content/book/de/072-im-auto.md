@@ -3,7 +3,7 @@ title: "Im Auto"
 coverImage: "/assets/book/072-travelling-in-the-vehicle.jpg"
 pageNumber: 72
 excerpt: "A good way to put someone at ease is to immediately treat them as though they are a friend. You can start the conversation by simply asking “How’s your day going?”"
-translationSource: 072-travelling-in-the-vehicle
+translationSlug: 072-travelling-in-the-vehicle
 translator: lena-kraus
 ---
 

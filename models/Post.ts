@@ -10,7 +10,7 @@ interface Post extends LocalizedContent {
   ogImage?: OgImage;
   excerpt: string;
   content: string;
-  translationSource?: string;
+  translationSlug?: string;
   translator?: Contributor;
 }
 

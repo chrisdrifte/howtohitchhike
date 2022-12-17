@@ -3,7 +3,7 @@ title: "Volunteering (Arbeiten für Kost und Logis)"
 coverImage: "/assets/book/098-volunteering-for-food-and-shelter.jpg"
 pageNumber: 98
 excerpt: "Ist es das Paradies? Eine kommunistische Utopie? Ein pseudo-spiritueller Kult? Nö – es handelt sich einfach um Volunteering, du arbeitest für Essen und Unterkunft."
-translationSource: 098-volunteering-for-food-and-shelter
+translationSlug: 098-volunteering-for-food-and-shelter
 translator: lena-kraus
 ---
 

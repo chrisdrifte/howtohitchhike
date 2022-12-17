@@ -3,7 +3,7 @@ title: "Encontrando um lugar"
 coverImage: "/assets/book/057-finding-a-spot.jpg"
 pageNumber: 57
 excerpt: "O primeiro passo para achar um bom lugar para pedir carona é identificar quais estradas têm um fluxo maior de veículos se movendo na mesma direção que você."
-translationSource: 057-finding-a-spot
+translationSlug: 057-finding-a-spot
 translator: joao-roque-sieczkowski-monaco
 ---
 

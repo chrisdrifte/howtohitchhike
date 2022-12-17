@@ -3,7 +3,7 @@ title: "Porquê pegar carona?"
 coverImage: "/assets/book/018-why-choose-to-hitch.jpg"
 pageNumber: 18
 excerpt: "Não pegue carona só porque você quer chegar em algum lugar. Pegue carona porque isso te lembra-ra que existe gente boa em todos os lugares."
-translationSource: 018-why-choose-to-hitch
+translationSlug: 018-why-choose-to-hitch
 translator: joao-roque-sieczkowski-monaco
 ---
 

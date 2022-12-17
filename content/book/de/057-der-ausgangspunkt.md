@@ -3,7 +3,7 @@ title: "Der Ausgangspunkt"
 coverImage: "/assets/book/057-finding-a-spot.jpg"
 pageNumber: 57
 excerpt: "Der erste Schritt, um einen solchen Ort zu finden, ist dir anzuschauen, auf welchen Straßen der meiste Verkehr in die richtige Richtung fließt."
-translationSource: 057-finding-a-spot
+translationSlug: 057-finding-a-spot
 translator: lena-kraus
 ---
 

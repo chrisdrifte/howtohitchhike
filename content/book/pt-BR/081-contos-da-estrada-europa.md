@@ -3,7 +3,7 @@ title: "Contos da estrada: Europa"
 coverImage: "/assets/book/081-tales-from-the-road-europe.jpg"
 pageNumber: 81
 excerpt: "Uddebo, Suécia até Bologna, Itália. Via Prague, República Tcheca (3400km). Lübeck was warm and full of tourists, so we decided to pay for our dinner by playing music on the street."
-translationSource: 081-tales-from-the-road-europe
+translationSlug: 081-tales-from-the-road-europe
 translator: joao-roque-sieczkowski-monaco
 ---
 

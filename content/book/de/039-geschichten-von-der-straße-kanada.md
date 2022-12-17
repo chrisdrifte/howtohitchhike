@@ -3,7 +3,7 @@ title: "Geschichten von der Straße: Kanada"
 coverImage: "/assets/book/039-tales-from-the-road-canada.jpg"
 pageNumber: 39
 excerpt: "Qualicum Beach, Vancouver Island nach Tofino, Vancouver Island (165km). Eine Frau mit langem, silbrig-weißem Haar saß am Steuer und grinste uns an. „Normalerweise halte ich nur für Natives an.“"
-translationSource: 039-tales-from-the-road-canada
+translationSlug: 039-tales-from-the-road-canada
 translator: lena-kraus
 ---
 

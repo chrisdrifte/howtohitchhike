@@ -3,7 +3,7 @@ title: "Dentro do veículo"
 coverImage: "/assets/book/072-travelling-in-the-vehicle.jpg"
 pageNumber: 72
 excerpt: "Uma boa maneira de deixar alguém confortável é tratá-la como se fosse um amigo. Você pode começar uma conversa perguntando a ela como foi seu dia."
-translationSource: 072-travelling-in-the-vehicle
+translationSlug: 072-travelling-in-the-vehicle
 translator: joao-roque-sieczkowski-monaco
 ---
 

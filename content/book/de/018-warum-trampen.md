@@ -3,7 +3,7 @@ title: "Warum trampen?"
 coverImage: "/assets/book/018-why-choose-to-hitch.jpg"
 pageNumber: 18
 excerpt: "Trampe, weil es dir zeigen wird, dass es überall gute Menschen gibt, und weil die Erfahrungen, die du auf diese Weise machst, Erfahrungen sind, die du auf keine andere Weise hättest machen können."
-translationSource: 018-why-choose-to-hitch
+translationSlug: 018-why-choose-to-hitch
 translator: lena-kraus
 ---
 

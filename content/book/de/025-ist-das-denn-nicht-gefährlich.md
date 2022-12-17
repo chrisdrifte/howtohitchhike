@@ -3,7 +3,7 @@ title: "Ist das denn nicht gefährlich?!"
 coverImage: "/assets/book/025-is-hitch-hiking-dangerous.jpg"
 pageNumber: 25
 excerpt: "So lange du deinen gesunden Menschenverstand benutzt und die Menschen um dich herum respektvoll und freundlich behandelst, ist die Wahrscheinlichkeit, dass du eine positive Erfahrung machst, sehr hoch."
-translationSource: 025-is-hitch-hiking-dangerous
+translationSlug: 025-is-hitch-hiking-dangerous
 translator: lena-kraus
 ---
 

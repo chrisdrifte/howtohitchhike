@@ -3,7 +3,7 @@ title: "Ganhando dinheiro na estrada"
 coverImage: "/assets/book/096-earning-money-on-the-road.jpg"
 pageNumber: 96
 excerpt: "Se você já pensou em atrações turísticas como algo brega e degradante, talvez agora você seja capaz de descobrir uma profunda apreciação pelas tendências capitalistas do local."
-translationSource: 096-earning-money-on-the-road
+translationSlug: 096-earning-money-on-the-road
 translator: joao-roque-sieczkowski-monaco
 ---
 

@@ -3,7 +3,7 @@ title: "Solicitando carona"
 coverImage: "/assets/book/062-how-to-get-rides.jpg"
 pageNumber: 62
 excerpt: "O símbolo para carona é universalmente reconhecido nas culturas ocidentais: levante o braço na horizontal, feche o punho e levante o dedão, fazendo assim o sinal de ‘joinha’ com a mão."
-translationSource: 062-how-to-get-rides
+translationSlug: 062-how-to-get-rides
 translator: joao-roque-sieczkowski-monaco
 ---
 

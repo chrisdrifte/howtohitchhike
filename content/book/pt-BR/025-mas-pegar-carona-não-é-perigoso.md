@@ -3,7 +3,7 @@ title: "Mas pegar carona não é perigoso?"
 coverImage: "/assets/book/025-is-hitch-hiking-dangerous.jpg"
 pageNumber: 25
 excerpt: "Tendo um bom julgamento e tratando as pessoas ao seu redor com respeito e gentileza, a probabilidade de se ter uma experiência positiva está a seu favor."
-translationSource: 025-is-hitch-hiking-dangerous
+translationSlug: 025-is-hitch-hiking-dangerous
 translator: joao-roque-sieczkowski-monaco
 ---
 

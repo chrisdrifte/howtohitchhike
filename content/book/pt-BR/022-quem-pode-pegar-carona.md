@@ -3,7 +3,7 @@ title: "Quem pode pegar carona?"
 coverImage: "/assets/book/022-who-can-hitch-hike.jpg"
 pageNumber: 22
 excerpt: "Todos podem pegar carona - mas algumas pessoas esperarão mais do que outras."
-translationSource: 022-who-can-hitch-hike
+translationSlug: 022-who-can-hitch-hike
 translator: joao-roque-sieczkowski-monaco
 ---
 

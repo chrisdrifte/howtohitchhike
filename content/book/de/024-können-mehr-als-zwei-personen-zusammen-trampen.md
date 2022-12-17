@@ -3,7 +3,7 @@ title: "Können mehr als zwei Personen zusammen trampen?"
 coverImage: "/assets/book/024-can-you-hitch-with-more-than-two-people.jpg"
 pageNumber: 24
 excerpt: "Der einzige echte Unterschied war, dass es immer fünf Minuten länger dauerte, unser Gepäck einzuladen."
-translationSource: 024-can-you-hitch-with-more-than-two-people
+translationSlug: 024-can-you-hitch-with-more-than-two-people
 translator: lena-kraus
 ---
 

@@ -3,7 +3,7 @@ title: "Contos da estrada: Suécia"
 coverImage: "/assets/book/027-tales-from-the-road-sweden.jpg"
 pageNumber: 27
 excerpt: "Uddebo a Skattunbyn (500km). Arbustos e galhos chicoteavam as janelas, o carro subia e descia violentamente cortando a estrada desnivelada, curvas fechadas apareciam, iluminadas pela luz de um farol, quase sem aviso."
-translationSource: 027-tales-from-the-road-sweden
+translationSlug: 027-tales-from-the-road-sweden
 translator: joao-roque-sieczkowski-monaco
 ---
 

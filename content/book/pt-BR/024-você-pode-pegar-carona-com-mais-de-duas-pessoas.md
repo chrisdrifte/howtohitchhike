@@ -3,7 +3,7 @@ title: "Você pode pegar carona com mais de duas pessoas?"
 coverImage: "/assets/book/024-can-you-hitch-with-more-than-two-people.jpg"
 pageNumber: 24
 excerpt: "A única diferença real eram os cinco minutos extras para acomodar as mochilas no carro."
-translationSource: 024-can-you-hitch-with-more-than-two-people
+translationSlug: 024-can-you-hitch-with-more-than-two-people
 translator: joao-roque-sieczkowski-monaco
 ---
 

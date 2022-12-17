@@ -3,7 +3,7 @@ title: "Contos da estrada: EUA"
 coverImage: "/assets/book/011-tales-from-the-road-usa.jpg"
 pageNumber: 11
 excerpt: "Manchester, Tennessee to Boulder, Colorado (2000km). “Vamos tentar fazer tudo em uma só viagem,” eu disse. Fedorentos, sujos e de ressaca, nos pusemos de frente ao tráfego e levantamos nossos dedões."
-translationSource: 011-tales-from-the-road-usa
+translationSlug: 011-tales-from-the-road-usa
 translator: joao-roque-sieczkowski-monaco
 ---
 

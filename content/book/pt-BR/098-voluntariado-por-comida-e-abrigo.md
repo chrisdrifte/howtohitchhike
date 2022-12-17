@@ -3,7 +3,7 @@ title: "Voluntariado por comida e abrigo"
 coverImage: "/assets/book/098-volunteering-for-food-and-shelter.jpg"
 pageNumber: 98
 excerpt: "Isso é o paraíso? Uma utopia comunista? Um culto pseudo espiritual? Não, é um simples voluntariado por comida e abrigo."
-translationSource: 098-volunteering-for-food-and-shelter
+translationSlug: 098-volunteering-for-food-and-shelter
 translator: joao-roque-sieczkowski-monaco
 ---
 

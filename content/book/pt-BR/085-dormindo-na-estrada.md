@@ -3,7 +3,7 @@ title: "Dormindo na estrada"
 coverImage: "/assets/book/085-sleeping-on-the-road.jpg"
 pageNumber: 85
 excerpt: "There's no reason why your nights on the road should be anything but comfortable, restful, and reasonably safe. As with hitchhiking, the skill is in finding a good spot."
-translationSource: 085-sleeping-on-the-road
+translationSlug: 085-sleeping-on-the-road
 translator: joao-roque-sieczkowski-monaco
 ---
 

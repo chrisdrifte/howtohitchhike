@@ -3,7 +3,7 @@ title: "Mitgenommen werden"
 coverImage: "/assets/book/062-how-to-get-rides.jpg"
 pageNumber: 62
 excerpt: "In der westlichen Welt ist das Symbol fürs Trampen universell: Strecke den Arm aus und mache ein „Daumen hoch“ Zeichen."
-translationSource: 062-how-to-get-rides
+translationSlug: 062-how-to-get-rides
 translator: lena-kraus
 ---
 

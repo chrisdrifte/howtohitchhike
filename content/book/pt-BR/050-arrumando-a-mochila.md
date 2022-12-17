@@ -3,7 +3,7 @@ title: "Arrumando a mochila"
 coverImage: "/assets/book/050-packing-your-bag.jpg"
 pageNumber: 50
 excerpt: "Você tem que levar em conta por quanto tempo estará viajando, os diferentes ambientes e climas que você passará, como você irá se alimentar e dormir, e o quanto você está fisicamente disposto a carregar."
-translationSource: 050-packing-your-bag
+translationSlug: 050-packing-your-bag
 translator: joao-roque-sieczkowski-monaco
 ---
 

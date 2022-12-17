@@ -3,7 +3,7 @@ title: "Ich packe meinen Rucksack"
 coverImage: "/assets/book/050-packing-your-bag.jpg"
 pageNumber: 50
 excerpt: "Du musst beachten, wie lange du unterwegs sein wirst, die verschiedenen Umgebungen und das Wetter, wie du essen und schlafen wirst und wie viel du tragen kannst."
-translationSource: 050-packing-your-bag
+translationSlug: 050-packing-your-bag
 translator: lena-kraus
 ---
 

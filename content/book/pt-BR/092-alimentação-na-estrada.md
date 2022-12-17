@@ -3,7 +3,7 @@ title: "Alimentação na estrada"
 coverImage: "/assets/book/092-eating-on-the-road.jpg"
 pageNumber: 92
 excerpt: "A comida sempre foi um dos grandes desafios para mim enquanto viajo. Espaço para comida é geralmente limitado e algumas vezes vaza, sujando tudo dentro da mochila."
-translationSource: 092-eating-on-the-road
+translationSlug: 092-eating-on-the-road
 translator: joao-roque-sieczkowski-monaco
 ---
 

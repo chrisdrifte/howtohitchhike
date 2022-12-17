@@ -3,7 +3,7 @@ title: "Die Vier Gebote"
 coverImage: "/assets/book/032-the-four-commandments-of-hitch-hiking.jpg"
 pageNumber: 32
 excerpt: "Ich kann verstehen, wenn bei manchen meiner Leserinnen und Leser der Eindruck entsteht, dieses Buch sei von ihren Eltern geschrieben worden. Sie sollten dankbar dafür sein, dass ihre Eltern ihnen so gute Ratschläge zum Trampen gegeben haben."
-translationSource: 032-the-four-commandments-of-hitch-hiking
+translationSlug: 032-the-four-commandments-of-hitch-hiking
 translator: lena-kraus
 ---
 

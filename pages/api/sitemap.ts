@@ -17,15 +17,15 @@ export default function SiteMapXml(_req: NextApiRequest, res: NextApiResponse) {
           .map(
             (page) => `
               <url>
-                <loc>${page.uri}</loc>
-                ${page.translations
-                  .map(
-                    (translation) => `<xhtml:link
+                <loc>${page.uri}</loc>${page.translations
+              .map(
+                (translation) => `
+                <xhtml:link
                      rel="alternate"
                      hreflang="${translation.locale}"
                      href="${translation.uri}" />`
-                  )
-                  .join("")}
+              )
+              .join("")}
               </url>`
           )
           .join("")}

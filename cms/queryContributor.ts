@@ -23,12 +23,12 @@ const queryContributor = async function ({
     post && {
       type,
       slug,
-      title: post.title,
+      title: post.title || null,
       picture: post.picture || null,
       instagram: post.instagram || null,
       linkedIn: post.linkedIn || null,
       website: post.website || null,
-      content: await markdownToHtml(`${post.content || ""}`),
+      content: (await markdownToHtml(`${post.content || ""}`)) || null,
     }
   );
 };

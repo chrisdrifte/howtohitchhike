@@ -3,7 +3,7 @@ title: "Essen unterwegs"
 coverImage: "/assets/book/092-eating-on-the-road.jpg"
 pageNumber: 92
 excerpt: "Food was always one of the big challenges for me when I travelled. Space for food was usually limited and delicate foods often spoiled in my bag (or, worse, busted open and spoiled everything else in my bag)."
-translationSource: 092-eating-on-the-road
+translationSlug: 092-eating-on-the-road
 translator: lena-kraus
 ---
 

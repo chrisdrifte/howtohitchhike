@@ -3,7 +3,7 @@ title: "Contos da estrada: Canadá"
 coverImage: "/assets/book/039-tales-from-the-road-canada.jpg"
 pageNumber: 39
 excerpt: "Praia Qualicum até Tofino 165km (Ilhas Vancouver). Uma mulher branca com cabelos grisalhos estava atrás do volante, reclamando. “Normalmente eu só paro para nativos,”"
-translationSource: 039-tales-from-the-road-canada
+translationSlug: 039-tales-from-the-road-canada
 translator: joao-roque-sieczkowski-monaco
 ---
 

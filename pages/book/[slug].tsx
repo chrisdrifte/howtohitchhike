@@ -7,7 +7,7 @@ import queryBookExtract from '../../cms/queryBookExtract';
 import queryNextSlug from '../../cms/queryNextSlug';
 import queryPaths from '../../cms/queryPaths';
 import queryTranslations from '../../cms/queryTranslations';
-import queryTranslationMap from '../../cms/queryTranslationsMap';
+import queryTranslationsMap from '../../cms/queryTranslationsMap';
 import Layout from '../../components/Layout';
 import Meta from '../../components/Meta';
 import NoticeSuggestedPost from '../../components/NoticeSuggestedPost';

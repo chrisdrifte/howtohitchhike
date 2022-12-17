@@ -3,7 +3,7 @@ title: "Aussteigen"
 coverImage: "/assets/book/077-leaving-the-vehicle.jpg"
 pageNumber: 77
 excerpt: "Vergiss nicht, dich zu bedanken und deinem Fahrer oder deiner Fahrerin eine gute Fahrt zu wünschen, wenn ihr euch verabschiedet."
-translationSource: 077-leaving-the-vehicle
+translationSlug: 077-leaving-the-vehicle
 translator: lena-kraus
 ---
 

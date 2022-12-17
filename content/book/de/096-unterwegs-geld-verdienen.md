@@ -3,7 +3,7 @@ title: "Unterwegs Geld verdienen"
 coverImage: "/assets/book/096-earning-money-on-the-road.jpg"
 pageNumber: 96
 excerpt: "Wenn du Touristenziele bisher eher kitschig und abwertend gefunden hast, wirst du ihre kapitalistischen Tendenzen jetzt vielleicht zu schätzen wissen."
-translationSource: 096-earning-money-on-the-road
+translationSlug: 096-earning-money-on-the-road
 translator: lena-kraus
 ---
 

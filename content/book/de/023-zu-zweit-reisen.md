@@ -3,7 +3,7 @@ title: "Zu zweit reisen?"
 coverImage: "/assets/book/023-should-you-travel-with-a-partner.jpg"
 pageNumber: 23
 excerpt: " Mit einem Reisepartner teilst du die Risiken, Schwierigkeiten und Herausforderungen, die dir beim Trampen begegnen werden."
-translationSource: 023-should-you-travel-with-a-partner
+translationSlug: 023-should-you-travel-with-a-partner
 translator: lena-kraus
 ---
 

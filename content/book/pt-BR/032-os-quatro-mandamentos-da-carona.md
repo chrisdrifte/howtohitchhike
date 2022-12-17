@@ -3,7 +3,7 @@ title: "Os quatro mandamentos da carona"
 coverImage: "/assets/book/032-the-four-commandments-of-hitch-hiking.jpg"
 pageNumber: 32
 excerpt: "Eu posso estimar que alguns leitores podem começar a pensar que este guia de carona foi, na verdade, escrito por suas mães. Estes leitores devem se considerar sortudos que suas mães estejam dando conselhos tão bons sobre carona."
-translationSource: 032-the-four-commandments-of-hitch-hiking
+translationSlug: 032-the-four-commandments-of-hitch-hiking
 translator: joao-roque-sieczkowski-monaco
 ---
 

@@ -3,7 +3,7 @@ title: "Minimizando sua vulnerabilidade"
 coverImage: "/assets/book/102-staying-safe-on-the-road.jpg"
 pageNumber: 102
 excerpt: "Na vida você pode transformar qualquer situação de risco em uma situação de baixo risco simplesmente estando atento aos riscos e os moldando."
-translationSource: 102-staying-safe-on-the-road
+translationSlug: 102-staying-safe-on-the-road
 translator: joao-roque-sieczkowski-monaco
 ---
 

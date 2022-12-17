@@ -3,7 +3,7 @@ title: "Reiseplanung"
 coverImage: "/assets/book/043-planning-your-route.jpg"
 pageNumber: 43
 excerpt: "Wie lange deine Reise dauert, kommt darauf an, wie viel Zeit du damit verbringst, zu deinen Ausgangspunkten zu laufen, wie schnell dich jemand mitnimmt, wie oft du umsteigen musst, und wie indirekt die Route letztendlich wird."
-translationSource: 043-planning-your-route
+translationSlug: 043-planning-your-route
 translator: lena-kraus
 ---
 

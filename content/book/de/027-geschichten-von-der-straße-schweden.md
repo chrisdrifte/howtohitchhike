@@ -3,7 +3,7 @@ title: "Geschichten von der Straße: Schweden"
 coverImage: "/assets/book/027-tales-from-the-road-sweden.jpg"
 pageNumber: 27
 excerpt: "Zweige peitschten die Windschutzscheibe, das Fahrzeug holperte wild durch die Schlaglöcher, scharfe Kurven tauchten plötzlich im Scheinwerferlicht auf"
-translationSource: 027-tales-from-the-road-sweden
+translationSlug: 027-tales-from-the-road-sweden
 translator: lena-kraus
 ---
 

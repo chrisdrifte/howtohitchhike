@@ -3,7 +3,7 @@ title: "Geschichten von der Straße: Europa"
 coverImage: "/assets/book/081-tales-from-the-road-europe.jpg"
 pageNumber: 81
 excerpt: "Uddebo, Schweden nach Bologna, Italien über Prag, Tschechien (3400 km). Lübeck war sehr warm und voller Touristen, also entschlossen wir, uns unser Abendessen zu verdienen, indem wir auf der Straße Musik machten."
-translationSource: 081-tales-from-the-road-europe
+translationSlug: 081-tales-from-the-road-europe
 translator: lena-kraus
 ---
 

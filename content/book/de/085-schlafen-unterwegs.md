@@ -3,7 +3,7 @@ title: "Schlafen unterwegs"
 coverImage: "/assets/book/085-sleeping-on-the-road.jpg"
 pageNumber: 85
 excerpt: "Wenn du dich auf deinen gesunden Menschenverstand verlässt, gibt es allerdings keinen Grund, warum deine Nächte unterwegs nicht erholsam, komfortabel und vergleichsweise sicher sein sollten."
-translationSource: 085-sleeping-on-the-road
+translationSlug: 085-sleeping-on-the-road
 translator: lena-kraus
 ---
 
