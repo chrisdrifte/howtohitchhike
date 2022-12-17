@@ -1,13 +1,13 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-import getSiteMapPages from '../../cms/getSiteMapPages';
+import querySiteMapPages from '../../cms/querySiteMapPages';
 
 export default function SiteMapXml(_req: NextApiRequest, res: NextApiResponse) {
   res.statusCode = 200;
   res.setHeader("Content-Type", "text/xml");
   res.setHeader("Cache-control", "stale-while-revalidate, s-maxage=3600");
 
-  getSiteMapPages().then((pages) => {
+  querySiteMapPages().then((pages) => {
     const xml = `<?xml version="1.0" encoding="UTF-8"?>
     <urlset 
       xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 

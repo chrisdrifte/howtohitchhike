@@ -6,25 +6,30 @@ type ContentDirQuery = {
   locale?: string;
 };
 
+const CONTENT_DIR = "content";
+
 /**
  * Get relative directory of content with `/` prefix
  */
 function getContentDir({ type, locale }: ContentDirQuery) {
   switch (type) {
     case ContentType.Contributor:
-      return `/content/${CONTRIBUTORS_DIR}`;
+      if (locale) {
+        throw new Error(`${type} is not ordered by locale`);
+      }
+      return `/${CONTENT_DIR}/${CONTRIBUTORS_DIR}`;
 
     case ContentType.BlogPost:
       if (!locale) {
-        throw new Error(`Content is ordered by locale`);
+        throw new Error(`${type} is ordered by locale`);
       }
-      return `/content/${BLOG_POSTS_DIR}/${locale}`;
+      return `/${CONTENT_DIR}/${BLOG_POSTS_DIR}/${locale}`;
 
     case ContentType.BookExtract:
       if (!locale) {
-        throw new Error(`Content is ordered by locale`);
+        throw new Error(`${type} is ordered by locale`);
       }
-      return `/content/${BOOK_EXTRACTS_DIR}/${locale}`;
+      return `/${CONTENT_DIR}/${BOOK_EXTRACTS_DIR}/${locale}`;
   }
 }
 

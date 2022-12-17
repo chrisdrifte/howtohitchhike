@@ -2,25 +2,23 @@ import memoize from 'lodash.memoize';
 
 import BlogPost from '../models/BlogPost';
 import ContentType from '../models/ContentType';
+import LocalizedContentQuery from '../models/LocalizedContentQuery';
 import markdownToHtml from '../utility/markdownToHtml';
 import getContentURI from './getContentURI';
-import getContributor from './getContributor';
 import getKey from './getKey';
-import getPost from './getPost';
+import queryContributor from './queryContributor';
+import queryPost from './queryPost';
 
-type BlogPostQuery = {
-  locale: string;
-  slug: string;
-};
+type BlogPostQuery = Pick<LocalizedContentQuery, "locale" | "slug">;
 
 /**
  * Get blog post by locale and slug
  */
-const getBlogPost = memoize(
+const queryBlogPost = memoize(
   async function ({ locale, slug }: BlogPostQuery): Promise<BlogPost> {
     const type = ContentType.BlogPost;
     const path = getContentURI({ type, slug });
-    const post = await getPost({ type, locale, slug });
+    const post = await queryPost({ type, locale, slug });
 
     // @todo verify data from post
 
@@ -36,9 +34,9 @@ const getBlogPost = memoize(
         excerpt: post.excerpt,
         content: await markdownToHtml(`${post.content || ""}`),
         date: post.date,
-        author: await getContributor({ slug: post.author }),
+        author: await queryContributor({ slug: post.author }),
         translationSource: post.translationSource || null,
-        translator: await getContributor({ slug: post.translator }),
+        translator: await queryContributor({ slug: post.translator }),
       }
     );
   },
@@ -46,4 +44,4 @@ const getBlogPost = memoize(
   getKey
 );
 
-export default getBlogPost;
+export default queryBlogPost;

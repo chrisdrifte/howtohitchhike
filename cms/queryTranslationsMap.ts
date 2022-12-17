@@ -1,16 +1,15 @@
 import memoize from 'lodash.memoize';
 
+import ContentQuery from '../models/ContentQuery';
 import ContentType from '../models/ContentType';
 import Translation from '../models/Translation';
 import { i18n } from '../next.config';
-import getBlogPost from './getBlogPost';
-import getBookExtract from './getBookExtract';
 import getContentURI from './getContentURI';
-import getSlugs from './getSlugs';
+import queryBlogPost from './queryBlogPost';
+import queryBookExtract from './queryBookExtract';
+import querySlugs from './querySlugs';
 
-type TranslationsMapQuery = {
-  type: ContentType;
-};
+type TranslationsMapQuery = Pick<ContentQuery, "type">;
 
 type TranslationMap = Map<string, Translation[]>;
 
@@ -18,12 +17,12 @@ type TranslationMap = Map<string, Translation[]>;
  * Generate a map of content and its translations
  * @todo clean up
  */
-const getTranslationMap = memoize(
+const queryTranslationMap = memoize(
   async function ({ type }: TranslationsMapQuery) {
     const translationMap: TranslationMap = new Map();
 
     const postMetaPromises = i18n.locales.map(async (locale) =>
-      (await getSlugs({ type, locale })).map((slug) => [locale, slug])
+      (await querySlugs({ type, locale })).map((slug) => [locale, slug])
     );
 
     const postMeta = (await Promise.all(postMetaPromises)).flat();
@@ -33,13 +32,13 @@ const getTranslationMap = memoize(
 
       switch (type) {
         case ContentType.BlogPost: {
-          const data = await getBlogPost({ locale, slug });
+          const data = await queryBlogPost({ locale, slug });
           source = data.translationSource || slug;
           break;
         }
 
         case ContentType.BookExtract: {
-          const data = await getBookExtract({ locale, slug });
+          const data = await queryBookExtract({ locale, slug });
           source = data.translationSource || slug;
           break;
         }
@@ -84,4 +83,4 @@ const getTranslationMap = memoize(
   (type) => `${type}`
 );
 
-export default getTranslationMap;
+export default queryTranslationMap;

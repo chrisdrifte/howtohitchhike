@@ -3,8 +3,8 @@ import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 
 import generateFeaturedPost from '../cms/generateFeaturedPost';
-import getBlogPosts from '../cms/getBlogPosts';
-import getBookExtracts from '../cms/getBookExtracts';
+import queryBlogPosts from '../cms/queryBlogPosts';
+import queryBookExtracts from '../cms/queryBookExtracts';
 import Layout from '../components/Layout';
 import Meta from '../components/Meta';
 import PageHome from '../components/PageHome';
@@ -47,8 +47,8 @@ export default function Index({
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  const blogPosts = await getBlogPosts({ locale });
-  const bookExtracts = await getBookExtracts({ locale });
+  const blogPosts = await queryBlogPosts({ locale });
+  const bookExtracts = await queryBookExtracts({ locale });
 
   const featuredPost = await generateFeaturedPost([
     ...blogPosts,

@@ -1,20 +1,21 @@
+import ContentQuery from '../models/ContentQuery';
 import ContentType from '../models/ContentType';
 import Contributor from '../models/Contributor';
 import markdownToHtml from '../utility/markdownToHtml';
-import getPost from './getPost';
+import parseMarkdownFile from '../utility/parseMarkdownFile';
+import getContentDir from './getContentDir';
 
-type ContributorQuery = {
-  slug: string;
-};
+type ContributorQuery = Pick<ContentQuery, "slug">;
 
 /**
  * Get contributor by slug
  */
-const getContributor = async function ({
+const queryContributor = async function ({
   slug,
 }: ContributorQuery): Promise<Contributor> {
   const type = ContentType.Contributor;
-  const post = await getPost({ type, slug });
+  const dir = getContentDir({ type });
+  const post = await parseMarkdownFile(dir, slug);
 
   // @todo verify data from post
 
@@ -32,4 +33,4 @@ const getContributor = async function ({
   );
 };
 
-export default getContributor;
+export default queryContributor;

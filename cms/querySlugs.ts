@@ -1,19 +1,16 @@
 import memoize from 'lodash.memoize';
 
-import ContentType from '../models/ContentType';
+import LocalizedContentQuery from '../models/LocalizedContentQuery';
 import getMarkdownFilesFromDirectory from '../utility/getMarkdownFilesFromDirectory';
 import getContentDir from './getContentDir';
 import getKey from './getKey';
 
-type SlugsQuery = {
-  type: ContentType;
-  locale: string;
-};
+type SlugsQuery = Pick<LocalizedContentQuery, "type" | "locale">;
 
 /**
  * Get all slugs in a certain type and locale
  */
-const getSlugs = memoize(
+const querySlugs = memoize(
   async function ({ type, locale }: SlugsQuery) {
     const contentDir = getContentDir({ type, locale });
     const slugs = await getMarkdownFilesFromDirectory(contentDir);
@@ -24,4 +21,4 @@ const getSlugs = memoize(
   getKey
 );
 
-export default getSlugs;
+export default querySlugs;

@@ -2,10 +2,10 @@ import { GetStaticProps } from 'next';
 import ErrorPage from 'next/error';
 import { useRouter } from 'next/router';
 
-import getBlogPost from '../../cms/getBlogPost';
-import getBookExtracts from '../../cms/getBookExtracts';
-import getNextSlug from '../../cms/getNextSlug';
-import getPaths from '../../cms/getPaths';
+import queryBlogPost from '../../cms/queryBlogPost';
+import queryBookExtracts from '../../cms/queryBookExtracts';
+import queryNextSlug from '../../cms/queryNextSlug';
+import queryPaths from '../../cms/queryPaths';
 import Layout from '../../components/Layout';
 import Meta from '../../components/Meta';
 import NoticeSuggestedPost from '../../components/NoticeSuggestedPost';
@@ -87,12 +87,12 @@ export const getStaticProps: GetStaticProps = async ({
 }: Params) => {
   const slug = params.slug;
 
-  const blogPost = await getBlogPost({ locale, slug });
-  const nextSlug = await getNextSlug(blogPost);
+  const blogPost = await queryBlogPost({ locale, slug });
+  const nextSlug = await queryNextSlug(blogPost);
 
   let nextPost: Post =
-    (await getBlogPost({ locale, slug: nextSlug })) ||
-    (await getBookExtracts({ locale }))[0] ||
+    (await queryBlogPost({ locale, slug: nextSlug })) ||
+    (await queryBookExtracts({ locale }))[0] ||
     null;
 
   return {
@@ -104,7 +104,7 @@ export const getStaticProps: GetStaticProps = async ({
 };
 
 export async function getStaticPaths() {
-  const paths = await getPaths(ContentType.BlogPost);
+  const paths = await queryPaths({ type: ContentType.BlogPost });
 
   return {
     paths: paths.map((path) => {

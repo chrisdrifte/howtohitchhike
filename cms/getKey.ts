@@ -1,5 +1,4 @@
 import ContentType from '../models/ContentType';
-import Post from '../models/Post';
 
 type Props = {
   type?: ContentType;

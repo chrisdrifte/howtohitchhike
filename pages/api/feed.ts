@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import RSS from 'rss';
 
-import getRssFeedPosts from '../../cms/getRssFeedPosts';
+import queryRssFeedPosts from '../../cms/queryRssFeedPosts';
 import { BLOG_DESCRIPTION, BLOG_TITLE, BLOG_URL } from '../../config';
 import { i18n } from '../../next.config';
 
@@ -10,7 +10,7 @@ export default function FeedXml(_req: NextApiRequest, res: NextApiResponse) {
   res.setHeader("Content-Type", "text/xml");
   res.setHeader("Cache-control", "stale-while-revalidate, s-maxage=3600");
 
-  getRssFeedPosts(i18n.defaultLocale).then((rssFeedPosts) => {
+  queryRssFeedPosts({ locale: i18n.defaultLocale }).then((rssFeedPosts) => {
     const feed = new RSS({
       title: BLOG_TITLE,
       description: BLOG_DESCRIPTION,

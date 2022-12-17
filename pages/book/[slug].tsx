@@ -3,11 +3,11 @@ import ErrorPage from 'next/error';
 import { useRouter } from 'next/router';
 import { ComponentProps } from 'react';
 
-import getBookExtract from '../../cms/getBookExtract';
-import getNextSlug from '../../cms/getNextSlug';
-import getPaths from '../../cms/getPaths';
-import getTranslations from '../../cms/getTranslations';
-import getTranslationMap from '../../cms/getTranslationsMap';
+import queryBookExtract from '../../cms/queryBookExtract';
+import queryNextSlug from '../../cms/queryNextSlug';
+import queryPaths from '../../cms/queryPaths';
+import queryTranslations from '../../cms/queryTranslations';
+import queryTranslationMap from '../../cms/queryTranslationsMap';
 import Layout from '../../components/Layout';
 import Meta from '../../components/Meta';
 import NoticeSuggestedPost from '../../components/NoticeSuggestedPost';
@@ -98,12 +98,12 @@ export const getStaticProps: GetStaticProps = async ({
   const type = ContentType.BookExtract;
   const slug = params.slug;
 
-  const bookExtract = await getBookExtract({ locale, slug });
+  const bookExtract = await queryBookExtract({ locale, slug });
 
-  const nextSlug = await getNextSlug(bookExtract);
-  const nextBookExtract = await getBookExtract({ locale, slug: nextSlug });
+  const nextSlug = await queryNextSlug(bookExtract);
+  const nextBookExtract = await queryBookExtract({ locale, slug: nextSlug });
 
-  const translations = await getTranslations({ type, slug });
+  const translations = await queryTranslations({ type, slug });
 
   return {
     props: {
@@ -115,7 +115,7 @@ export const getStaticProps: GetStaticProps = async ({
 };
 
 export async function getStaticPaths() {
-  const paths = await getPaths(ContentType.BookExtract);
+  const paths = await queryPaths({ type: ContentType.BookExtract });
 
   return {
     paths: paths.map((post) => {
