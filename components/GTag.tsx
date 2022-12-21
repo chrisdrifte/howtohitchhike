@@ -5,6 +5,9 @@ type Props = {
 };
 
 function GTag({ gaMeasurementId }: Props) {
+  if (process.env.NODE_ENV === "development") {
+    return null;
+  }
   return (
     <>
       <Script

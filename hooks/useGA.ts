@@ -7,6 +7,10 @@ function useGA() {
   const router = useRouter();
 
   useEffect(() => {
+    if (process.env.NODE_ENV === "development") {
+      return;
+    }
+
     const handleRouteChange = (url: string) => {
       if (!window.gtag) {
         console.warn("gtag not detected");
