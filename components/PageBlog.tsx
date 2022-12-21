@@ -25,18 +25,8 @@ export default function PageBlog({ blogPost }: Props) {
               date={blogPost.date}
               author={blogPost.author}
             />
-            <PostBody content={blogPost.content} />
 
-            <div className="max-w-2xl mx-auto">
-              <SectionSeparator />
-              <h3 className="text-3xl font-serif font-bold tracking-tighter leading-tight">
-                Read the book for free
-              </h3>
-              <BookExtractPreview
-                title="Rules of Thumb: How to Hitchhike and Live on the Road"
-                slug="011-tales-from-the-road-usa"
-              />
-            </div>
+            <PostBody content={blogPost.content} />
 
             <div className="max-w-2xl mx-auto mt-14 bg-neutral-50 p-5 flex flex-col items-center ">
               <strong>Words by</strong>
@@ -54,6 +44,17 @@ export default function PageBlog({ blogPost }: Props) {
                   }}
                 />
               )}
+            </div>
+
+            <div className="max-w-2xl mx-auto">
+              <SectionSeparator />
+              <h3 className="text-3xl font-serif font-bold tracking-tighter leading-tight">
+                Read the book for free
+              </h3>
+              <BookExtractPreview
+                title="Rules of Thumb: How to Hitchhike and Live on the Road"
+                slug="011-tales-from-the-road-usa"
+              />
             </div>
           </article>
         )}
