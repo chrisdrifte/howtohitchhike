@@ -1,19 +1,16 @@
-import memoize from 'lodash.memoize';
-
 import ContentQuery from '../models/ContentQuery';
 import ContentType from '../models/ContentType';
 import Contributor from '../models/Contributor';
 import markdownToHtml from '../utility/markdownToHtml';
 import parseMarkdownFile from '../utility/parseMarkdownFile';
 import getContentDir from './getContentDir';
-import getKey from './getKey';
 
 type ContributorQuery = Pick<ContentQuery, "slug">;
 
 /**
  * Get contributor by slug
  */
-const queryContributor = memoize(async function ({
+const queryContributor = async function ({
   slug,
 }: ContributorQuery): Promise<Contributor> {
   const type = ContentType.Contributor;
@@ -34,7 +31,6 @@ const queryContributor = memoize(async function ({
       content: (await markdownToHtml(`${post.content || ""}`)) || null,
     }
   );
-},
-getKey);
+};
 
 export default queryContributor;

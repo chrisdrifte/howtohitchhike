@@ -1,11 +1,8 @@
-import memoize from 'lodash.memoize';
-
 import BookExtract from '../models/BookExtract';
 import ContentType from '../models/ContentType';
 import LocalizedContentQuery from '../models/LocalizedContentQuery';
 import markdownToHtml from '../utility/markdownToHtml';
 import getContentURI from './getContentURI';
-import getKey from './getKey';
 import queryContributor from './queryContributor';
 import queryPost from './queryPost';
 
@@ -14,7 +11,7 @@ type BookExtractQuery = Pick<LocalizedContentQuery, "locale" | "slug">;
 /**
  * Get book extract by locale and slug
  */
-const queryBookExtract = memoize(async function ({
+const queryBookExtract = async function ({
   locale,
   slug,
 }: BookExtractQuery): Promise<BookExtract> {
@@ -40,7 +37,6 @@ const queryBookExtract = memoize(async function ({
       translator: (await queryContributor({ slug: post.translator })) || null,
     }
   );
-},
-getKey);
+};
 
 export default queryBookExtract;
