@@ -1,11 +1,8 @@
-import memoize from 'lodash.memoize';
-
 import BlogPost from '../models/BlogPost';
 import ContentType from '../models/ContentType';
 import LocalizedContentQuery from '../models/LocalizedContentQuery';
 import markdownToHtml from '../utility/markdownToHtml';
 import getContentURI from './getContentURI';
-import getKey from './getKey';
 import queryContributor from './queryContributor';
 import queryPost from './queryPost';
 
@@ -14,7 +11,7 @@ type BlogPostQuery = Pick<LocalizedContentQuery, "locale" | "slug">;
 /**
  * Get blog post by locale and slug
  */
-const queryBlogPost = memoize(async function ({
+const queryBlogPost = async function ({
   locale,
   slug,
 }: BlogPostQuery): Promise<BlogPost> {
@@ -41,7 +38,6 @@ const queryBlogPost = memoize(async function ({
       translator: (await queryContributor({ slug: post.translator })) || null,
     }
   );
-},
-getKey);
+};
 
 export default queryBlogPost;

@@ -1,5 +1,3 @@
-import memoize from 'lodash.memoize';
-
 import ContentType from '../models/ContentType';
 import Translation from '../models/Translation';
 import { i18n } from '../next.config';
@@ -15,7 +13,7 @@ type SourcesMap = Map<string, Translation[]>;
 /**
  * Generate map of content translations
  */
-const queryTranslationsMap = memoize(async function () {
+const queryTranslationsMap = async function () {
   const translationsMap: TranslationsMap = new Map([
     [ContentType.BlogPost, new Map()],
     [ContentType.BookExtract, new Map()],
@@ -62,6 +60,6 @@ const queryTranslationsMap = memoize(async function () {
   }
 
   return translationsMap;
-});
+};
 
 export default queryTranslationsMap;
