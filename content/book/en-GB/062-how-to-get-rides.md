@@ -79,9 +79,8 @@ The road isn't the only place you can hitchhike. You may find some success at bu
 
 When you're hitchhiking from a place like a petrol station or car park, you have two choices:
 
-Wait at the exit with a sign.
-
-Approach people directly.
+1. Wait at the exit with a sign.
+2. Approach people directly.
 
 It can be effective to use both approaches simultaneously if you're travelling with a friend. Try to stay in sight of one another or you risk missing out on rides with people who stop at the exit, but don't want to wait for you to search for your friend. Be prepared for the vast majority of people to reject you if you're approaching them for rides. The trick here is to ask as many people as possible and be as friendly as possible. Don't be afraid to approach people who are sitting in their vehicles. Sometimes a driver will see you asking other people and then actually come up to you to offer a ride.
 
