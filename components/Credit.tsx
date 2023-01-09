@@ -61,7 +61,7 @@ const Credit = ({
         />
       )}
       <div className="text-xl font-bold">{title}</div>
-      {links.length && (
+      {!!links.length && (
         <ul className="flex m-4">
           {links.map(({ key, link }) => (
             <li key={key} className="m-1">
