@@ -1,15 +1,15 @@
-import { ComponentProps } from 'react';
+import { ComponentProps } from "react";
 
-import BookExtract from '../models/BookExtract';
-import { i18n } from '../next.config';
-import AsideKeepReading from './AsideKeepReading';
-import BookExtractHeader from './BookExtractHeader';
-import BookExtractPreview from './BookExtractPreview';
-import Container from './Container';
-import Credit from './Credit';
-import Header from './Header';
-import PostBody from './PostBody';
-import SectionSeparator from './SectionSeparator';
+import BookExtract from "../models/BookExtract";
+import { i18n } from "../next.config";
+import AsideKeepReading from "./AsideKeepReading";
+import BookExtractHeader from "./BookExtractHeader";
+import BookExtractPreview from "./BookExtractPreview";
+import Container from "./Container";
+import Credit from "./Credit";
+import Header from "./Header";
+import PostBody from "./PostBody";
+import SectionSeparator from "./SectionSeparator";
 
 type Props = {
   bookExtract?: BookExtract;
@@ -46,6 +46,7 @@ export default function PageBlog({
               <Credit
                 title={bookExtract.translator.title}
                 picture={bookExtract.translator.picture}
+                hillfire={bookExtract.translator.hillfire}
                 instagram={bookExtract.translator.instagram}
                 linkedIn={bookExtract.translator.linkedIn}
                 website={bookExtract.translator.website}
