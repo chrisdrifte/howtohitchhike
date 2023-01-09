@@ -73,7 +73,7 @@ export default function PageHome({
         <BookExtractList bookExtracts={bookExtracts} />
       </Container>
 
-      <CreditTranslation translator={translator} />
+      <CreditTranslation translator={translator} showContent />
 
       {isDefaultLocale && <AsideKeepReading />}
     </>
