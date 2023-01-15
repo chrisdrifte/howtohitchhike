@@ -1,9 +1,8 @@
-import { BLOG_URL } from '../config';
-import ContentType from '../models/ContentType';
-import { i18n } from '../next.config';
-import queryBlogPosts from './queryBlogPosts';
-import queryBookExtracts from './queryBookExtracts';
-import queryTranslationsMap from './queryTranslationsMap';
+import { BLOG_URL } from "../config";
+import { i18n } from "../next.config";
+import queryBlogPosts from "./queryBlogPosts";
+import queryBookExtracts from "./queryBookExtracts";
+import queryTranslationsMap from "./queryTranslationsMap";
 
 type SiteMapPage = {
   uri: string;
@@ -23,8 +22,8 @@ async function querySiteMapPages(): Promise<SiteMapPage[]> {
 
   const posts = (await Promise.all(promises)).flat();
 
-  return posts.map((post) => ({
-    uri: BLOG_URL + post.path,
+  const siteMapPages = posts.map((post) => ({
+    uri: BLOG_URL + post.fullPath,
     translations: (translationMap.get(post.type).get(post.slug) || []).map(
       (translation) => ({
         locale: translation.locale,
@@ -32,6 +31,8 @@ async function querySiteMapPages(): Promise<SiteMapPage[]> {
       })
     ),
   }));
+
+  return siteMapPages;
 }
 
 export default querySiteMapPages;
