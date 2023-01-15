@@ -1,11 +1,12 @@
-import ContentType from '../models/ContentType';
-import Translation from '../models/Translation';
-import { i18n } from '../next.config';
-import sortByLocale from '../utility/sortByLocale';
-import getContentURI from './getContentURI';
-import queryBlogPost from './queryBlogPost';
-import queryBookExtract from './queryBookExtract';
-import querySlugs from './querySlugs';
+import ContentType from "../models/ContentType";
+import Translation from "../models/Translation";
+import { i18n } from "../next.config";
+import sortByLocale from "../utility/sortByLocale";
+import getContentURI from "./getContentURI";
+import getLocalizedURI from "./getLocalizedURI";
+import queryBlogPost from "./queryBlogPost";
+import queryBookExtract from "./queryBookExtract";
+import querySlugs from "./querySlugs";
 
 type TranslationsMap = Map<ContentType, SourcesMap>;
 type SourcesMap = Map<string, Translation[]>;
@@ -35,8 +36,7 @@ const queryTranslationsMap = async function () {
         const translations = sourcesMap.get(sourceSlug) || [];
 
         const path = getContentURI({ type, slug });
-        const fullPath =
-          locale === i18n.defaultLocale ? path : `/${locale}` + path;
+        const fullPath = getLocalizedURI(locale, path);
 
         const newTranslation: Translation = {
           type,

@@ -1,11 +1,12 @@
-import { DEFAULT_OG_IMAGE_URL } from '../../config';
-import Post from '../../models/Post';
-import sampleCoverJpg from './sampleCover.jpg';
+import { DEFAULT_OG_IMAGE_URL } from "../../config";
+import Post from "../../models/Post";
+import sampleCoverJpg from "./sampleCover.jpg";
 
 export const samplePost: Omit<Post, "type"> = {
   locale: "en-GB",
   slug: "hello-world",
   path: "/example/hello-world",
+  fullPath: "/en/example/hello-world",
   title: "Learn How to Pre-render Pages Using Static Generation with Next.js",
   coverImage: sampleCoverJpg.toString(),
   ogImage: {

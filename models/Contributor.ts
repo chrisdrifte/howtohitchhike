@@ -1,9 +1,10 @@
-import Content from './Content';
+import Content from "./Content";
 
 interface Contributor extends Content {
   title: string;
   picture?: string;
-  instagram?: string;
+  hillfire?: string;
+  instagram?: string | string[];
   linkedIn?: string;
   website?: string;
   content?: string;
