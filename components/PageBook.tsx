@@ -60,7 +60,7 @@ export default function PageBlog({
       </Container>
 
       {bookExtract.translator && (
-        <CreditTranslation translator={bookExtract.translator} showContent />
+        <CreditTranslation translator={bookExtract.translator} />
       )}
 
       {isDefaultLocale && <AsideKeepReading />}

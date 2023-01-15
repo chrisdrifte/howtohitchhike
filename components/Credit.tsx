@@ -23,12 +23,10 @@ const Credit = ({
   website,
 }: Props) => {
   const links: { key: string; link: JSX.Element }[] = [
-    // list of hillfire links
-    ...forceArray(hillfire).map((url) => ({
+    // list of external links
+    ...forceArray(website).map((url) => ({
       key: url,
-      link: (
-        <LinkIcon iconSrc="/assets/icons/hillfire.png" url={url} nofollow />
-      ),
+      link: <LinkIcon iconSrc="/assets/icons/external.svg" url={url} />,
     })),
     // list of instagram links
     ...forceArray(instagram).map((username) => ({
@@ -42,10 +40,12 @@ const Credit = ({
         <LinkIcon iconSrc="/assets/icons/linkedin.svg" url={url} nofollow />
       ),
     })),
-    // list of external links
-    ...forceArray(website).map((url) => ({
+    // list of hillfire links
+    ...forceArray(hillfire).map((url) => ({
       key: url,
-      link: <LinkIcon iconSrc="/assets/icons/external.svg" url={url} />,
+      link: (
+        <LinkIcon iconSrc="/assets/icons/hillfire.png" url={url} nofollow />
+      ),
     })),
   ];
 
@@ -60,7 +60,7 @@ const Credit = ({
           height={48}
         />
       )}
-      <div className="text-xl font-bold">{title}</div>
+      <div className="text-l md:text-xl font-bold">{title}</div>
       {!!links.length && (
         <ul className="flex m-4">
           {links.map(({ key, link }) => (

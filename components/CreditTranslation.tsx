@@ -5,10 +5,9 @@ import Credit from "./Credit";
 
 type Props = {
   translator?: Contributor;
-  showContent?: boolean;
 };
 
-const CreditTranslation = ({ translator, showContent }: Props) => {
+const CreditTranslation = ({ translator }: Props) => {
   if (!translator) {
     return null;
   }
@@ -21,8 +20,8 @@ const CreditTranslation = ({ translator, showContent }: Props) => {
   return (
     <div className="mx-auto bg-neutral-50 pt-10 pb-20 md:pb-0">
       <Container>
-        <div className="md:flex flex-row flex-start items-center">
-          <div className="mr-14 mb-10">
+        <div className="md:grid md:grid-cols-2">
+          <div className="md:mr-14 mb-10">
             <strong className="block mb-3">Written by</strong>
             <Credit
               title="Chris Drifte"
@@ -32,7 +31,7 @@ const CreditTranslation = ({ translator, showContent }: Props) => {
               website={hasLink ? BLOG_URL + "/en-GB" : null}
             />
           </div>
-          <div className="mr-14 mb-10">
+          <div className="md:mr-14 mb-10">
             <strong className="block mb-3">Translated by</strong>
             <Credit
               title={translator.title}
@@ -42,15 +41,15 @@ const CreditTranslation = ({ translator, showContent }: Props) => {
               linkedIn={translator.linkedIn}
               website={translator.website}
             />
+            {translator.content && (
+              <div
+                className="mt-6"
+                dangerouslySetInnerHTML={{
+                  __html: translator.content,
+                }}
+              />
+            )}
           </div>
-          {showContent && translator.content && (
-            <div
-              className="md:w-1/2 md:text-xs"
-              dangerouslySetInnerHTML={{
-                __html: translator.content,
-              }}
-            />
-          )}
         </div>
       </Container>
     </div>
