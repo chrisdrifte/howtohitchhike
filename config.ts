@@ -1,4 +1,5 @@
 export const GA_MEASUREMENT_ID = "G-SCFEB0JZ0M";
+export const GOOGLE_ADSENSE_CLIENT = "ca-pub-7184869199103757";
 
 export const DEFAULT_OG_IMAGE_URL = "/assets/ogimage/ogimage-default.png";
 

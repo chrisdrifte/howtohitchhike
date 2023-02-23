@@ -1,4 +1,7 @@
-import { Head, Html, Main, NextScript } from 'next/document';
+import { Head, Html, Main, NextScript } from "next/document";
+import Script from "next/script";
+
+import { GOOGLE_ADSENSE_CLIENT } from "../config";
 
 export default function Document() {
   return (
@@ -10,6 +13,12 @@ export default function Document() {
           as="font"
           type="font/woff2"
           crossOrigin="anonymous"
+        />
+        <Script
+          async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${GOOGLE_ADSENSE_CLIENT}`}
+          crossOrigin="anonymous"
+          strategy="beforeInteractive"
         />
       </Head>
       <body>
